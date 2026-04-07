@@ -18,6 +18,8 @@
 #include <cctype>
 #include <iostream>
 #include <istream>
+#include <map>
+#include <set>
 #include <string>
 
 using Avogadro::Core::Array;
@@ -50,6 +52,37 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
   Array<char> altAtomLocs;
   std::set<char> altLocs;
   Array<Vector3> altAtomPositions;
+
+  // BIOMT (biological assembly) data
+  struct BioMTMatrix
+  {
+    Eigen::Matrix3d rotation = Eigen::Matrix3d::Identity();
+    Vector3 translation = Vector3::Zero();
+  };
+  struct BioMTGroup
+  {
+    std::set<char> chains;
+    std::vector<BioMTMatrix> matrices;
+  };
+  auto parseBioMTChains = [](const string& chainStr, std::set<char>& chains) {
+    for (char c : chainStr) {
+      if (std::isalnum(static_cast<unsigned char>(c)))
+        chains.insert(c);
+    }
+  };
+  auto parseBioMTRow = [&](const string& line, int row, BioMTMatrix& mat) {
+    if (line.length() < 68)
+      return;
+
+    mat.rotation(row, 0) = lexicalCast<double>(line.substr(24, 9), ok);
+    mat.rotation(row, 1) = lexicalCast<double>(line.substr(33, 10), ok);
+    mat.rotation(row, 2) = lexicalCast<double>(line.substr(43, 10), ok);
+    mat.translation[row] = lexicalCast<double>(line.substr(53, 15), ok);
+  };
+  std::vector<BioMTGroup> bioMTGroups;
+  BioMTGroup* currentBioMTGroup = nullptr;
+  bool inFirstBiomolecule = false;
+  bool pastFirstBiomolecule = false;
 
   while (getline(in, buffer)) { // Read Each line one by one
     if (!in.good())
@@ -111,6 +144,47 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
           if (hall > 0)
             mol.setHallNumber(hall);
         }
+      }
+    }
+
+    // Parse REMARK 350 for biological assembly (BIOMT) matrices
+    else if (startsWith(buffer, "REMARK 350") && !pastFirstBiomolecule) {
+      if (buffer.find("BIOMOLECULE:") != string::npos) {
+        currentBioMTGroup = nullptr;
+        if (inFirstBiomolecule) {
+          // We've hit a second BIOMOLECULE, stop parsing
+          pastFirstBiomolecule = true;
+        } else {
+          inFirstBiomolecule = true;
+        }
+      } else if (inFirstBiomolecule &&
+                 buffer.find("APPLY THE FOLLOWING TO CHAINS:") !=
+                   string::npos) {
+        bioMTGroups.emplace_back();
+        currentBioMTGroup = &bioMTGroups.back();
+        auto colonPos = buffer.find(':');
+        if (colonPos != string::npos)
+          parseBioMTChains(buffer.substr(colonPos + 1),
+                           currentBioMTGroup->chains);
+      } else if (inFirstBiomolecule &&
+                 buffer.find("AND CHAINS:") != string::npos &&
+                 currentBioMTGroup != nullptr) {
+        auto colonPos = buffer.find(':');
+        if (colonPos != string::npos)
+          parseBioMTChains(buffer.substr(colonPos + 1),
+                           currentBioMTGroup->chains);
+      } else if (inFirstBiomolecule && buffer.find("BIOMT1") != string::npos &&
+                 currentBioMTGroup != nullptr) {
+        currentBioMTGroup->matrices.emplace_back();
+        parseBioMTRow(buffer, 0, currentBioMTGroup->matrices.back());
+      } else if (inFirstBiomolecule && buffer.find("BIOMT2") != string::npos &&
+                 currentBioMTGroup != nullptr &&
+                 !currentBioMTGroup->matrices.empty()) {
+        parseBioMTRow(buffer, 1, currentBioMTGroup->matrices.back());
+      } else if (inFirstBiomolecule && buffer.find("BIOMT3") != string::npos &&
+                 currentBioMTGroup != nullptr &&
+                 !currentBioMTGroup->matrices.empty()) {
+        parseBioMTRow(buffer, 2, currentBioMTGroup->matrices.back());
       }
     }
 
@@ -333,6 +407,136 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
   if (mol.residueCount() != 0) {
     SecondaryStructureAssigner ssa;
     ssa.assign(&mol);
+  }
+
+  // Apply BIOMT matrices to generate biological assembly
+  if (!bioMTGroups.empty()) {
+    const Index originalAtomCount = mol.atomCount();
+    const Index originalBondCount = mol.bondCount();
+    const Index originalResidueCount = mol.residueCount();
+    const Array<Vector3> originalPositions = mol.atomPositions3d();
+
+    struct CoordinateSetInfo
+    {
+      size_t index;
+      Array<Vector3> source;
+      Array<Vector3> expanded;
+    };
+    std::vector<CoordinateSetInfo> coordinateSets;
+    coordinateSets.reserve(mol.coordinate3dCount());
+    for (size_t ci = 0; ci < mol.coordinate3dCount(); ++ci) {
+      Array<Vector3> coords = mol.coordinate3d(ci);
+      if (coords.size() != originalAtomCount)
+        continue;
+
+      coordinateSets.push_back({ ci, coords, coords });
+    }
+
+    struct BondInfo
+    {
+      Index atom1, atom2;
+      unsigned char order;
+    };
+
+    struct ResidueInfo
+    {
+      std::string name;
+      Index id;
+      char chainId;
+      bool heterogen;
+      Residue::SecondaryStructure ss;
+      std::vector<std::pair<std::string, Index>> atomNames; // name, orig index
+    };
+
+    for (const auto& group : bioMTGroups) {
+      if (group.chains.empty() || group.matrices.empty())
+        continue;
+
+      std::vector<Index> assemblyAtoms;
+      std::set<Index> assemblySet;
+      std::vector<ResidueInfo> residuesToCopy;
+
+      for (Index ri = 0; ri < originalResidueCount; ++ri) {
+        const auto& origRes = mol.residue(ri);
+        if (!group.chains.count(origRes.chainId()))
+          continue;
+
+        ResidueInfo info;
+        info.name = origRes.residueName();
+        info.id = origRes.residueId();
+        info.chainId = origRes.chainId();
+        info.heterogen = origRes.isHeterogen();
+        info.ss = origRes.secondaryStructure();
+        for (const auto& atom : origRes.residueAtoms()) {
+          if (assemblySet.insert(atom.index()).second)
+            assemblyAtoms.push_back(atom.index());
+
+          std::string aName = origRes.atomName(atom);
+          if (!aName.empty())
+            info.atomNames.emplace_back(aName, atom.index());
+        }
+        residuesToCopy.push_back(std::move(info));
+      }
+
+      if (assemblyAtoms.empty())
+        continue;
+
+      std::vector<BondInfo> assemblyBonds;
+      for (Index bi = 0; bi < originalBondCount; ++bi) {
+        auto bp = mol.bondPair(bi);
+        if (assemblySet.count(bp.first) && assemblySet.count(bp.second)) {
+          assemblyBonds.push_back({ bp.first, bp.second, mol.bondOrder(bi) });
+        }
+      }
+
+      for (const auto& mat : group.matrices) {
+        if (mat.rotation.isIdentity(1e-6) && mat.translation.norm() < 1e-6) {
+          continue;
+        }
+
+        std::map<Index, Index> oldToNew;
+
+        for (Index origIdx : assemblyAtoms) {
+          Vector3 transformed =
+            mat.rotation * originalPositions[origIdx] + mat.translation;
+          Atom newAtom = mol.addAtom(mol.atomicNumber(origIdx), transformed);
+          if (mol.formalCharge(origIdx) != 0)
+            mol.setFormalCharge(newAtom.index(), mol.formalCharge(origIdx));
+          if (mol.isotope(origIdx) != 0)
+            mol.setIsotope(newAtom.index(), mol.isotope(origIdx));
+          oldToNew[origIdx] = newAtom.index();
+
+          for (auto& coordSet : coordinateSets) {
+            coordSet.expanded.push_back(
+              mat.rotation * coordSet.source[origIdx] + mat.translation);
+          }
+        }
+
+        for (const auto& bond : assemblyBonds) {
+          auto it1 = oldToNew.find(bond.atom1);
+          auto it2 = oldToNew.find(bond.atom2);
+          if (it1 != oldToNew.end() && it2 != oldToNew.end())
+            mol.addBond(it1->second, it2->second, bond.order);
+        }
+
+        for (const auto& info : residuesToCopy) {
+          std::string resName = info.name;
+          Index resId = info.id;
+          char chainId = info.chainId;
+          auto& newRes = mol.addResidue(resName, resId, chainId);
+          newRes.setHeterogen(info.heterogen);
+          newRes.setSecondaryStructure(info.ss);
+          for (const auto& pair : info.atomNames) {
+            auto it = oldToNew.find(pair.second);
+            if (it != oldToNew.end())
+              newRes.addResidueAtom(pair.first, mol.atom(it->second));
+          }
+        }
+      }
+    }
+
+    for (const auto& coordSet : coordinateSets)
+      mol.setCoordinate3d(coordSet.expanded, coordSet.index);
   }
 
   return true;
