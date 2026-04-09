@@ -131,11 +131,19 @@ void MoldenFile::processLine(std::istream& in)
     m_mode = VibrationalModes;
   } else if (Core::contains(line, "[INT]")) {
     m_mode = Intensities;
-  } else if (Core::contains(line, "[5D]")) {
+  } else if (Core::contains(line, "5D") || Core::contains(line, "5d")) {
+    // Handles [5D], [5D7F], [5D7F11G], etc. (Dalton combined tokens)
     m_cartesianD = false;
-  } else if (Core::contains(line, "[7F]")) {
+    // Check for combined tokens like [5D7F] or [5D7F11G]
+    if (Core::contains(line, "7F") || Core::contains(line, "7f"))
+      m_cartesianF = false;
+    if (Core::contains(line, "9G") || Core::contains(line, "9g"))
+      m_cartesianG = false;
+  } else if (Core::contains(line, "7F") || Core::contains(line, "7f")) {
     m_cartesianF = false;
-  } else if (Core::contains(line, "[9G]")) {
+    if (Core::contains(line, "9G") || Core::contains(line, "9g"))
+      m_cartesianG = false;
+  } else if (Core::contains(line, "9G") || Core::contains(line, "9g")) {
     m_cartesianG = false;
   } else if (Core::contains(line, "[")) { // unknown section
     m_mode = Unrecognized;
