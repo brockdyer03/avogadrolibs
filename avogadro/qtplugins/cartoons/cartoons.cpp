@@ -266,7 +266,6 @@ void renderBackbone(const AtomsPairList& backbone, const Molecule& molecule,
   cylinders->identifier().type = Rendering::AtomType;
   geometry->addDrawable(cylinders);
 
-  Index i = 0;
   for (auto it = backbone.begin(); it != backbone.end(); ++it) {
     const auto& bone = *it;
     auto color1 = bone.color1;
@@ -282,7 +281,6 @@ void renderBackbone(const AtomsPairList& backbone, const Molecule& molecule,
       const Vector3f& pos2 = nextBone.pos;
       cylinders->addCylinder(pos, pos2, radius, color1, color2, bone.residueID);
     }
-    ++i;
   }
 }
 
@@ -372,13 +370,12 @@ void Cartoons::process(const Molecule& molecule, Rendering::GroupNode& node)
         interface->showSimpleCartoon || interface->showCartoon ||
         interface->showRope) {
       map<size_t, AtomsPairList> backbones;
-      if (molecule.residues().size() > 0) {
+      if (!molecule.residues().empty()) {
         backbones = getBackboneByResidues(molecule, layer);
       }
-      if (backbones.size() == 0) {
+      if (backbones.empty()) {
         continue; // maybe something in a different layer
       }
-      size_t i = 0;
       for (const auto& group : backbones) {
         const auto& backbone = group.second;
         if (interface->showBackbone) {
@@ -403,7 +400,6 @@ void Cartoons::process(const Molecule& molecule, Rendering::GroupNode& node)
         if (interface->showRope) {
           renderRope(backbone, molecule, node, 1.0f);
         }
-        ++i;
       }
     }
   }

@@ -15,6 +15,7 @@ namespace {
 } // namespace
 #include "avogadrogl.h"
 
+#include <algorithm>
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -86,38 +87,46 @@ void CurveGeometry::update(int index)
   const size_t qttySegments = lineResolution * qttyPoints;
   Vector3f previous;
   std::vector<Eigen::Affine3f> points;
-  size_t top = qttyPoints <= 4 ? 0 : line->points.size() - 4;
-  auto it = line->points.begin();
-  for (size_t i = SKIPPED; i < top; ++i) {
+  // B-spline valid parameter range requires a margin of ~n/6 at the end;
+  // for long chains (n >= 24), 4 points suffice
+  size_t margin = std::min<size_t>(4, (qttyPoints + 5) / 6);
+  size_t top = qttyPoints <= margin + 2 ? 0 : qttyPoints - margin;
+  bool nanDetected = false;
+  for (size_t i = SKIPPED; i < top && !nanDetected; ++i) {
     for (size_t j = 0; j < lineResolution; ++j) {
       float t = (i * lineResolution + j) / float(qttySegments);
       auto p = computeCurvePoint(t, line->points);
       if (i > SKIPPED) {
+        Vector3f tangent = p - previous;
+        if (tangent.squaredNorm() < 1e-10f) {
+          previous = p;
+          continue;
+        }
         Eigen::Matrix3f m;
-        m.col(1) = (p - previous).normalized();
+        m.col(1) = tangent.normalized();
         m.col(0) = m.col(1).unitOrthogonal() * -1.0f;
         if (i > SKIPPED + 1) {
           const auto& previousAngle = points.back().linear().col(0);
           float angle = previousAngle.dot(m.col(0));
-          // avoid nans
           if (std::isnan(angle)) {
-            m.col(0) = previousAngle;
+            nanDetected = true;
             break;
-            // if angle > 90 flip it
-          } else if (angle <= 0.0f) {
-            m.col(0) *= -1.0f;
           }
+          // if angle > 90 flip it
+          if (angle <= 0.0f)
+            m.col(0) *= -1.0f;
           angle = previousAngle.dot(m.col(0));
-          float degrees =
-            (std::acos(angle / (m.col(0).norm() * previousAngle.norm())) *
-             RAD_TO_DEG_F);
-          // if angle is > 25º get the bisector
-          while (degrees > 25.0f) {
+          float denom = m.col(0).norm() * previousAngle.norm();
+          float cosAngle = std::clamp(angle / denom, -1.0f, 1.0f);
+          float degrees = std::acos(cosAngle) * RAD_TO_DEG_F;
+          // if angle is > 25 degrees get the bisector
+          int maxIter = 10;
+          while (degrees > 25.0f && --maxIter > 0) {
             m.col(0) = (m.col(0) + previousAngle).normalized();
             angle = previousAngle.dot(m.col(0));
-            degrees =
-              (std::acos(angle / (m.col(0).norm() * previousAngle.norm())) *
-               RAD_TO_DEG_F);
+            denom = m.col(0).norm() * previousAngle.norm();
+            cosAngle = std::clamp(angle / denom, -1.0f, 1.0f);
+            degrees = std::acos(cosAngle) * RAD_TO_DEG_F;
           }
         }
         m.col(2) = m.col(0).cross(m.col(1)) * -1.0f;
@@ -133,14 +142,13 @@ void CurveGeometry::update(int index)
       }
       previous = p;
     }
-    ++it;
   }
 
   // prepare VBO and EBO
   std::vector<unsigned int> indices;
   std::vector<ColorNormalVertex> vertices;
 
-  it = line->points.begin();
+  auto it = line->points.begin();
   if (line->points.size() > 3) {
     it = std::next(it, 3);
   }
@@ -237,38 +245,37 @@ void CurveGeometry::render(const Camera& camera)
     checkShaderInfo(m_shaderInfo, cylinders_fs, cylinders_vs);
     m_dirty = false;
   }
-  if (!m_dirty) {
-    processShaderError(!m_shaderInfo.program.bind());
-    processShaderError(!m_shaderInfo.program.setUniformValue(
-      "modelView", camera.modelView().matrix()));
-    processShaderError(!m_shaderInfo.program.setUniformValue(
-      "projection", camera.projection().matrix()));
-    Eigen::Matrix3f normalMatrix =
-      camera.modelView().linear().inverse().transpose();
-    processShaderError(
-      !m_shaderInfo.program.setUniformValue("normalMatrix", normalMatrix));
 
-    for (size_t i = 0; i < m_lines.size(); ++i) {
-      Line* line = m_lines[i];
-      if (line->dirty) {
-        update(i);
-      }
+  processShaderError(!m_shaderInfo.program.bind());
+  processShaderError(!m_shaderInfo.program.setUniformValue(
+    "modelView", camera.modelView().matrix()));
+  processShaderError(!m_shaderInfo.program.setUniformValue(
+    "projection", camera.projection().matrix()));
+  Eigen::Matrix3f normalMatrix =
+    camera.modelView().linear().inverse().transpose();
+  processShaderError(
+    !m_shaderInfo.program.setUniformValue("normalMatrix", normalMatrix));
 
-      // Bind the VAO (captures all vertex attribute state)
-      line->vao.bind();
-
-      if (line->flat && m_canBeFlat) {
-        glLineWidth(-line->radius);
-      }
-      glDrawRangeElements(line->flat && m_canBeFlat ? GL_LINE_STRIP
-                                                    : GL_TRIANGLES,
-                          0, static_cast<GLuint>(line->numberOfVertices),
-                          static_cast<GLsizei>(line->numberOfIndices),
-                          GL_UNSIGNED_INT, reinterpret_cast<const GLvoid*>(0));
-      line->vao.release();
+  for (size_t i = 0; i < m_lines.size(); ++i) {
+    Line* line = m_lines[i];
+    if (line->dirty) {
+      update(i);
     }
-    m_shaderInfo.program.release();
+
+    // Bind the VAO (captures all vertex attribute state)
+    line->vao.bind();
+
+    if (line->flat && m_canBeFlat) {
+      glLineWidth(-line->radius);
+    }
+    glDrawRangeElements(line->flat && m_canBeFlat ? GL_LINE_STRIP
+                                                  : GL_TRIANGLES,
+                        0, static_cast<GLuint>(line->numberOfVertices),
+                        static_cast<GLsizei>(line->numberOfIndices),
+                        GL_UNSIGNED_INT, reinterpret_cast<const GLvoid*>(0));
+    line->vao.release();
   }
+  m_shaderInfo.program.release();
 }
 
 void CurveGeometry::addPoint(const Vector3f& pos, const Vector3ub& color,

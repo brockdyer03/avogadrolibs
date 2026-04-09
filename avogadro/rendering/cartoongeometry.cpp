@@ -74,7 +74,7 @@ float arrowFunction(float t)
 
 float Cartoon::computeScale(size_t index, float p, float radius) const
 {
-  if (index > m_type.size())
+  if (index >= m_type.size())
     return radius;
   float t = (m_type[index].second + p) / 0.80f;
   t = t > 1.0f ? 1.0f : t;
