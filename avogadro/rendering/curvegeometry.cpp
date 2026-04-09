@@ -330,7 +330,7 @@ void CurveGeometry::render(const Camera& camera)
                    static_cast<GLsizei>(line->numberOfVertices));
     } else if (line->numberOfIndices > 0) {
       glDrawRangeElements(GL_TRIANGLES, 0,
-                          static_cast<GLuint>(line->numberOfVertices),
+                          static_cast<GLuint>(line->numberOfVertices - 1),
                           static_cast<GLsizei>(line->numberOfIndices),
                           GL_UNSIGNED_INT, reinterpret_cast<const GLvoid*>(0));
     }
