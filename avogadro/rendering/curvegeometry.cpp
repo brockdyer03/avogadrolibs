@@ -46,15 +46,21 @@ CurveGeometry::~CurveGeometry()
   }
 }
 
-std::vector<ColorNormalVertex> CurveGeometry::computeCirclePoints(
-  const Eigen::Affine3f& a, const Eigen::Affine3f& b, bool flat) const
+size_t CurveGeometry::circleResolution(bool flat) const
 {
-  unsigned int circleResolution = flat ? 1 : 12;
-  const float resolutionRadians =
-    2.0f * static_cast<float>(M_PI) / static_cast<float>(circleResolution);
-  std::vector<ColorNormalVertex> result;
+  return flat ? 1u : 12u;
+}
 
-  for (unsigned int i = 0; i < circleResolution; ++i) {
+void CurveGeometry::appendCirclePoints(std::vector<ColorNormalVertex>& result,
+                                       const Eigen::Affine3f& a,
+                                       const Eigen::Affine3f& b,
+                                       bool flat) const
+{
+  const size_t resolution = circleResolution(flat);
+  const float resolutionRadians =
+    2.0f * static_cast<float>(M_PI) / static_cast<float>(resolution);
+
+  for (size_t i = 0; i < resolution; ++i) {
     float theta = i * resolutionRadians;
     Vector3f circle = Vector3f(std::cos(theta), 0.0f, std::sin(theta));
     ColorNormalVertex vert1;
@@ -69,7 +75,6 @@ std::vector<ColorNormalVertex> CurveGeometry::computeCirclePoints(
     vert2.color = Vector3ub(0, 0, 0);
     result.push_back(vert2);
   }
-  return result;
 }
 
 float CurveGeometry::computeScale(size_t, float, float scale) const
@@ -81,12 +86,15 @@ void CurveGeometry::update(int index)
 {
   // compute the middle points
   Line* line = m_lines[index];
-  unsigned int lineResolution = line->flat ? 20 : 15;
-  size_t qttyPoints = line->points.size();
+  const size_t lineResolution = line->flat ? 20u : 15u;
+  const size_t qttyPoints = line->points.size();
+  line->numberOfVertices = 0;
+  line->numberOfIndices = 0;
 
   const size_t qttySegments = lineResolution * qttyPoints;
   Vector3f previous;
   std::vector<Eigen::Affine3f> points;
+  points.reserve(qttySegments);
   // B-spline valid parameter range requires a margin of ~n/6 at the end;
   // for long chains (n >= 24), 4 points suffice
   size_t margin = std::min<size_t>(4, (qttyPoints + 5) / 6);
@@ -147,43 +155,86 @@ void CurveGeometry::update(int index)
   // prepare VBO and EBO
   std::vector<unsigned int> indices;
   std::vector<ColorNormalVertex> vertices;
-
-  auto it = line->points.begin();
-  if (line->points.size() > 3) {
-    it = std::next(it, 3);
+  if (points.empty()) {
+    line->dirty = false;
+    return;
   }
-  for (size_t i = 1; i < points.size(); ++i) {
-    if (i % lineResolution == 0) {
-      ++it;
-    }
-    std::vector<ColorNormalVertex> radials =
-      computeCirclePoints(points[i], points[i - 1], line->flat);
-    for (auto r : radials) {
-      r.color = (*it)->color;
-      vertices.push_back(r);
-    }
-    const auto tubeStart = static_cast<unsigned int>(
-      vertices.size() - (line->flat && m_canBeFlat ? radials.size() : 0));
-    for (unsigned int j = 0; j < radials.size() / 2; ++j) {
-      unsigned int r1 = j + j;
-      unsigned int r2 = (j != 0 ? r1 : radials.size()) - 2;
-      indices.push_back(tubeStart + r1);
-      indices.push_back(tubeStart + r1 + 1);
-      indices.push_back(tubeStart + r2);
 
-      indices.push_back(tubeStart + r2);
-      indices.push_back(tubeStart + r1 + 1);
-      indices.push_back(tubeStart + r2 + 1);
+  if (line->flat && m_canBeFlat) {
+    vertices.reserve(points.size());
+
+    size_t colorIndex = line->points.size() > 3 ? 3u : 0u;
+    for (size_t i = 0; i < points.size(); ++i) {
+      if (i != 0 && i % lineResolution == 0 &&
+          colorIndex + 1 < line->points.size()) {
+        ++colorIndex;
+      }
+
+      Vector3f normal = points[i].linear().col(0);
+      if (normal.squaredNorm() < 1e-10f) {
+        normal = Vector3f::UnitX();
+      } else {
+        normal.normalize();
+      }
+      vertices.emplace_back(line->points[colorIndex].color, normal,
+                            points[i].translation());
     }
+  } else {
+    const size_t resolution = circleResolution(line->flat);
+    const size_t radialVertexCount = resolution * 2;
+    const size_t segmentCount = points.size() > 1 ? points.size() - 1 : 0;
+    vertices.reserve(segmentCount * radialVertexCount);
+    indices.reserve(segmentCount * resolution * 6);
+
+    std::vector<ColorNormalVertex> radials;
+    radials.reserve(radialVertexCount);
+
+    size_t colorIndex = line->points.size() > 3 ? 3u : 0u;
+    for (size_t i = 1; i < points.size(); ++i) {
+      if (i % lineResolution == 0 && colorIndex + 1 < line->points.size()) {
+        ++colorIndex;
+      }
+      radials.clear();
+      appendCirclePoints(radials, points[i], points[i - 1], line->flat);
+      for (auto& radial : radials) {
+        radial.color = line->points[colorIndex].color;
+        vertices.push_back(radial);
+      }
+      const auto tubeStart =
+        static_cast<unsigned int>(vertices.size() - radials.size());
+      for (size_t j = 0; j < resolution; ++j) {
+        unsigned int r1 = static_cast<unsigned int>(j * 2);
+        unsigned int r2 =
+          j != 0 ? r1 - 2 : static_cast<unsigned int>(radials.size() - 2);
+        indices.push_back(tubeStart + r1);
+        indices.push_back(tubeStart + r1 + 1);
+        indices.push_back(tubeStart + r2);
+
+        indices.push_back(tubeStart + r2);
+        indices.push_back(tubeStart + r1 + 1);
+        indices.push_back(tubeStart + r2 + 1);
+      }
+    }
+  }
+
+  if (vertices.empty()) {
+    line->dirty = false;
+    return;
   }
 
   line->vbo.upload(vertices, BufferObject::ArrayBuffer);
-  line->ibo.upload(indices, BufferObject::ElementArrayBuffer);
+  if (!indices.empty()) {
+    line->ibo.upload(indices, BufferObject::ElementArrayBuffer);
+  }
 
   // Set up VAO with vertex attribute bindings (OpenGL 4.0 core profile)
   line->vao.bind();
   line->vbo.bind();
-  line->ibo.bind();
+  if (!indices.empty()) {
+    line->ibo.bind();
+  } else {
+    line->ibo.release();
+  }
 
   processShaderError(!m_shaderInfo.program.enableAttributeArray("vertex"));
   processShaderError(!m_shaderInfo.program.useAttributeArray(
@@ -265,14 +316,21 @@ void CurveGeometry::render(const Camera& camera)
     // Bind the VAO (captures all vertex attribute state)
     line->vao.bind();
 
+    if (line->numberOfVertices == 0) {
+      line->vao.release();
+      continue;
+    }
+
     if (line->flat && m_canBeFlat) {
       glLineWidth(-line->radius);
+      glDrawArrays(GL_LINE_STRIP, 0,
+                   static_cast<GLsizei>(line->numberOfVertices));
+    } else if (line->numberOfIndices > 0) {
+      glDrawRangeElements(GL_TRIANGLES, 0,
+                          static_cast<GLuint>(line->numberOfVertices),
+                          static_cast<GLsizei>(line->numberOfIndices),
+                          GL_UNSIGNED_INT, reinterpret_cast<const GLvoid*>(0));
     }
-    glDrawRangeElements(line->flat && m_canBeFlat ? GL_LINE_STRIP
-                                                  : GL_TRIANGLES,
-                        0, static_cast<GLuint>(line->numberOfVertices),
-                        static_cast<GLsizei>(line->numberOfIndices),
-                        GL_UNSIGNED_INT, reinterpret_cast<const GLvoid*>(0));
     line->vao.release();
   }
   m_shaderInfo.program.release();
@@ -287,7 +345,7 @@ void CurveGeometry::addPoint(const Vector3f& pos, const Vector3ub& color,
   }
   m_lines[m_indexMap[group]]->radius = radius;
   m_lines[m_indexMap[group]]->flat = radius < 0.0f;
-  m_lines[m_indexMap[group]]->add(new Point(pos, color, id));
+  m_lines[m_indexMap[group]]->add(Point(pos, color, id));
 }
 
 Array<Identifier> CurveGeometry::areaHits(const Frustrum& f) const
@@ -298,14 +356,14 @@ Array<Identifier> CurveGeometry::areaHits(const Frustrum& f) const
     size_t skip = 0;
     std::queue<size_t> previous;
     for (const auto& point : line->points) {
-      previous.push(point->id);
+      previous.push(point.id);
       if (skip < 2) {
         ++skip;
         continue;
       }
       int in = 0;
       for (; in < 4; ++in) {
-        float dist = (point->pos - f.points[2 * in]).dot(f.planes[in]);
+        float dist = (point.pos - f.points[2 * in]).dot(f.planes[in]);
         if (dist > 0.0f) {
           // Outside of our frustrum, break.
           break;

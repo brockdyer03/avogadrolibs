@@ -36,7 +36,7 @@ float B(float i, float k, float t, float knot)
 }
 
 Vector3f BSplineGeometry::computeCurvePoint(
-  float t, const std::list<Point*>& points) const
+  float t, const std::vector<Point>& points) const
 {
   // degree: linear = 1, quadratic = 2, cubic = 3
   float k = 3.0f;
@@ -46,20 +46,16 @@ Vector3f BSplineGeometry::computeCurvePoint(
   float m = 2 * lookahead + k + 1.0f;
   float knot = 1.0f / m;
   Vector3f Q = Vector3f::Zero();
-  float i = 0.0f;
-  auto it = points.begin();
-  const auto end = points.end();
   int size = static_cast<int>(points.size());
   // start from a lookbehind distance rather than at the beginning
   int maxStart = std::max(0, size - 2 * lookahead);
   int startIndex =
     std::clamp(static_cast<int>(size * t) - lookahead, 0, maxStart);
   float t2 = (t - startIndex / (float)size) * size / (2 * lookahead);
-  for (; startIndex > 0 && it != end; --startIndex, ++it) {}
-  // only read a certain number of elements from here
-  size_t count = 2 * lookahead;
-  for (; count && it != end; --count, ++it) {
-    Q += (*it)->pos * B(i, k, t2, knot);
+  const int endIndex = std::min(size, startIndex + 2 * lookahead);
+  float i = 0.0f;
+  for (int pointIndex = startIndex; pointIndex < endIndex; ++pointIndex) {
+    Q += points[pointIndex].pos * B(i, k, t2, knot);
     i += 1.0f;
   }
   return Q;

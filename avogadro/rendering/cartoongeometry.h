@@ -34,9 +34,10 @@ public:
 
 protected:
   // create an ellipsis and adapt it to the affine A
-  std::vector<ColorNormalVertex> computeCirclePoints(const Eigen::Affine3f& a,
-                                                     const Eigen::Affine3f& b,
-                                                     bool flat) const override;
+  size_t circleResolution(bool flat) const override;
+  void appendCirclePoints(std::vector<ColorNormalVertex>& result,
+                          const Eigen::Affine3f& a, const Eigen::Affine3f& b,
+                          bool flat) const override;
 
   float computeScale(size_t index, float t, float scale) const override;
 

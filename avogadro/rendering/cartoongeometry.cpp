@@ -24,19 +24,23 @@ Cartoon::Cartoon(float minRadius, float maxRadius)
 {
 }
 
-vector<ColorNormalVertex> Cartoon::computeCirclePoints(const Eigen::Affine3f& a,
-                                                       const Eigen::Affine3f& b,
-                                                       bool flat) const
+size_t Cartoon::circleResolution(bool flat) const
 {
-  unsigned int circleResolution = flat ? 2 : 20;
+  return flat ? 2u : 20u;
+}
+
+void Cartoon::appendCirclePoints(std::vector<ColorNormalVertex>& result,
+                                 const Eigen::Affine3f& a,
+                                 const Eigen::Affine3f& b, bool flat) const
+{
+  const size_t resolution = circleResolution(flat);
   const float resolutionRadians =
-    2.0f * static_cast<float>(M_PI) / static_cast<float>(circleResolution);
-  vector<ColorNormalVertex> result;
+    2.0f * static_cast<float>(M_PI) / static_cast<float>(resolution);
   float elipseA = flat ? 0.999f : ELIPSE_RATIO;
   float elipseB = 1.0f - elipseA;
   float e = std::sqrt(1.0f - ((elipseB * elipseB) / (elipseA * elipseA)));
   float c = elipseA * e;
-  for (unsigned int i = 0; i < circleResolution; ++i) {
+  for (size_t i = 0; i < resolution; ++i) {
     float theta = resolutionRadians * i;
     float r = (elipseA * (1.0f - (e * e))) / (1.0f + e * std::cos(theta));
     Vector3f elipse =
@@ -52,7 +56,6 @@ vector<ColorNormalVertex> Cartoon::computeCirclePoints(const Eigen::Affine3f& a,
     vert2.vertex = b * elipse;
     result.push_back(vert2);
   }
-  return result;
 }
 
 float arrowFunction(float t)
