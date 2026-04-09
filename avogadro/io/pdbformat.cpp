@@ -18,6 +18,7 @@
 #include <cctype>
 #include <iostream>
 #include <istream>
+#include <limits>
 #include <string>
 
 using Avogadro::Core::Array;
@@ -40,7 +41,10 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
   string buffer;
   std::vector<int> terList;
   Residue* r = nullptr;
-  size_t currentResidueId = 0;
+  size_t currentResidueId = std::numeric_limits<size_t>::max();
+  char currentChainId = '\0';
+  string currentResidueName;
+  bool currentHeterogen = false;
   bool ok(false);
   int coordSet = 0;
   Array<Vector3> positions;
@@ -120,6 +124,8 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
         return false;
       }
 
+      const bool isHeterogen = startsWith(buffer, "HETATM");
+
       // First we initialize the residue instance
       auto residueId = lexicalCast<size_t>(buffer.substr(22, 4), ok);
       if (!ok) {
@@ -128,22 +134,26 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
         return false;
       }
 
-      if (residueId != currentResidueId) {
+      auto residueName = lexicalCast<string>(buffer.substr(17, 3), ok);
+      if (!ok) {
+        appendError("Failed to parse residue name: " + buffer.substr(17, 3));
+        return false;
+      }
+
+      char chainId = lexicalCast<char>(buffer.substr(21, 1), ok);
+      if (!ok) {
+        chainId = 'A'; // it's a non-standard "PDB"-like file
+      }
+
+      if (residueId != currentResidueId || chainId != currentChainId ||
+          residueName != currentResidueName ||
+          isHeterogen != currentHeterogen) {
         currentResidueId = residueId;
-
-        auto residueName = lexicalCast<string>(buffer.substr(17, 3), ok);
-        if (!ok) {
-          appendError("Failed to parse residue name: " + buffer.substr(17, 3));
-          return false;
-        }
-
-        char chainId = lexicalCast<char>(buffer.substr(21, 1), ok);
-        if (!ok) {
-          chainId = 'A'; // it's a non-standard "PDB"-like file
-        }
-
+        currentChainId = chainId;
+        currentResidueName = residueName;
+        currentHeterogen = isHeterogen;
         r = &mol.addResidue(residueName, currentResidueId, chainId);
-        if (startsWith(buffer, "HETATM"))
+        if (isHeterogen)
           r->setHeterogen(true);
       }
 

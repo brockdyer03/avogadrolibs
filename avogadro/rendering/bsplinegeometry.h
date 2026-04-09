@@ -19,7 +19,7 @@ public:
 
 protected:
   Vector3f computeCurvePoint(float t,
-                             const std::list<Point*>& points) const override;
+                             const std::vector<Point>& points) const override;
 };
 
 } // End namespace Rendering

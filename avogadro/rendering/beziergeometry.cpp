@@ -10,7 +10,7 @@ namespace Avogadro::Rendering {
 BezierGeometry::BezierGeometry() : CurveGeometry() {}
 
 Vector3f BezierGeometry::computeCurvePoint(
-  float t, const std::list<Point*>& points) const
+  float t, const std::vector<Point>& points) const
 {
   Vector3f h = Vector3f::Ones();
   float u = 1.0f - t;
@@ -22,7 +22,7 @@ Vector3f BezierGeometry::computeCurvePoint(
     for (size_t i = 0; i < 3; ++i) {
       h[i] = h[i] * t * (n1 - k) * w;
       h[i] = h[i] / (k * u * w + h[i]);
-      Q[i] = (1.0f - h[i]) * Q[i] + h[i] * p->pos[i];
+      Q[i] = (1.0f - h[i]) * Q[i] + h[i] * p.pos[i];
     }
     k += 1.0f;
   }

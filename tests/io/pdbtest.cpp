@@ -120,3 +120,23 @@ TEST(PdbTest, pdb1)
   EXPECT_EQ(residues[1].residueName(), "LEU");
   EXPECT_EQ(residues[2].residueName(), "ASN");
 }
+
+TEST(PdbTest, chainChangeStartsNewResidue)
+{
+  const std::string pdbText = "ATOM      1  CA  GLY A   1      11.000  12.000  "
+                              "13.000  1.00 20.00           C\n"
+                              "TER       2      GLY A   1\n"
+                              "ATOM      3  CA  GLY B   1      21.000  22.000  "
+                              "23.000  1.00 20.00           C\n"
+                              "END\n";
+
+  PdbFormat pdb;
+  Molecule molecule;
+  ASSERT_TRUE(pdb.readString(pdbText, molecule)) << pdb.error();
+
+  ASSERT_EQ(molecule.residueCount(), 2);
+  EXPECT_EQ(molecule.residue(0).chainId(), 'A');
+  EXPECT_EQ(molecule.residue(0).residueId(), 1);
+  EXPECT_EQ(molecule.residue(1).chainId(), 'B');
+  EXPECT_EQ(molecule.residue(1).residueId(), 1);
+}
