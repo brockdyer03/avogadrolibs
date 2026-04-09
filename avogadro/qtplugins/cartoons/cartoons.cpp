@@ -21,6 +21,7 @@
 #include <avogadro/rendering/spheregeometry.h>
 
 #include <functional>
+#include <limits>
 #include <utility>
 #include <vector>
 
@@ -41,6 +42,53 @@ using std::list;
 using std::map;
 using std::reference_wrapper;
 using std::vector;
+
+namespace {
+
+constexpr float kMaxProteinBackboneStep = 6.0f;
+constexpr float kMaxNucleicBackboneStep = 8.0f;
+
+struct BackboneSegmentState
+{
+  size_t renderGroup = std::numeric_limits<size_t>::max();
+  Vector3f position = Vector3f::Zero();
+  size_t residueId = 0;
+  char chainId = '\0';
+  bool initialized = false;
+};
+
+bool needsBackboneBreak(const BackboneSegmentState& previous,
+                        const Residue& residue, const Vector3f& position,
+                        float maxStep)
+{
+  if (!previous.initialized)
+    return true;
+  if (previous.chainId != residue.chainId())
+    return true;
+  if (residue.residueId() <= previous.residueId)
+    return true;
+
+  return (position - previous.position).norm() > maxStep;
+}
+
+size_t backboneSegmentGroup(
+  std::map<size_t, BackboneSegmentState>& previousSegments, size_t sourceGroup,
+  const Residue& residue, const Vector3f& position, float maxStep,
+  size_t& nextGroup)
+{
+  auto& previous = previousSegments[sourceGroup];
+  if (needsBackboneBreak(previous, residue, position, maxStep)) {
+    previous.renderGroup = nextGroup++;
+  }
+
+  previous.position = position;
+  previous.residueId = residue.residueId();
+  previous.chainId = residue.chainId();
+  previous.initialized = true;
+  return previous.renderGroup;
+}
+
+} // namespace
 
 struct LayerCartoon : Core::LayerData
 {
@@ -203,6 +251,8 @@ map<size_t, AtomsPairList> Cartoons::getBackboneByResidues(
   const auto& graph = molecule.graph();
   map<size_t, AtomsPairList> result;
   map<size_t, BackboneResidue> previousAtom;
+  map<size_t, BackboneSegmentState> previousSegments;
+  size_t nextGroup = 0;
   for (const auto& residue : molecule.residues()) {
     if (!residue.isHeterogen()) {
       Atom caAtom = residue.atomByName("CA");
@@ -210,8 +260,10 @@ map<size_t, AtomsPairList> Cartoons::getBackboneByResidues(
       if (caAtom.isValid() && oAtom.isValid() &&
           m_layerManager.atomEnabled(layer, caAtom.index()) &&
           m_layerManager.atomEnabled(layer, oAtom.index())) {
-        // get the group ID and check if it's initialized in the map
-        size_t group = graph.getConnectedID(caAtom.index());
+        const Vector3f ca = caAtom.position3d().cast<float>();
+        size_t group = backboneSegmentGroup(
+          previousSegments, graph.getConnectedID(caAtom.index()), residue, ca,
+          kMaxProteinBackboneStep, nextGroup);
         addBackBone(result, previousAtom, caAtom, residue.color(), group,
                     residue.secondaryStructure());
       } else { // maybe DNA
@@ -220,7 +272,10 @@ map<size_t, AtomsPairList> Cartoons::getBackboneByResidues(
         if (c3Atom.isValid() && o3Atom.isValid() &&
             m_layerManager.atomEnabled(layer, c3Atom.index()) &&
             m_layerManager.atomEnabled(layer, o3Atom.index())) {
-          size_t group = graph.getConnectedID(c3Atom.index());
+          const Vector3f c3 = c3Atom.position3d().cast<float>();
+          size_t group = backboneSegmentGroup(
+            previousSegments, graph.getConnectedID(c3Atom.index()), residue, c3,
+            kMaxNucleicBackboneStep, nextGroup);
           addBackBone(result, previousAtom, c3Atom, residue.color(), group,
                       residue.secondaryStructure());
         }
