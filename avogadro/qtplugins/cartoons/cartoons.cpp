@@ -50,18 +50,18 @@ constexpr float kMaxNucleicBackboneStep = 8.0f;
 
 struct BackboneSegmentState
 {
-  size_t renderGroup = std::numeric_limits<size_t>::max();
+  static constexpr size_t kUninitialized = std::numeric_limits<size_t>::max();
+  size_t renderGroup = kUninitialized;
   Vector3f position = Vector3f::Zero();
   size_t residueId = 0;
   char chainId = '\0';
-  bool initialized = false;
 };
 
 bool needsBackboneBreak(const BackboneSegmentState& previous,
                         const Residue& residue, const Vector3f& position,
                         float maxStep)
 {
-  if (!previous.initialized)
+  if (previous.renderGroup == BackboneSegmentState::kUninitialized)
     return true;
   if (previous.chainId != residue.chainId())
     return true;
@@ -84,7 +84,6 @@ size_t backboneSegmentGroup(
   previous.position = position;
   previous.residueId = residue.residueId();
   previous.chainId = residue.chainId();
-  previous.initialized = true;
   return previous.renderGroup;
 }
 

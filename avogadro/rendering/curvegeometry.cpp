@@ -160,15 +160,21 @@ void CurveGeometry::update(int index)
     return;
   }
 
+  // Map spline sample index to control point color
+  const size_t numControlPoints = line->points.size();
+  size_t colorIndex = numControlPoints > 3 ? 3u : 0u;
+  auto advanceColor = [&](size_t i) {
+    if (i != 0 && i % lineResolution == 0 &&
+        colorIndex + 1 < numControlPoints) {
+      ++colorIndex;
+    }
+  };
+
   if (line->flat && m_canBeFlat) {
     vertices.reserve(points.size());
 
-    size_t colorIndex = line->points.size() > 3 ? 3u : 0u;
     for (size_t i = 0; i < points.size(); ++i) {
-      if (i != 0 && i % lineResolution == 0 &&
-          colorIndex + 1 < line->points.size()) {
-        ++colorIndex;
-      }
+      advanceColor(i);
 
       Vector3f normal = points[i].linear().col(0);
       if (normal.squaredNorm() < 1e-10f) {
@@ -189,11 +195,8 @@ void CurveGeometry::update(int index)
     std::vector<ColorNormalVertex> radials;
     radials.reserve(radialVertexCount);
 
-    size_t colorIndex = line->points.size() > 3 ? 3u : 0u;
     for (size_t i = 1; i < points.size(); ++i) {
-      if (i % lineResolution == 0 && colorIndex + 1 < line->points.size()) {
-        ++colorIndex;
-      }
+      advanceColor(i);
       radials.clear();
       appendCirclePoints(radials, points[i], points[i - 1], line->flat);
       for (auto& radial : radials) {
