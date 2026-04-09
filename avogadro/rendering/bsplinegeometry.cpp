@@ -5,6 +5,8 @@
 
 #include "bsplinegeometry.h"
 
+#include <algorithm>
+
 namespace Avogadro::Rendering {
 
 BSplineGeometry::BSplineGeometry() : CurveGeometry() {}
@@ -49,11 +51,9 @@ Vector3f BSplineGeometry::computeCurvePoint(
   const auto end = points.end();
   int size = static_cast<int>(points.size());
   // start from a lookbehind distance rather than at the beginning
-  int startIndex = (size * t) - lookahead;
-  if (startIndex < 0)
-    startIndex = 0;
-  else if (startIndex > size - 2 * lookahead)
-    startIndex = size - 2 * lookahead;
+  int maxStart = std::max(0, size - 2 * lookahead);
+  int startIndex =
+    std::clamp(static_cast<int>(size * t) - lookahead, 0, maxStart);
   float t2 = (t - startIndex / (float)size) * size / (2 * lookahead);
   for (; startIndex > 0 && it != end; --startIndex, ++it) {}
   // only read a certain number of elements from here
