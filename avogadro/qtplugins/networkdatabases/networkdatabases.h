@@ -52,12 +52,15 @@ private slots:
   void replyFinished(QNetworkReply*);
 
 private:
+  static bool sdfHasThreeDCoordinates(const QByteArray& data);
+
   QAction* m_action;
   QtGui::Molecule* m_molecule;
   QNetworkAccessManager* m_network;
   QString m_moleculeName;
   QByteArray m_moleculeData;
   QProgressDialog* m_progressDialog;
+  bool m_triedPubChem = false;
 };
 } // namespace QtPlugins
 } // namespace Avogadro
