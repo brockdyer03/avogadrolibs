@@ -70,14 +70,19 @@ bool PdbFormat::read(std::istream& in, Core::Molecule& mol)
         chains.insert(c);
     }
   };
-  auto parseBioMTRow = [&](const string& line, int row, BioMTMatrix& mat) {
+  auto parseBioMTRow = [&](const string& line, int row, BioMTMatrix& mat) -> bool {
     if (line.length() < 68)
-      return;
+      return false;
 
-    mat.rotation(row, 0) = lexicalCast<double>(line.substr(24, 9), ok);
-    mat.rotation(row, 1) = lexicalCast<double>(line.substr(33, 10), ok);
-    mat.rotation(row, 2) = lexicalCast<double>(line.substr(43, 10), ok);
-    mat.translation[row] = lexicalCast<double>(line.substr(53, 15), ok);
+    bool parseOk = true;
+    mat.rotation(row, 0) = lexicalCast<double>(line.substr(24, 9), parseOk);
+    if (!parseOk) return false;
+    mat.rotation(row, 1) = lexicalCast<double>(line.substr(33, 10), parseOk);
+    if (!parseOk) return false;
+    mat.rotation(row, 2) = lexicalCast<double>(line.substr(43, 10), parseOk);
+    if (!parseOk) return false;
+    mat.translation[row] = lexicalCast<double>(line.substr(53, 15), parseOk);
+    return parseOk;
   };
   std::vector<BioMTGroup> bioMTGroups;
   BioMTGroup* currentBioMTGroup = nullptr;
