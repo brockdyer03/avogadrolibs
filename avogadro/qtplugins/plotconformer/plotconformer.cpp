@@ -78,7 +78,8 @@ void PlotConformer::moleculeChanged(unsigned int c)
 
   auto changes = static_cast<Molecule::MoleculeChanges>(c);
 
-  if (changes & Molecule::Added || changes & Molecule::Removed)
+  if (changes & Molecule::Added || changes & Molecule::Removed ||
+      changes & Molecule::Modified)
     updateActions();
 }
 
