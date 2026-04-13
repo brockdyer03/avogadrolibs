@@ -7,6 +7,9 @@
 
 #include <gtest/gtest.h>
 
+#include <cmath>
+#include <sstream>
+
 #include <avogadro/core/molecule.h>
 #include <avogadro/core/residue.h>
 
@@ -14,6 +17,25 @@
 
 using Avogadro::Core::Molecule;
 using Avogadro::Io::PdbFormat;
+
+namespace {
+
+bool hasAtomAt(const Molecule& molecule, double x, double y, double z)
+{
+  constexpr double tolerance = 1e-6;
+  for (Avogadro::Index i = 0; i < molecule.atomCount(); ++i) {
+    const auto pos = molecule.atomPosition3d(i);
+    if (std::abs(pos.x() - x) < tolerance &&
+        std::abs(pos.y() - y) < tolerance &&
+        std::abs(pos.z() - z) < tolerance) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+} // namespace
 
 TEST(PdbTest, read)
 {
@@ -119,6 +141,87 @@ TEST(PdbTest, pdb1)
   EXPECT_EQ(residues[0].residueName(), "TRP");
   EXPECT_EQ(residues[1].residueName(), "LEU");
   EXPECT_EQ(residues[2].residueName(), "ASN");
+}
+
+TEST(PdbTest, biomtPreservesCoordinateSets)
+{
+  const std::string pdbData =
+    "REMARK 350 BIOMOLECULE: 1\n"
+    "REMARK 350 APPLY THE FOLLOWING TO CHAINS: A\n"
+    "REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000\n"
+    "REMARK 350   BIOMT1   2  1.000000  0.000000  0.000000       10.00000\n"
+    "REMARK 350   BIOMT2   2  0.000000  1.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT3   2  0.000000  0.000000  1.000000        0.00000\n"
+    "MODEL        1\n"
+    "ATOM      1  N   GLY A   1       1.000   2.000   3.000  1.00 20.00        "
+    "   N  \n"
+    "TER       2      GLY A   1\n"
+    "ENDMDL\n"
+    "MODEL        2\n"
+    "ATOM      1  N   GLY A   1       4.000   5.000   6.000  1.00 20.00        "
+    "   N  \n"
+    "TER       2      GLY A   1\n"
+    "ENDMDL\n"
+    "END\n";
+
+  PdbFormat pdb;
+  Molecule molecule;
+  std::istringstream input(pdbData);
+
+  EXPECT_TRUE(pdb.read(input, molecule));
+  EXPECT_EQ(molecule.atomCount(), 2);
+  EXPECT_EQ(molecule.coordinate3dCount(), 2);
+  EXPECT_EQ(molecule.coordinate3d(0).size(), molecule.atomCount());
+  EXPECT_EQ(molecule.coordinate3d(1).size(), molecule.atomCount());
+
+  EXPECT_DOUBLE_EQ(molecule.atomPosition3d(1).x(), 11.0);
+  EXPECT_DOUBLE_EQ(molecule.atomPosition3d(1).y(), 2.0);
+  EXPECT_DOUBLE_EQ(molecule.atomPosition3d(1).z(), 3.0);
+  EXPECT_DOUBLE_EQ(molecule.coordinate3d(0)[1].x(), 11.0);
+  EXPECT_DOUBLE_EQ(molecule.coordinate3d(1)[1].x(), 14.0);
+  EXPECT_DOUBLE_EQ(molecule.coordinate3d(1)[1].y(), 5.0);
+  EXPECT_DOUBLE_EQ(molecule.coordinate3d(1)[1].z(), 6.0);
+}
+
+TEST(PdbTest, biomtKeepsChainGroupsSeparated)
+{
+  const std::string pdbData =
+    "REMARK 350 BIOMOLECULE: 1\n"
+    "REMARK 350 APPLY THE FOLLOWING TO CHAINS: A\n"
+    "REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000\n"
+    "REMARK 350   BIOMT1   2  1.000000  0.000000  0.000000       10.00000\n"
+    "REMARK 350   BIOMT2   2  0.000000  1.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT3   2  0.000000  0.000000  1.000000        0.00000\n"
+    "REMARK 350 APPLY THE FOLLOWING TO CHAINS: B\n"
+    "REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000\n"
+    "REMARK 350   BIOMT1   2  1.000000  0.000000  0.000000        0.00000\n"
+    "REMARK 350   BIOMT2   2  0.000000  1.000000  0.000000       20.00000\n"
+    "REMARK 350   BIOMT3   2  0.000000  0.000000  1.000000        0.00000\n"
+    "ATOM      1  N   GLY A   1       1.000   1.000   1.000  1.00 20.00        "
+    "   N  \n"
+    "ATOM      2  N   GLY B   2       2.000   2.000   2.000  1.00 20.00        "
+    "   N  \n"
+    "TER       3      GLY B   2\n"
+    "END\n";
+
+  PdbFormat pdb;
+  Molecule molecule;
+  std::istringstream input(pdbData);
+
+  EXPECT_TRUE(pdb.read(input, molecule));
+  EXPECT_EQ(molecule.atomCount(), 4);
+  EXPECT_TRUE(hasAtomAt(molecule, 1.0, 1.0, 1.0));
+  EXPECT_TRUE(hasAtomAt(molecule, 2.0, 2.0, 2.0));
+  EXPECT_TRUE(hasAtomAt(molecule, 11.0, 1.0, 1.0));
+  EXPECT_TRUE(hasAtomAt(molecule, 2.0, 22.0, 2.0));
+  EXPECT_FALSE(hasAtomAt(molecule, 12.0, 2.0, 2.0));
+  EXPECT_FALSE(hasAtomAt(molecule, 1.0, 21.0, 1.0));
 }
 
 TEST(PdbTest, chainChangeStartsNewResidue)
