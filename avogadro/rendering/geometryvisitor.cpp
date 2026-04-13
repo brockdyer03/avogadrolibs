@@ -91,7 +91,7 @@ void GeometryVisitor::visit(CurveGeometry& cg)
   Vector3f tmpCenter(Vector3f::Zero());
   for (const auto& line : lines) {
     for (const auto& point : line->points) {
-      tmpCenter += point->pos;
+      tmpCenter += point.pos;
     }
     qtty += line->points.size();
   }
@@ -100,7 +100,7 @@ void GeometryVisitor::visit(CurveGeometry& cg)
   float tmpRadius = 0.0f;
   for (const auto& line : lines) {
     for (const auto& point : line->points) {
-      float distance = (point->pos - tmpCenter).squaredNorm();
+      float distance = (point.pos - tmpCenter).squaredNorm();
       if (distance > tmpRadius)
         tmpRadius = distance;
     }

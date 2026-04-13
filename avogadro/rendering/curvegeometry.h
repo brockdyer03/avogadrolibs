@@ -12,7 +12,6 @@
 #include "shaderprogram.h"
 #include "vertexarrayobject.h"
 #include <avogadro/core/vector.h>
-#include <list>
 #include <map>
 #include <vector>
 
@@ -39,21 +38,23 @@ struct Point
 
 struct Line
 {
-  Line() : dirty(true), flat(true), radius(0.0f) {}
-  explicit Line(float r) : dirty(true), radius(r) { flat = r < 0.0f; }
-
-  ~Line()
+  Line()
+    : dirty(true), flat(true), radius(0.0f), numberOfVertices(0),
+      numberOfIndices(0)
   {
-    for (auto& p : points) {
-      delete p;
-    }
   }
-  void add(Point* point)
+  explicit Line(float r)
+    : dirty(true), flat(r < 0.0f), radius(r), numberOfVertices(0),
+      numberOfIndices(0)
+  {
+  }
+
+  void add(const Point& point)
   {
     points.push_back(point);
     dirty = true;
   }
-  std::list<Point*> points;
+  std::vector<Point> points;
   bool dirty;
   bool flat; // use GL_POINTS
   float radius;
@@ -94,10 +95,12 @@ protected:
   bool m_canBeFlat;
 
   virtual void update(int index);
-  virtual Vector3f computeCurvePoint(float t,
-                                     const std::list<Point*>& points) const = 0;
-  virtual std::vector<ColorNormalVertex> computeCirclePoints(
-    const Eigen::Affine3f& a, const Eigen::Affine3f& b, bool flat) const;
+  virtual Vector3f computeCurvePoint(
+    float t, const std::vector<Point>& points) const = 0;
+  virtual size_t circleResolution(bool flat) const;
+  virtual void appendCirclePoints(std::vector<ColorNormalVertex>& result,
+                                  const Eigen::Affine3f& a,
+                                  const Eigen::Affine3f& b, bool flat) const;
   virtual float computeScale(size_t index, float t, float scale) const;
 
   void processShaderError(bool error);
