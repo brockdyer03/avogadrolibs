@@ -276,11 +276,9 @@ void PackageManagerDialog::installSelected()
   for (const QModelIndex& proxyIdx : selected)
     rows.append(m_proxyModel->mapToSource(proxyIdx).row());
 
-  // TODO: Fix this since we don't use checkboxes
   if (rows.isEmpty()) {
-    QMessageBox::information(
-      this, tr("Nothing Selected"),
-      tr("Check the box next to a plugin to install or update it."));
+    QMessageBox::information(this, tr("Nothing Selected"),
+                             tr("Select a plugin to install or update."));
     return;
   }
 
@@ -548,11 +546,9 @@ void PackageManagerDialog::removeSelected()
     }
   }
 
-  // TODO - fix this string since we don't use checkboxes
   if (toRemove.isEmpty()) {
-    QMessageBox::information(
-      this, tr("Nothing to Remove"),
-      tr("Check the box next to an installed plugin to remove it."));
+    QMessageBox::information(this, tr("Nothing to Remove"),
+                             tr("Select an installed plugin to remove it."));
     return;
   }
 
