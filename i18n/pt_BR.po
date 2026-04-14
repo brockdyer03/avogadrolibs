@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avogadro\n"
 "Report-Msgid-Bugs-To: avogadro-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-03-22 03:46+0000\n"
+"POT-Creation-Date: 2026-04-12 04:21+0000\n"
 "PO-Revision-Date: 2026-04-03 01:09+0000\n"
 "Last-Translator: Alexandre R Soares <ntegti@zipmail.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -208,7 +208,7 @@ msgstr "Fechar"
 #: molequeue/inputgeneratorwidget.cpp:171 qtgui/elementtranslator.cpp:372
 #: qtplugins/configurepython/configurepythondialog.cpp:188
 #: qtplugins/configurepython/configurepythondialog.cpp:191
-#: qtplugins/spacegroup/spacegroup.cpp:630
+#: qtplugins/spacegroup/spacegroup.cpp:634
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -539,7 +539,7 @@ msgstr "Dividir na Vertical"
 
 #. i18n: file: qtplugins/templatetool/templatetoolwidget.ui:61
 #. i18n: ectx: property (text), item, widget (QComboBox, elementComboBox)
-#: qtgui/elementtranslator.cpp:17 qtplugins/noncovalent/noncovalent.cpp:409
+#: qtgui/elementtranslator.cpp:17 qtplugins/noncovalent/noncovalent.cpp:408
 msgid "Hydrogen"
 msgstr "Hidrogênio"
 
@@ -561,7 +561,7 @@ msgstr "Boro"
 
 #. i18n: file: qtplugins/templatetool/templatetoolwidget.ui:66
 #. i18n: ectx: property (text), item, widget (QComboBox, elementComboBox)
-#: qtgui/elementtranslator.cpp:32:2109
+#: qtgui/elementtranslator.cpp:32:2103
 msgid "Carbon"
 msgstr "Carbono"
 
@@ -643,13 +643,13 @@ msgstr "Manganês"
 
 #. i18n: file: qtplugins/templatetool/templatetoolwidget.ui:71
 #. i18n: ectx: property (text), item, widget (QComboBox, elementComboBox)
-#: qtgui/elementtranslator.cpp:92:2112
+#: qtgui/elementtranslator.cpp:92:2106
 msgid "Iron"
 msgstr "Ferro"
 
 #. i18n: file: qtplugins/templatetool/templatetoolwidget.ui:76
 #. i18n: ectx: property (text), item, widget (QComboBox, elementComboBox)
-#: qtgui/elementtranslator.cpp:95:2115
+#: qtgui/elementtranslator.cpp:95:2109
 msgid "Cobalt"
 msgstr "Cobalto"
 
@@ -1239,90 +1239,90 @@ msgstr "[sem molécula]"
 msgid "Layer %1"
 msgstr "Camada %1"
 
-#: qtgui/layermodel.cpp:170 qtplugins/ballandstick/ballandstick.h:28
+#: qtgui/layermodel.cpp:172 qtplugins/ballandstick/ballandstick.h:28
 msgid "Ball and Stick"
 msgstr "Bola e Bastão"
 
-#: qtgui/layermodel.cpp:172 qtplugins/cartoons/cartoons.h:31
+#: qtgui/layermodel.cpp:174 qtplugins/cartoons/cartoons.h:31
 msgctxt "protein ribbon / cartoon rendering"
 msgid "Cartoons"
 msgstr "Cartoons"
 
-#: qtgui/layermodel.cpp:174 qtplugins/closecontacts/closecontacts.h:31
+#: qtgui/layermodel.cpp:176 qtplugins/closecontacts/closecontacts.h:31
 msgctxt "rendering of non-covalent close contacts"
 msgid "Close Contacts"
 msgstr "Fechar contatos"
 
-#: qtgui/layermodel.cpp:176 qtplugins/crystal/crystalscene.h:31
+#: qtgui/layermodel.cpp:178 qtplugins/crystal/crystalscene.h:31
 msgid "Crystal Lattice"
 msgstr "Rede de Cristal"
 
-#: qtgui/layermodel.cpp:178 qtplugins/force/force.h:28
+#: qtgui/layermodel.cpp:180 qtplugins/force/force.h:28
 msgid "Force"
 msgstr "Força"
 
-#: qtgui/layermodel.cpp:180 qtplugins/label/label.h:25
+#: qtgui/layermodel.cpp:182 qtplugins/label/label.h:25
 msgid "Labels"
 msgstr "Rótulos"
 
-#: qtgui/layermodel.cpp:182 qtplugins/licorice/licorice.h:31
+#: qtgui/layermodel.cpp:184 qtplugins/licorice/licorice.h:31
 #, fuzzy
 msgctxt "stick / licorice rendering"
 msgid "Licorice"
 msgstr "Bastão"
 
-#: qtgui/layermodel.cpp:184 qtplugins/surfacerender/surfacerender.h:29
+#: qtgui/layermodel.cpp:186 qtplugins/surfacerender/surfacerender.h:29
 #: qtplugins/surfaces/orbitals.cpp:480 qtplugins/surfaces/orbitals.cpp:572
-#: qtplugins/surfaces/surfaces.cpp:883 qtplugins/surfaces/surfaces.h:71
+#: qtplugins/surfaces/surfaces.cpp:890 qtplugins/surfaces/surfaces.h:71
 msgid "Surfaces"
 msgstr "Superfícies"
 
-#: qtgui/layermodel.cpp:186 qtplugins/noncovalent/noncovalent.h:30
+#: qtgui/layermodel.cpp:188 qtplugins/noncovalent/noncovalent.h:30
 msgid "Non-Covalent"
 msgstr "Não-Covalente"
 
-#: qtgui/layermodel.cpp:188
+#: qtgui/layermodel.cpp:190
 msgctxt "quantum theory of atoms in molecules"
 msgid "QTAIM"
 msgstr "QTAIM"
 
-#: qtgui/layermodel.cpp:190 qtplugins/symmetry/symmetryscene.h:33
+#: qtgui/layermodel.cpp:192 qtplugins/symmetry/symmetryscene.h:33
 msgid "Symmetry Elements"
 msgstr "Elementos de Simetria"
 
-#: qtgui/layermodel.cpp:192 qtplugins/surfaces/surfacedialog.cpp:25
+#: qtgui/layermodel.cpp:194 qtplugins/surfaces/surfacedialog.cpp:25
 #: qtplugins/vanderwaals/vanderwaals.h:29
 msgid "Van der Waals"
 msgstr "Van der Waals"
 
-#: qtgui/layermodel.cpp:194
+#: qtgui/layermodel.cpp:196
 msgctxt "ambient occlusion"
 msgid "Van der Waals (AO)"
 msgstr "Van der Waals (OA)"
 
-#: qtgui/layermodel.cpp:196
+#: qtgui/layermodel.cpp:198
 msgctxt "volumetric clouds"
 msgid "Volumes"
 msgstr "Volumes"
 
-#: qtgui/layermodel.cpp:198 qtplugins/surfacerender/surfacerender.cpp:271
+#: qtgui/layermodel.cpp:200 qtplugins/surfacerender/surfacerender.cpp:273
 #: qtplugins/wireframe/wireframe.h:28
 msgid "Wireframe"
 msgstr "Estrutura de Arame"
 
-#: qtgui/layermodel.cpp:200 qtplugins/overlayaxes/overlayaxes.h:28
+#: qtgui/layermodel.cpp:202 qtplugins/overlayaxes/overlayaxes.h:28
 msgid "Reference Axes"
 msgstr "Eixos de Referência"
 
-#: qtgui/moleculemodel.cpp:120
+#: qtgui/moleculemodel.cpp:121
 msgid "Untitled"
 msgstr "Sem título"
 
-#: qtgui/moleculemodel.cpp:135
+#: qtgui/moleculemodel.cpp:136
 msgid "Edit molecule"
 msgstr "Editar molécula"
 
-#: qtgui/moleculemodel.cpp:142
+#: qtgui/moleculemodel.cpp:143
 msgid "Not saved"
 msgstr "Não salvo"
 
@@ -1437,7 +1437,7 @@ msgstr "Adicionar camada de informação"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: qtgui/rwlayermanager.cpp:222 qtgui/rwlayermanager.cpp:225
 #: qtplugins/select/select.cpp:564
-#: qtplugins/selectiontool/selectiontool.cpp:264:1789
+#: qtplugins/selectiontool/selectiontool.cpp:264:1783
 msgid "Change Layer"
 msgstr "Trocar Camada"
 
@@ -1553,11 +1553,11 @@ msgid "Reduce to Primitive"
 msgstr "Reduzir à célula primitiva"
 
 #: qtgui/rwmolecule.cpp:709 qtplugins/spacegroup/spacegroup.cpp:72
-#: qtplugins/spacegroup/spacegroup.cpp:468
+#: qtplugins/spacegroup/spacegroup.cpp:472
 msgid "Conventionalize Cell"
 msgstr "Convencionalizar Célula"
 
-#: qtgui/rwmolecule.cpp:743 qtplugins/spacegroup/spacegroup.cpp:496
+#: qtgui/rwmolecule.cpp:743 qtplugins/spacegroup/spacegroup.cpp:500
 msgid "Symmetrize Cell"
 msgstr "Simetrizar Célula"
 
@@ -1683,7 +1683,7 @@ msgstr "&Construir"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: qtplugins/templatetool/templatetoolwidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, elementLabel)
-#: qtplugins/alchemy/alchemy.cpp:74:485 rc.cpp:2103
+#: qtplugins/alchemy/alchemy.cpp:74:485 rc.cpp:2097
 msgid "Element:"
 msgstr "Elemento:"
 
@@ -1720,7 +1720,7 @@ msgstr ""
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:230
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: qtplugins/aligntool/aligntool.cpp:81:1831
+#: qtplugins/aligntool/aligntool.cpp:81:1825
 msgid "Axis:"
 msgstr "Eixo:"
 
@@ -1852,11 +1852,8 @@ msgstr "Arquivos PQR (*.pqr)"
 #: qtplugins/openbabel/openbabel.cpp:890 qtplugins/openbabel/openbabel.cpp:932
 #: qtplugins/openbabel/openbabel.cpp:964
 #: qtplugins/openmminput/openmminput.cpp:62
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:439
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:653
-#: qtplugins/plugindownloader/downloaderwidget.cpp:103
-#: qtplugins/plugindownloader/downloaderwidget.cpp:109
-#: qtplugins/plugindownloader/downloaderwidget.cpp:368
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:438
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:641
 #: qtplugins/propertytables/propertyview.cpp:504
 #: qtplugins/propertytables/propertyview.cpp:537
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:162
@@ -1864,7 +1861,7 @@ msgstr "Arquivos PQR (*.pqr)"
 #: qtplugins/qtaim/qtaimwavefunction.h:48
 #: qtplugins/qtaim/qtaimwavefunction.h:81
 #: qtplugins/quantuminput/quantuminput.cpp:152
-#: qtplugins/spacegroup/spacegroup.cpp:675
+#: qtplugins/spacegroup/spacegroup.cpp:679
 msgid "Error"
 msgstr "Erro"
 
@@ -1906,10 +1903,9 @@ msgid "Input file written to '%1'"
 msgstr "Arquivo de entrada gravado em %1"
 
 #: qtplugins/apbs/apbsdialog.cpp:190 qtplugins/fetchpdb/fetchpdb.cpp:144
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:440
-#: qtplugins/playertool/playertool.cpp:424
-#: qtplugins/plugindownloader/downloaderwidget.cpp:369
-#: qtplugins/qtaim/qtaimwavefunction.h:49 qtplugins/surfaces/surfaces.cpp:1018
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:439
+#: qtplugins/playertool/playertool.cpp:468
+#: qtplugins/qtaim/qtaimwavefunction.h:49 qtplugins/surfaces/surfaces.cpp:1025
 #, qt-format
 msgid "Cannot save file %1."
 msgstr "Não foi possível salvar o arquivo %1."
@@ -1954,25 +1950,25 @@ msgstr "Pelo esquema Shapely"
 #: qtplugins/applycolors/applycolors.cpp:108
 #: qtplugins/applycolors/applycolors.cpp:211
 #: qtplugins/applycolors/applycolors.cpp:312
-#: qtplugins/surfaces/surfaces.cpp:803
+#: qtplugins/surfaces/surfaces.cpp:810
 msgctxt "colormap"
 msgid "Parula"
 msgstr "Parula"
 
 #: qtplugins/applycolors/applycolors.cpp:110
-#: qtplugins/surfaces/surfaces.cpp:805
+#: qtplugins/surfaces/surfaces.cpp:812
 msgctxt "colormap"
 msgid "Heat"
 msgstr "Heat"
 
 #: qtplugins/applycolors/applycolors.cpp:112
-#: qtplugins/surfaces/surfaces.cpp:807
+#: qtplugins/surfaces/surfaces.cpp:814
 msgctxt "colormap"
 msgid "Hot"
 msgstr "Hot"
 
 #: qtplugins/applycolors/applycolors.cpp:114
-#: qtplugins/surfaces/surfaces.cpp:809
+#: qtplugins/surfaces/surfaces.cpp:816
 msgctxt "colormap"
 msgid "Gray"
 msgstr "Cinza"
@@ -1980,7 +1976,7 @@ msgstr "Cinza"
 #: qtplugins/applycolors/applycolors.cpp:116
 #: qtplugins/applycolors/applycolors.cpp:211
 #: qtplugins/applycolors/applycolors.cpp:312
-#: qtplugins/surfaces/surfaces.cpp:811
+#: qtplugins/surfaces/surfaces.cpp:818
 msgctxt "colormap"
 msgid "Magma"
 msgstr "Magma"
@@ -1988,7 +1984,7 @@ msgstr "Magma"
 #: qtplugins/applycolors/applycolors.cpp:118
 #: qtplugins/applycolors/applycolors.cpp:212
 #: qtplugins/applycolors/applycolors.cpp:313
-#: qtplugins/surfaces/surfaces.cpp:813
+#: qtplugins/surfaces/surfaces.cpp:820
 msgctxt "colormap"
 msgid "Inferno"
 msgstr "Inferno"
@@ -1996,7 +1992,7 @@ msgstr "Inferno"
 #: qtplugins/applycolors/applycolors.cpp:120
 #: qtplugins/applycolors/applycolors.cpp:212
 #: qtplugins/applycolors/applycolors.cpp:313
-#: qtplugins/surfaces/surfaces.cpp:815
+#: qtplugins/surfaces/surfaces.cpp:822
 msgctxt "colormap"
 msgid "Plasma"
 msgstr "Plasma"
@@ -2004,7 +2000,7 @@ msgstr "Plasma"
 #: qtplugins/applycolors/applycolors.cpp:122
 #: qtplugins/applycolors/applycolors.cpp:213
 #: qtplugins/applycolors/applycolors.cpp:314
-#: qtplugins/surfaces/surfaces.cpp:817
+#: qtplugins/surfaces/surfaces.cpp:824
 msgctxt "colormap"
 msgid "Viridis"
 msgstr "Viridis"
@@ -2012,7 +2008,7 @@ msgstr "Viridis"
 #: qtplugins/applycolors/applycolors.cpp:124
 #: qtplugins/applycolors/applycolors.cpp:213
 #: qtplugins/applycolors/applycolors.cpp:314
-#: qtplugins/surfaces/surfaces.cpp:819
+#: qtplugins/surfaces/surfaces.cpp:826
 msgctxt "colormap"
 msgid "Cividis"
 msgstr "Cividis"
@@ -2024,7 +2020,7 @@ msgstr "Cividis"
 #: qtplugins/applycolors/applycolors.cpp:126
 #: qtplugins/applycolors/applycolors.cpp:214
 #: qtplugins/applycolors/applycolors.cpp:315
-#: qtplugins/surfaces/surfaces.cpp:821:183 rc.cpp:1979
+#: qtplugins/surfaces/surfaces.cpp:828:183 rc.cpp:1973
 msgctxt "colormap"
 msgid "Spectral"
 msgstr "Espectral"
@@ -2034,7 +2030,7 @@ msgstr "Espectral"
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:169
 #. i18n: ectx: property (text), item, widget (QComboBox, colormapCombo)
 #: qtplugins/applycolors/applycolors.cpp:128
-#: qtplugins/surfaces/surfaces.cpp:823:180 rc.cpp:1976
+#: qtplugins/surfaces/surfaces.cpp:830:180 rc.cpp:1970
 msgctxt "colormap"
 msgid "Coolwarm"
 msgstr "Coolwarm"
@@ -2044,7 +2040,7 @@ msgstr "Coolwarm"
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:159
 #. i18n: ectx: property (text), item, widget (QComboBox, colormapCombo)
 #: qtplugins/applycolors/applycolors.cpp:130
-#: qtplugins/surfaces/surfaces.cpp:825:174 rc.cpp:1970
+#: qtplugins/surfaces/surfaces.cpp:832:174 rc.cpp:1964
 msgctxt "colormap"
 msgid "Balance"
 msgstr "Equilibrar"
@@ -2054,7 +2050,7 @@ msgstr "Equilibrar"
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:164
 #. i18n: ectx: property (text), item, widget (QComboBox, colormapCombo)
 #: qtplugins/applycolors/applycolors.cpp:132
-#: qtplugins/surfaces/surfaces.cpp:827:177 rc.cpp:1973
+#: qtplugins/surfaces/surfaces.cpp:834:177 rc.cpp:1967
 msgctxt "colormap"
 msgid "Blue-DarkRed"
 msgstr "Azul-VermelhoEscuro"
@@ -2066,7 +2062,7 @@ msgstr "Azul-VermelhoEscuro"
 #: qtplugins/applycolors/applycolors.cpp:134
 #: qtplugins/applycolors/applycolors.cpp:214
 #: qtplugins/applycolors/applycolors.cpp:315
-#: qtplugins/surfaces/surfaces.cpp:829:186 rc.cpp:1982
+#: qtplugins/surfaces/surfaces.cpp:836:186 rc.cpp:1976
 msgctxt "colormap"
 msgid "Turbo"
 msgstr "Turbo"
@@ -2099,7 +2095,7 @@ msgstr "Selecionar mapa de cores"
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:143
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: qtplugins/applycolors/applycolors.cpp:217
-#: qtplugins/applycolors/applycolors.cpp:318:171 rc.cpp:1967
+#: qtplugins/applycolors/applycolors.cpp:318:171 rc.cpp:1961
 msgid "Colormap:"
 msgstr "Mapa de Cores:"
 
@@ -2375,37 +2371,37 @@ msgstr "Ligando"
 msgid "Perform bonding operations."
 msgstr "Realize operações de ligação."
 
-#: qtplugins/cartoons/cartoons.cpp:92
+#: qtplugins/cartoons/cartoons.cpp:139
 msgctxt "protein rendering style"
 msgid "Backbone"
 msgstr "Esqueleto"
 
-#: qtplugins/cartoons/cartoons.cpp:93
+#: qtplugins/cartoons/cartoons.cpp:140
 msgctxt "protein rendering style"
 msgid "Trace"
 msgstr "Traçado"
 
-#: qtplugins/cartoons/cartoons.cpp:94
+#: qtplugins/cartoons/cartoons.cpp:141
 msgctxt "protein rendering style"
 msgid "Tube"
 msgstr "Tubo"
 
-#: qtplugins/cartoons/cartoons.cpp:95
+#: qtplugins/cartoons/cartoons.cpp:142
 msgctxt "protein rendering style"
 msgid "Ribbon"
 msgstr "Fita"
 
-#: qtplugins/cartoons/cartoons.cpp:96
+#: qtplugins/cartoons/cartoons.cpp:143
 msgctxt "protein rendering style"
 msgid "Simple Cartoon"
 msgstr "Cartoon simples"
 
-#: qtplugins/cartoons/cartoons.cpp:97
+#: qtplugins/cartoons/cartoons.cpp:144
 msgctxt "protein rendering style"
 msgid "Cartoon"
 msgstr "Cartoon"
 
-#: qtplugins/cartoons/cartoons.cpp:98
+#: qtplugins/cartoons/cartoons.cpp:145
 msgctxt "protein rendering style"
 msgid "Rope"
 msgstr "Corda"
@@ -2435,28 +2431,28 @@ msgstr "Centroide"
 msgid "Add centroids and center-of-mass."
 msgstr "Adicionar centroides e centro de massa."
 
-#: qtplugins/closecontacts/closecontacts.cpp:250
-#: qtplugins/noncovalent/noncovalent.cpp:401
+#: qtplugins/closecontacts/closecontacts.cpp:252
+#: qtplugins/noncovalent/noncovalent.cpp:400
 msgid "Maximum distance:"
 msgstr "Distância máxima:"
 
-#: qtplugins/closecontacts/closecontacts.cpp:251
-#: qtplugins/crystal/crystalscene.cpp:174
-#: qtplugins/noncovalent/noncovalent.cpp:402
-#: qtplugins/surfacerender/surfacerender.cpp:295
+#: qtplugins/closecontacts/closecontacts.cpp:253
+#: qtplugins/crystal/crystalscene.cpp:147
+#: qtplugins/noncovalent/noncovalent.cpp:401
+#: qtplugins/surfacerender/surfacerender.cpp:297
 #: qtplugins/wireframe/wireframe.cpp:96
 msgid "Line width:"
 msgstr "Espessura da linha:"
 
-#: qtplugins/closecontacts/closecontacts.cpp:258
+#: qtplugins/closecontacts/closecontacts.cpp:260
 msgid "Contact"
 msgstr "Contato"
 
-#: qtplugins/closecontacts/closecontacts.cpp:261
+#: qtplugins/closecontacts/closecontacts.cpp:263
 msgid "Salt Bridge"
 msgstr "Ponte Salina"
 
-#: qtplugins/closecontacts/closecontacts.cpp:264
+#: qtplugins/closecontacts/closecontacts.cpp:266
 msgid "Repulsive"
 msgstr "Repulsivo"
 
@@ -2473,7 +2469,6 @@ msgstr "Renderizar contatos próximos entre átomos."
 #: qtplugins/forcefield/forcefield.cpp:233
 #: qtplugins/openbabel/openbabel.cpp:113
 #: qtplugins/packageinstaller/packageinstaller.cpp:35
-#: qtplugins/plugindownloader/plugindownloader.cpp:41
 #: qtplugins/yaehmop/yaehmop.cpp:111
 msgid "&Extensions"
 msgstr "&Extensões"
@@ -2562,7 +2557,7 @@ msgstr "Configurar ambientes do Python."
 #: qtplugins/templatetool/templatetoolwidget.cpp:450
 #: qtplugins/templatetool/templatetoolwidget.cpp:458
 #: qtplugins/templatetool/templatetoolwidget.cpp:466
-#: qtplugins/templatetool/templatetoolwidget.cpp:531:2223
+#: qtplugins/templatetool/templatetoolwidget.cpp:531:2217
 msgid "Other…"
 msgstr "Outro…"
 
@@ -2783,7 +2778,7 @@ msgstr "Editar Coordenadas Atômicas"
 #. i18n: ectx: property (text), item, widget (QComboBox, smoothingCombo)
 #: qtplugins/coordinateeditor/coordinateeditordialog.cpp:638
 #: qtplugins/label/label.cpp:209 qtplugins/label/label.cpp:232
-#: qtplugins/label/label.cpp:247:2009 rc.cpp:2034
+#: qtplugins/label/label.cpp:247:2003 rc.cpp:2028
 msgid "Custom"
 msgstr "Personalizar"
 
@@ -2940,7 +2935,7 @@ msgstr "Gerar Entrada para CP2K."
 #. i18n: ectx: property (text), item, widget (QComboBox, scoringComboBox)
 #: qtplugins/cp2kinput/cp2kinputdialog.cpp:255
 #: qtplugins/forcefield/forcefield.cpp:80
-#: qtplugins/plotconformer/plotconformer.cpp:145:1342
+#: qtplugins/plotconformer/plotconformer.cpp:147:1342
 msgid "Energy"
 msgstr "Energia"
 
@@ -3130,11 +3125,11 @@ msgstr "Cristal"
 msgid "Tools for crystal-specific editing/analysis."
 msgstr "Ferramentas para edição/análise específica de cristal."
 
-#: qtplugins/crystal/crystalscene.cpp:178
+#: qtplugins/crystal/crystalscene.cpp:151
 msgid "Color axes:"
 msgstr "Colorir eixos:"
 
-#: qtplugins/crystal/crystalscene.cpp:184
+#: qtplugins/crystal/crystalscene.cpp:157
 msgid "Line color:"
 msgstr "Cor da linha:"
 
@@ -3240,7 +3235,7 @@ msgstr "Ferramenta de Edição"
 #. i18n: ectx: property (currentText), widget (QComboBox, resolutionCombo)
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:249
 #. i18n: ectx: property (text), item, widget (QComboBox, resolutionCombo)
-#: qtplugins/editor/editortoolwidget.cpp:209:1988 rc.cpp:2006
+#: qtplugins/editor/editortoolwidget.cpp:209:1982 rc.cpp:2000
 msgid "Automatic"
 msgstr "Automático"
 
@@ -3346,7 +3341,7 @@ msgstr "Renderizar visualizações do campo de força para os átomos da molécu
 
 #: qtplugins/forcefield/forcefield.cpp:88
 #: qtplugins/gamessinput/gamessinputdialog.cpp:269
-#: qtplugins/plotconformer/plotconformer.cpp:147
+#: qtplugins/plotconformer/plotconformer.cpp:149
 msgid "Forces"
 msgstr "Forças"
 
@@ -3392,9 +3387,9 @@ msgstr ""
 #: qtplugins/forcefield/forcefield.cpp:470
 #: qtplugins/forcefield/forcefield.cpp:640
 #: qtplugins/forcefield/forcefield.cpp:693
-#: qtplugins/playertool/playertool.cpp:391
-#: qtplugins/playertool/playertool.cpp:423 qtplugins/surfaces/surfaces.cpp:961
-#: qtplugins/surfaces/surfaces.cpp:1005 qtplugins/surfaces/surfaces.cpp:1017
+#: qtplugins/playertool/playertool.cpp:435
+#: qtplugins/playertool/playertool.cpp:467 qtplugins/surfaces/surfaces.cpp:968
+#: qtplugins/surfaces/surfaces.cpp:1012 qtplugins/surfaces/surfaces.cpp:1024
 #: qtplugins/yaehmop/yaehmop.cpp:534
 msgid "Avogadro"
 msgstr "Avogadro"
@@ -3511,7 +3506,7 @@ msgstr "Potencial Central"
 #. i18n: ectx: property (text), item, widget (QComboBox, smoothingCombo)
 #: qtplugins/gamessinput/gamessinputdialog.cpp:419
 #: qtplugins/label/label.cpp:199 qtplugins/label/label.cpp:229
-#: qtplugins/label/label.cpp:242:1527 rc.cpp:1610 rc.cpp:1961
+#: qtplugins/label/label.cpp:242:1527 rc.cpp:1610 rc.cpp:1955
 msgid "None"
 msgstr "Nenhum"
 
@@ -3737,8 +3732,8 @@ msgstr ""
 msgid "Insert oligopeptide sequences."
 msgstr "Inserir sequências de oligopeptídeos."
 
-#: qtplugins/label/label.cpp:169 qtplugins/surfacerender/surfacerender.cpp:311
-#: qtplugins/surfacerender/surfacerender.cpp:317
+#: qtplugins/label/label.cpp:169 qtplugins/surfacerender/surfacerender.cpp:313
+#: qtplugins/surfacerender/surfacerender.cpp:319
 #, fuzzy
 msgid "Color:"
 msgstr "Cores:"
@@ -3795,8 +3790,7 @@ msgid "ID"
 msgstr "ID"
 
 #: qtplugins/label/label.cpp:244
-#: qtplugins/packageinstaller/packagemodel.cpp:172
-#: qtplugins/plugindownloader/downloaderwidget.cpp:67
+#: qtplugins/packageinstaller/packagemodel.cpp:168
 #: qtplugins/propertytables/propertymodel.cpp:685
 msgid "Name"
 msgstr "Nome"
@@ -3861,8 +3855,8 @@ msgstr ""
 #. i18n: file: qtplugins/qtaim/qtaimsettingswidget.ui:157
 #. i18n: ectx: property (text), widget (QLabel, opacitySliderLabel)
 #: qtplugins/licorice/licorice.cpp:78
-#: qtplugins/surfacerender/surfacerender.cpp:284
-#: qtplugins/vanderwaals/vanderwaals.cpp:75:1780
+#: qtplugins/surfacerender/surfacerender.cpp:286
+#: qtplugins/vanderwaals/vanderwaals.cpp:75:1774
 msgid "Opacity:"
 msgstr "Opacidade:"
 
@@ -4210,15 +4204,15 @@ msgstr "Bancos de Dados de Rede"
 msgid "Interact with online databases, query structures etc."
 msgstr "Interagir com bancos de dados online, estruturas de consulta, etc."
 
-#: qtplugins/noncovalent/noncovalent.cpp:400
+#: qtplugins/noncovalent/noncovalent.cpp:399
 msgid "Angle tolerance:"
 msgstr "Ângulo de tolerância:"
 
-#: qtplugins/noncovalent/noncovalent.cpp:412
+#: qtplugins/noncovalent/noncovalent.cpp:411
 msgid "Halogen"
 msgstr "Halogênio"
 
-#: qtplugins/noncovalent/noncovalent.cpp:415
+#: qtplugins/noncovalent/noncovalent.cpp:414
 msgid "Chalcogen"
 msgstr "Calcogênio"
 
@@ -4583,24 +4577,24 @@ msgstr "Erro: resposta vazia do servidor."
 msgid "Error fetching README: %1"
 msgstr "Erro ao obter o arquivo README: %1"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:283
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:282
 msgid "Nothing Selected"
 msgstr "Nada Selecionado"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:284
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:283
 msgid "Check the box next to a plugin to install or update it."
 msgstr "Marque a caixa ao lado de um plugin para instalá-lo ou atualizá-lo."
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:294
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:293
 #, qt-format
 msgid "%1 (requires %2)"
 msgstr "%1 (requer %2)"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:298
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:297
 msgid "Version Incompatibility"
 msgstr "Incompatibilidade de Versões"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:299
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:298
 #, qt-format
 msgid ""
 "The following plugins require a newer version of Avogadro:\n"
@@ -4615,11 +4609,11 @@ msgstr ""
 "\n"
 "Instalar assim mesmo?"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:326
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:325
 msgid "No Download Available"
 msgstr "Sem Download Disponível"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:327
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:326
 #, qt-format
 msgid ""
 "The selected plugin(s) do not provide a downloadable source URL:\n"
@@ -4630,68 +4624,67 @@ msgstr ""
 "\n"
 "%1"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:374
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:373
 #, qt-format
 msgid "Failed to follow redirect while downloading %1.\n"
 msgstr "Falha ao seguir o redirecionamento ao transferir %1.\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:391
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:390
 #, qt-format
 msgid "Failed to download from %1: status %2, %3\n"
 msgstr "Falha ao baixar de %1: status %2, %3\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:400
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:399
 #, qt-format
 msgid "Failed to download from %1: %2\n"
 msgstr "Falha ao baixar de %1: %2\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:435
-#: qtplugins/plugindownloader/downloaderwidget.cpp:364
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:434
 #, qt-format
 msgid "Downloading %1 to %2\n"
 msgstr "Transferindo %1 até %2\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:449
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:448
 #, qt-format
 msgid "Extracting %1…\n"
 msgstr "A extrair %1…\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:457
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:456
 #, qt-format
 msgid "Extraction complete (%1 files)\n"
 msgstr "Extração concluída (%1 arquivos)\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:492
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:491
 #, qt-format
 msgid "Error: could not move extracted package %1 to %2\n"
 msgstr "Erro: não foi possível mover o pacote extraído %1 para %2\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:505
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:504
 #, qt-format
 msgid "Extraction error: %1"
 msgstr "Erro ao extrair: %1"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:507
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:506
 msgid "Extraction yielded no files.\n"
 msgstr "A extração não gerou nenhum arquivo.\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:517
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:516
 msgid "Installation complete.\n"
 msgstr "Instalação concluída.\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:565
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:554
 msgid "Nothing to Remove"
 msgstr "Nada a Remover"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:566
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:555
 msgid "Check the box next to an installed plugin to remove it."
 msgstr "Marque a caixa ao lado de um plugin instalado para removê-lo."
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:572
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:561
 msgid "Remove Plugins"
 msgstr "Remover Plugins"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:573
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:562
 #, qt-plural-format
 msgctxt ""
 msgid "Remove %n selected plugin(s)?"
@@ -4699,74 +4692,74 @@ msgid_plural "Remove %n selected plugin(s)?"
 msgstr[0] "Remover %n plugin selecionado?"
 msgstr[1] "Remover %n plugin(s) selecionados?"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:577
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:566
 msgid "Keep Files"
 msgstr "Manter arquivos"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:579
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:568
 msgid "Delete Files"
 msgstr "Deletar Arquivos"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:612
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:600
 msgid "Select Plugin Directory"
 msgstr "Selecionar Pasta do Plugin"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:618
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:606
 msgid "Invalid Directory"
 msgstr "Diretório Inválido"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:619
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:607
 msgid "The selected directory does not contain a pyproject.toml file."
 msgstr "O diretório (pasta) selecionado não contém um arquivo pyproject.toml."
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:633
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:621
 #, qt-format
 msgid "Plugin already installed as symlink: %1\n"
 msgstr "Plugin já instalado como link simbólico: %1\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:648
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:636
 #, qt-format
 msgid "Created symlink: %1 → %2\n"
 msgstr "Criado link simbólico: %1 → %2\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:651
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:639
 msgid "Symlink creation failed; copying files instead…\n"
 msgstr ""
 "A criação do link simbólico falhou; em vez disso, os arquivos serão "
 "copiados…\n"
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:654
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:642
 #, qt-format
 msgid "Failed to copy package to %1."
 msgstr "Falha ao copiar o pacote para %1."
 
-#: qtplugins/packageinstaller/packagemanagerdialog.cpp:659
+#: qtplugins/packageinstaller/packagemanagerdialog.cpp:647
 #, qt-format
 msgid "Installing plugin from %1…\n"
 msgstr "Instalando plugin de %1…\n"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:58
+#: qtplugins/packageinstaller/packagemodel.cpp:59
 msgid "Not installed"
 msgstr "Não instalado"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:60
+#: qtplugins/packageinstaller/packagemodel.cpp:61
 msgid "Installed (up to date)"
 msgstr "Instalado (atualizado)"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:62
+#: qtplugins/packageinstaller/packagemodel.cpp:63
 msgid "Update available"
 msgstr "Atualização disponível"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:64
+#: qtplugins/packageinstaller/packagemodel.cpp:65
 msgid "Installed locally (not in online catalog)"
 msgstr "Instalado localmente (não no catálogo online)"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:70
+#: qtplugins/packageinstaller/packagemodel.cpp:71
 #, qt-format
 msgid "Requires Avogadro %1 or later (running %2)"
 msgstr "Requer Avogadro %1 ou superior (está usando %2)"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:162
+#: qtplugins/packageinstaller/packagemodel.cpp:158
 #, qt-format
 msgid ""
 "Feature icons:\n"
@@ -4775,46 +4768,43 @@ msgstr ""
 "Ícones de recursos:\n"
 "%1"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:170
+#: qtplugins/packageinstaller/packagemodel.cpp:166
 msgid "Status"
 msgstr ""
 
-#: qtplugins/packageinstaller/packagemodel.cpp:174
-#: qtplugins/plugindownloader/downloaderwidget.cpp:67
+#: qtplugins/packageinstaller/packagemodel.cpp:170
 msgid "Version"
 msgstr "Versão"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:176
+#: qtplugins/packageinstaller/packagemodel.cpp:172
 msgid "Features"
 msgstr "Características"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:178
-#: qtplugins/plugindownloader/downloaderwidget.cpp:68
+#: qtplugins/packageinstaller/packagemodel.cpp:174
 msgid "Description"
 msgstr "Descrição"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:564
+#: qtplugins/packageinstaller/packagemodel.cpp:525
 msgid "Electrostatics"
 msgstr "Eletrostática"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:566
+#: qtplugins/packageinstaller/packagemodel.cpp:527
 msgid "Energy Models"
 msgstr "Modelos de Energia"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:568
+#: qtplugins/packageinstaller/packagemodel.cpp:529
 msgid "File Formats"
 msgstr "Formatos de Arquivos"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:570
+#: qtplugins/packageinstaller/packagemodel.cpp:531
 msgid "Input Generators"
 msgstr "Geradores de Entrada"
 
-#: qtplugins/packageinstaller/packagemodel.cpp:572
+#: qtplugins/packageinstaller/packagemodel.cpp:533
 msgid "Commands"
 msgstr "Comandos"
 
 #: qtplugins/packageinstaller/zipextractor.cpp:60
-#: qtplugins/plugindownloader/zipextracter.cpp:67
 #, qt-format
 msgctxt "%1 is the error message from libarchive"
 msgid ""
@@ -4825,7 +4815,6 @@ msgstr ""
 "(%1)"
 
 #: qtplugins/packageinstaller/zipextractor.cpp:117
-#: qtplugins/plugindownloader/zipextracter.cpp:115
 #, qt-format
 msgctxt "%1 is the error message from libarchive"
 msgid ""
@@ -4838,104 +4827,101 @@ msgstr ""
 #: qtplugins/packageinstaller/zipextractor.cpp:134
 #: qtplugins/packageinstaller/zipextractor.cpp:151
 #: qtplugins/packageinstaller/zipextractor.cpp:162
-#: qtplugins/plugindownloader/zipextracter.cpp:132
-#: qtplugins/plugindownloader/zipextracter.cpp:151
-#: qtplugins/plugindownloader/zipextracter.cpp:161
 #, qt-format
 msgctxt "%1 is the message from libarchive"
 msgid "Warning: (%1)"
 msgstr "Alerta: (%1)"
 
-#: qtplugins/playertool/playertool.cpp:51
+#: qtplugins/playertool/playertool.cpp:52
 #, fuzzy
 msgctxt "control-key 9"
 msgid "Ctrl+9"
 msgstr "Ctrl+9"
 
-#: qtplugins/playertool/playertool.cpp:52
+#: qtplugins/playertool/playertool.cpp:53
 msgid "Player"
 msgstr ""
 
-#: qtplugins/playertool/playertool.cpp:53
+#: qtplugins/playertool/playertool.cpp:54
 #, qt-format
 msgid "Animation Tool\t(%1)"
 msgstr "Ferramenta de Animação\t(%1)"
 
 #. i18n: file: qtplugins/surfaces/surfacedialog.ui:432
 #. i18n: ectx: property (text), widget (QLabel, frameLabel)
-#: qtplugins/playertool/playertool.cpp:83:2037
+#: qtplugins/playertool/playertool.cpp:84:2031
 msgid "Frame:"
 msgstr "Quadro:"
 
-#: qtplugins/playertool/playertool.cpp:113
+#: qtplugins/playertool/playertool.cpp:114
 msgctxt "start or first frame index"
 msgid "Start:"
 msgstr "Início:"
 
-#: qtplugins/playertool/playertool.cpp:124
+#: qtplugins/playertool/playertool.cpp:125
 msgctxt "end or last frame index"
 msgid "End:"
 msgstr "Fim:"
 
-#: qtplugins/playertool/playertool.cpp:138
+#: qtplugins/playertool/playertool.cpp:139
 msgid "Dynamic bonding?"
 msgstr "Ligações dinâmicas?"
 
-#: qtplugins/playertool/playertool.cpp:146
+#: qtplugins/playertool/playertool.cpp:147
 msgid "Frame rate:"
 msgstr "Taxa de quadros:"
 
-#: qtplugins/playertool/playertool.cpp:152
+#: qtplugins/playertool/playertool.cpp:153
 msgctxt "frames per second"
 msgid " FPS"
 msgstr " QPS"
 
-#: qtplugins/playertool/playertool.cpp:160
-#: qtplugins/playertool/playertool.cpp:234
+#: qtplugins/playertool/playertool.cpp:161
+#: qtplugins/playertool/playertool.cpp:278
 #, fuzzy
 msgid "Play"
 msgstr "Reproduzir"
 
-#: qtplugins/playertool/playertool.cpp:165
+#: qtplugins/playertool/playertool.cpp:166
 msgid "Record…"
 msgstr "Gravar…"
 
-#: qtplugins/playertool/playertool.cpp:216
+#: qtplugins/playertool/playertool.cpp:260
 msgid "Pause"
 msgstr "Pausar"
 
-#: qtplugins/playertool/playertool.cpp:291
-#: qtplugins/playertool/playertool.cpp:396
+#: qtplugins/playertool/playertool.cpp:335
+#: qtplugins/playertool/playertool.cpp:440
 msgid "Movie (*.mp4)"
 msgstr "Vídeo (*.mp4)"
 
-#: qtplugins/playertool/playertool.cpp:293
+#: qtplugins/playertool/playertool.cpp:337
 msgid "Export Bitmap Graphics"
 msgstr "Exportar Gráficos Bitmap"
 
-#: qtplugins/playertool/playertool.cpp:294
+#: qtplugins/playertool/playertool.cpp:338
 msgid "Movie (*.mp4);;Movie (*.avi);;GIF (*.gif)"
 msgstr "Filme (*.mp4);;Filme (*.avi);;GIF (*.gif)"
 
-#: qtplugins/playertool/playertool.cpp:308 qtplugins/surfaces/surfaces.cpp:932
+#: qtplugins/playertool/playertool.cpp:352 qtplugins/surfaces/surfaces.cpp:939
 msgid "GIF (*.gif)"
 msgstr "GIF (*.gif)"
 
-#: qtplugins/playertool/playertool.cpp:314
+#: qtplugins/playertool/playertool.cpp:358
 msgid "GIF FPS support warning"
 msgstr "Aviso GIF FPS suportado"
 
-#: qtplugins/playertool/playertool.cpp:315
+#: qtplugins/playertool/playertool.cpp:359
 msgid "The GIF file format does not support frame rates over 100 FPS."
 msgstr ""
 "O formato de arquivo GIF não oferece suporte a taxas de quadros acima de 100 "
 "FPS (qps)."
 
-#: qtplugins/playertool/playertool.cpp:360
+#: qtplugins/playertool/playertool.cpp:404
 msgid "Movie (*.avi)"
 msgstr "Vídeo (*.avi)"
 
-#: qtplugins/playertool/playertool.cpp:392 qtplugins/surfaces/surfaces.cpp:1006
+#: qtplugins/playertool/playertool.cpp:436 qtplugins/surfaces/surfaces.cpp:1013
 msgid "Error: cannot add frame to video."
 msgstr "Erro: não é possível adicionar quadro ao vídeo."
 
@@ -4951,46 +4937,46 @@ msgstr "Reproduzir trajetórias"
 msgid "Plot Conformer Data…"
 msgstr ""
 
-#: qtplugins/plotconformer/plotconformer.cpp:127
+#: qtplugins/plotconformer/plotconformer.cpp:129
 msgid "Conformer Analysis"
 msgstr "Análise de Confôrmero"
 
-#: qtplugins/plotconformer/plotconformer.cpp:141
+#: qtplugins/plotconformer/plotconformer.cpp:143
 msgid "Plot Type:"
 msgstr "Tipo de Gráfico:"
 
 #. i18n: file: qtplugins/openbabel/conformersearchdialog.ui:191
 #. i18n: ectx: property (text), item, widget (QComboBox, scoringComboBox)
-#: qtplugins/plotconformer/plotconformer.cpp:143:1339
+#: qtplugins/plotconformer/plotconformer.cpp:145:1339
 msgid "RMSD"
 msgstr ""
 
-#: qtplugins/plotconformer/plotconformer.cpp:149
+#: qtplugins/plotconformer/plotconformer.cpp:151
 msgid "Velocities"
 msgstr "Velocidades"
 
-#: qtplugins/plotconformer/plotconformer.cpp:158
+#: qtplugins/plotconformer/plotconformer.cpp:160
 msgid "Energy Units:"
 msgstr "Unidades de Energia:"
 
-#: qtplugins/plotconformer/plotconformer.cpp:167
+#: qtplugins/plotconformer/plotconformer.cpp:169
 msgid "to"
 msgstr ""
 
-#: qtplugins/plotconformer/plotconformer.cpp:227
+#: qtplugins/plotconformer/plotconformer.cpp:229
 msgid "RMSD (Å)"
 msgstr ""
 
-#: qtplugins/plotconformer/plotconformer.cpp:230
+#: qtplugins/plotconformer/plotconformer.cpp:232
 #, qt-format
 msgid "Relative Energy (%1)"
 msgstr "Energia Relativa (%1)"
 
-#: qtplugins/plotconformer/plotconformer.cpp:233
+#: qtplugins/plotconformer/plotconformer.cpp:235
 msgid "Forces (N)"
 msgstr "Forças (N)"
 
-#: qtplugins/plotconformer/plotconformer.cpp:235
+#: qtplugins/plotconformer/plotconformer.cpp:237
 msgid "Velocities (m/s)"
 msgstr "Velocidades (m/s)"
 
@@ -4998,7 +4984,7 @@ msgstr "Velocidades (m/s)"
 msgid "PlotConformer"
 msgstr ""
 
-#: qtplugins/plotconformer/plotconformer.h:81
+#: qtplugins/plotconformer/plotconformer.h:82
 msgid "Generate and plot conformer data (RMSD or energy)."
 msgstr ""
 
@@ -5057,81 +5043,6 @@ msgstr "TraceDrx"
 #: qtplugins/plotxrd/plotxrd.h:87
 msgid "Generate and plot a theoretical XRD pattern using ObjCryst++."
 msgstr "Criar e desenhar um padrão de DRX teórico usando ObjCryst ++."
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:67
-#, fuzzy
-msgid "Update"
-msgstr "Atualizar"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:104
-msgid "Error downloading plugin data."
-msgstr "Erro ao baixar os dados do plugin."
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:109
-msgid "Error parsing plugin data."
-msgstr "Erro ao analisar os dados do plugin."
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:270
-msgid ""
-"This plugin requires certain packages to be installed.\n"
-"Do you want to install them?"
-msgstr ""
-"Este plugin requer a instalação de certos pacotes.\n"
-"Deseja instalá-los?"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:278
-msgid "Always"
-msgstr "Sempre"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:279
-msgid "Never"
-msgstr "Nunca"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:323
-#: qtplugins/plugindownloader/downloaderwidget.cpp:333
-#, qt-format
-msgctxt ""
-"After an HTTP request; %1 is a URL, %2 is the HTTP status code, %3 is the "
-"error message (if any)"
-msgid "Failed to download from %1: status code %2, %3\n"
-msgstr "Falha ao baixar de %1: código de status %2, %3\n"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:381
-#, qt-format
-msgid "Extracting %1 to %2\n"
-msgstr "Extraindo %1 para %2\n"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:384
-#, qt-format
-msgid "Finished %1 files\n"
-msgstr "Concluídos %1 arquivos\n"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:388
-msgid "Extraction successful\n"
-msgstr "Extração concluída com sucesso\n"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:421
-#, fuzzy, qt-format
-msgid "Error while extracting: %1"
-msgstr "Erro ao extrair: %1"
-
-#: qtplugins/plugindownloader/downloaderwidget.cpp:452
-msgid "Installation canceled\n"
-msgstr "Instalação cancelada\n"
-
-#. i18n: file: qtplugins/plugindownloader/downloaderwidget.ui:14
-#. i18n: ectx: property (windowTitle), widget (QDialog, DownloaderWidget)
-#: qtplugins/plugindownloader/plugindownloader.cpp:27:1762
-msgid "Download Plugins…"
-msgstr "Baixar Plugins…"
-
-#: qtplugins/plugindownloader/plugindownloader.h:37
-msgid "Download Plugins"
-msgstr "Baixar Plugins"
-
-#: qtplugins/plugindownloader/plugindownloader.h:41
-msgid "Download plugins from GitHub repositories."
-msgstr "Baixar plugins dos repositórios do GitHub."
 
 #: qtplugins/ply/ply.cpp:29
 msgid "PLY Render…"
@@ -5622,7 +5533,7 @@ msgstr "Selecionar Resíduo"
 
 #. i18n: file: qtplugins/symmetry/symmetrywidget.ui:186
 #. i18n: ectx: property (text), widget (QPushButton, selectSubgroupButton)
-#: qtplugins/select/select.h:30:2076
+#: qtplugins/select/select.h:30:2070
 msgid "Select"
 msgstr "Selecionar"
 
@@ -5675,12 +5586,12 @@ msgstr "Perceber Grupo Espacial…"
 
 #. i18n: file: qtplugins/symmetry/symmetrywidget.ui:99
 #. i18n: ectx: property (text), widget (QPushButton, symmetrizeMoleculeButton)
-#: qtplugins/spacegroup/spacegroup.cpp:78:2061
+#: qtplugins/spacegroup/spacegroup.cpp:78:2055
 msgid "Symmetrize"
 msgstr "Simetrizar"
 
 #: qtplugins/spacegroup/spacegroup.cpp:83
-#: qtplugins/spacegroup/spacegroup.cpp:576
+#: qtplugins/spacegroup/spacegroup.cpp:580
 msgid "Reduce to Asymmetric Unit"
 msgstr "Reduzir para Unidade Assimétrica"
 
@@ -5711,19 +5622,19 @@ msgstr ""
 msgid "Fill all atoms based on the crystal space group."
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:390
-#: qtplugins/spacegroup/spacegroup.cpp:418
+#: qtplugins/spacegroup/spacegroup.cpp:394
+#: qtplugins/spacegroup/spacegroup.cpp:422
 msgid "Perceive Space Group"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:391
+#: qtplugins/spacegroup/spacegroup.cpp:395
 #, qt-format
 msgid ""
 "The space group is already set to: %1.\n"
 "Would you like to overwrite it?"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:407
+#: qtplugins/spacegroup/spacegroup.cpp:411
 #, qt-format
 msgid ""
 "Space group perception succeeded:\n"
@@ -5733,11 +5644,11 @@ msgid ""
 "International symbol: %4"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:424
+#: qtplugins/spacegroup/spacegroup.cpp:428
 msgid "Failure"
 msgstr "Falha"
 
-#: qtplugins/spacegroup/spacegroup.cpp:425
+#: qtplugins/spacegroup/spacegroup.cpp:429
 msgid ""
 "Space group perception failed.\n"
 "Would you like to try again with a different tolerance?"
@@ -5745,13 +5656,13 @@ msgstr ""
 "Percepção do Grupo de Espaço falhou.\n"
 "Gostaria de tentar novamente com uma tolerância diferente?"
 
-#: qtplugins/spacegroup/spacegroup.cpp:440
+#: qtplugins/spacegroup/spacegroup.cpp:444
 msgid "Primitive Reduction"
 msgstr "Redução Primitiva"
 
-#: qtplugins/spacegroup/spacegroup.cpp:441
-#: qtplugins/spacegroup/spacegroup.cpp:469
-#: qtplugins/spacegroup/spacegroup.cpp:497
+#: qtplugins/spacegroup/spacegroup.cpp:445
+#: qtplugins/spacegroup/spacegroup.cpp:473
+#: qtplugins/spacegroup/spacegroup.cpp:501
 #, qt-format
 msgid ""
 "The tolerance is currently set to: %1.\n"
@@ -5760,7 +5671,7 @@ msgstr ""
 "A tolerância está definida como: %1.\n"
 "Continuar com esta tolerância?"
 
-#: qtplugins/spacegroup/spacegroup.cpp:457
+#: qtplugins/spacegroup/spacegroup.cpp:461
 msgid ""
 "Primitive reduction failed.\n"
 "Please check your crystal and try again with a different tolerance."
@@ -5769,7 +5680,7 @@ msgstr ""
 "Por favor, verifique seu cristal e tente novamente com uma tolerância "
 "diferente."
 
-#: qtplugins/spacegroup/spacegroup.cpp:485
+#: qtplugins/spacegroup/spacegroup.cpp:489
 msgid ""
 "Conventionalize cell failed.\n"
 "Please check your crystal and try again with a different tolerance."
@@ -5778,7 +5689,7 @@ msgstr ""
 "Por favor, verifique seu cristal e tente novamente com uma tolerância "
 "diferente."
 
-#: qtplugins/spacegroup/spacegroup.cpp:511
+#: qtplugins/spacegroup/spacegroup.cpp:515
 msgid ""
 "Symmetrization failed.\n"
 "Please check your crystal and try again with a different tolerance."
@@ -5787,7 +5698,7 @@ msgstr ""
 "Por favor, verifique seu cristal e tente novamente com uma tolerância "
 "diferente."
 
-#: qtplugins/spacegroup/spacegroup.cpp:565
+#: qtplugins/spacegroup/spacegroup.cpp:569
 #, qt-format
 msgid ""
 "With a tolerance of %1  Å, the space group information was perceived to be "
@@ -5806,53 +5717,59 @@ msgstr ""
 "\n"
 "Prosseguir com este grupo espacial?"
 
-#: qtplugins/spacegroup/spacegroup.cpp:596 qtplugins/yaehmop/yaehmop.cpp:208
+#: qtplugins/spacegroup/spacegroup.cpp:600 qtplugins/yaehmop/yaehmop.cpp:208
 #: qtplugins/yaehmop/yaehmop.cpp:298 qtplugins/yaehmop/yaehmop.cpp:310
 #: qtplugins/yaehmop/yaehmop.cpp:323 qtplugins/yaehmop/yaehmop.cpp:433
 msgid "Avogadro2"
 msgstr "Avogadro2"
 
-#: qtplugins/spacegroup/spacegroup.cpp:597
+#: qtplugins/spacegroup/spacegroup.cpp:601
 msgid "Select tolerance in Å:"
 msgstr "Selecione a tolerância em Å:"
 
-#: qtplugins/spacegroup/spacegroup.cpp:614
+#: qtplugins/spacegroup/spacegroup.cpp:618
 msgid "Triclinic"
 msgstr "Triclínica"
 
-#: qtplugins/spacegroup/spacegroup.cpp:616
+#: qtplugins/spacegroup/spacegroup.cpp:620
+#: qtplugins/spacegroup/spacegroup.cpp:769
 msgid "Monoclinic"
 msgstr "Monoclínica"
 
-#: qtplugins/spacegroup/spacegroup.cpp:618
+#: qtplugins/spacegroup/spacegroup.cpp:622
+#: qtplugins/spacegroup/spacegroup.cpp:766
 msgid "Orthorhombic"
 msgstr "Ortorrômbica"
 
-#: qtplugins/spacegroup/spacegroup.cpp:620
+#: qtplugins/spacegroup/spacegroup.cpp:624
+#: qtplugins/spacegroup/spacegroup.cpp:762
 msgid "Tetragonal"
 msgstr "Tetragonal"
 
-#: qtplugins/spacegroup/spacegroup.cpp:622
+#: qtplugins/spacegroup/spacegroup.cpp:626
 msgid "Trigonal"
 msgstr "Trigonal"
 
-#: qtplugins/spacegroup/spacegroup.cpp:624
+#: qtplugins/spacegroup/spacegroup.cpp:628
+#: qtplugins/spacegroup/spacegroup.cpp:764
 msgid "Rhombohedral"
 msgstr "Romboédrica"
 
-#: qtplugins/spacegroup/spacegroup.cpp:626
+#: qtplugins/spacegroup/spacegroup.cpp:630
+#: qtplugins/spacegroup/spacegroup.cpp:760
 msgid "Hexagonal"
 msgstr "Hexagonal"
 
-#: qtplugins/spacegroup/spacegroup.cpp:628
+#: qtplugins/spacegroup/spacegroup.cpp:632
+#: qtplugins/spacegroup/spacegroup.cpp:758
 msgid "Cubic"
 msgstr "Cúbica"
 
-#: qtplugins/spacegroup/spacegroup.cpp:660
+#: qtplugins/spacegroup/spacegroup.cpp:664
 msgid "Primitive Cell Detected"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:662
+#: qtplugins/spacegroup/spacegroup.cpp:666
 #, qt-format
 msgid ""
 "The current unit cell appears to be a primitive cell (non-90° angles), but "
@@ -5863,27 +5780,27 @@ msgid ""
 "Would you like to create a conventional cell first?"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:676
+#: qtplugins/spacegroup/spacegroup.cpp:680
 msgid "Failed to conventionalize the cell."
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:692
+#: qtplugins/spacegroup/spacegroup.cpp:696
 msgid "International"
 msgstr "Internacional"
 
-#: qtplugins/spacegroup/spacegroup.cpp:692
+#: qtplugins/spacegroup/spacegroup.cpp:696
 msgid "Hall"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:692
+#: qtplugins/spacegroup/spacegroup.cpp:696
 msgid "Hermann-Mauguin"
 msgstr "Hermann-Mauguin"
 
-#: qtplugins/spacegroup/spacegroup.cpp:693
+#: qtplugins/spacegroup/spacegroup.cpp:697
 msgid "Crystal System"
 msgstr ""
 
-#: qtplugins/spacegroup/spacegroup.cpp:725
+#: qtplugins/spacegroup/spacegroup.cpp:729
 msgid "Select Space Group"
 msgstr "Selecionar Grupo de Espaço"
 
@@ -5901,7 +5818,7 @@ msgstr ""
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:39
 #. i18n: ectx: attribute (title), widget (QWidget, tab_spectra)
-#: qtplugins/spectra/spectra.h:32:1795
+#: qtplugins/spectra/spectra.h:32:1789
 #, fuzzy
 msgid "Spectra"
 msgstr "Espectro"
@@ -5911,170 +5828,170 @@ msgstr "Espectro"
 msgid "Display spectra plots."
 msgstr "Mostrar espectros."
 
-#: qtplugins/spectra/spectradialog.cpp:567
+#: qtplugins/spectra/spectradialog.cpp:597
 #, fuzzy
 msgid "Infrared"
 msgstr "Infravermelho"
 
-#: qtplugins/spectra/spectradialog.cpp:571
+#: qtplugins/spectra/spectradialog.cpp:601
 #, fuzzy
 msgid "Raman"
 msgstr "Raman"
 
-#: qtplugins/spectra/spectradialog.cpp:574
+#: qtplugins/spectra/spectradialog.cpp:604
 msgctxt "vibrational circular dichroism"
 msgid "Vibrational CD"
 msgstr "CD Vibracional"
 
-#: qtplugins/spectra/spectradialog.cpp:578
+#: qtplugins/spectra/spectradialog.cpp:608
 msgctxt "magnetic circular dichroism"
 msgid "Magnetic CD"
 msgstr "CD Magnético"
 
-#: qtplugins/spectra/spectradialog.cpp:582
+#: qtplugins/spectra/spectradialog.cpp:612
 msgid "NMR"
 msgstr "RMN"
 
-#: qtplugins/spectra/spectradialog.cpp:585
+#: qtplugins/spectra/spectradialog.cpp:615
 #, fuzzy
 msgid "Electronic"
 msgstr "elétron"
 
-#: qtplugins/spectra/spectradialog.cpp:589
+#: qtplugins/spectra/spectradialog.cpp:619
 msgid "Circular Dichroism"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:593
-#: qtplugins/spectra/spectradialog.cpp:844
+#: qtplugins/spectra/spectradialog.cpp:623
+#: qtplugins/spectra/spectradialog.cpp:877
 msgid "Density of States"
 msgstr "Densidade dos Estados"
 
-#: qtplugins/spectra/spectradialog.cpp:636
+#: qtplugins/spectra/spectradialog.cpp:667
 msgid "Select Background Color"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:660
+#: qtplugins/spectra/spectradialog.cpp:692
 msgid "Select Foreground Color"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:673
+#: qtplugins/spectra/spectradialog.cpp:706
 msgid "Select Calculated Spectra Color"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:685
+#: qtplugins/spectra/spectradialog.cpp:718
 msgid "Select Raw Spectra Color"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:698
+#: qtplugins/spectra/spectradialog.cpp:731
 msgid "Select Imported Spectra Color"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:744
+#: qtplugins/spectra/spectradialog.cpp:777
 msgid "Wavelength (nm)"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:745
+#: qtplugins/spectra/spectradialog.cpp:778
 msgid "Frequency (Hz)"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:751
+#: qtplugins/spectra/spectradialog.cpp:784
 msgid "Vibrational Spectra"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:752
-#: qtplugins/spectra/spectradialog.cpp:766
-#: qtplugins/spectra/spectradialog.cpp:779
-#: qtplugins/spectra/spectradialog.cpp:792
+#: qtplugins/spectra/spectradialog.cpp:785
+#: qtplugins/spectra/spectradialog.cpp:799
+#: qtplugins/spectra/spectradialog.cpp:812
+#: qtplugins/spectra/spectradialog.cpp:825
 #, fuzzy
 msgid "Wavenumbers (cm⁻¹)"
 msgstr "Número de onda (cm⁻¹)"
 
-#: qtplugins/spectra/spectradialog.cpp:753
+#: qtplugins/spectra/spectradialog.cpp:786
 msgid "Transmission"
 msgstr "Transmissão"
 
-#: qtplugins/spectra/spectradialog.cpp:765
+#: qtplugins/spectra/spectradialog.cpp:798
 msgid "Raman Spectra"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:767
-#: qtplugins/spectra/spectradialog.cpp:780
-#: qtplugins/spectra/spectradialog.cpp:793
-#: qtplugins/spectra/spectradialog.cpp:806
-#: qtplugins/spectra/spectradialog.cpp:820
-#: qtplugins/spectra/spectradialog.cpp:833
+#: qtplugins/spectra/spectradialog.cpp:800
+#: qtplugins/spectra/spectradialog.cpp:813
+#: qtplugins/spectra/spectradialog.cpp:826
+#: qtplugins/spectra/spectradialog.cpp:839
+#: qtplugins/spectra/spectradialog.cpp:853
+#: qtplugins/spectra/spectradialog.cpp:866
 msgid "Intensity"
 msgstr "Intensidade"
 
-#: qtplugins/spectra/spectradialog.cpp:778
+#: qtplugins/spectra/spectradialog.cpp:811
 msgid "Vibrational Circular Dichroism"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:791
+#: qtplugins/spectra/spectradialog.cpp:824
 msgid "Magnetic Circular Dichroism"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:804
+#: qtplugins/spectra/spectradialog.cpp:837
 msgid "NMR Spectra"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:805
+#: qtplugins/spectra/spectradialog.cpp:838
 #, fuzzy
 msgid "Chemical Shift (ppm)"
 msgstr "Shift (ppm)"
 
-#: qtplugins/spectra/spectradialog.cpp:818
+#: qtplugins/spectra/spectradialog.cpp:851
 msgid "Electronic Spectra"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:819
-#: qtplugins/spectra/spectradialog.cpp:832
-#: qtplugins/spectra/spectradialog.cpp:845
+#: qtplugins/spectra/spectradialog.cpp:852
+#: qtplugins/spectra/spectradialog.cpp:865
+#: qtplugins/spectra/spectradialog.cpp:878
 #: qtplugins/surfaces/orbitaltablemodel.cpp:135
 msgid "Energy (eV)"
 msgstr "Energia (eV)"
 
-#: qtplugins/spectra/spectradialog.cpp:831
+#: qtplugins/spectra/spectradialog.cpp:864
 msgid "Circular Dichroism Spectra"
 msgstr ""
 
 #. i18n: file: qtplugins/openmminput/openmminputdialog.ui:938
 #. i18n: ectx: property (text), widget (QCheckBox, densityCheck)
-#: qtplugins/spectra/spectradialog.cpp:846:1686
+#: qtplugins/spectra/spectradialog.cpp:879:1686
 msgid "Density"
 msgstr "Densidade"
 
-#: qtplugins/spectra/spectradialog.cpp:965
+#: qtplugins/spectra/spectradialog.cpp:1001
 msgid "Smoothed"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:974
+#: qtplugins/spectra/spectradialog.cpp:1010
 msgid "Raw"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:985
+#: qtplugins/spectra/spectradialog.cpp:1021
 msgid "Imported"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:1021
+#: qtplugins/spectra/spectradialog.cpp:1057
 msgid "Import Data"
 msgstr ""
 
-#: qtplugins/spectra/spectradialog.cpp:1021
+#: qtplugins/spectra/spectradialog.cpp:1057
 msgid "CSV Files (*.csv);;TSV Files (*.tsv)"
 msgstr ""
 
-#: qtplugins/surfacerender/surfacerender.cpp:270
+#: qtplugins/surfacerender/surfacerender.cpp:272
 msgid "Surface"
 msgstr "Superfície"
 
 #. i18n: file: qtplugins/openmminput/openmminputdialog.ui:928
 #. i18n: ectx: property (text), widget (QCheckBox, volumeCheck)
-#: qtplugins/surfacerender/surfacerender.cpp:272:1683
+#: qtplugins/surfacerender/surfacerender.cpp:274:1683
 msgid "Volume"
 msgstr "Volume"
 
-#: qtplugins/surfacerender/surfacerender.cpp:275
+#: qtplugins/surfacerender/surfacerender.cpp:277
 msgid "Style:"
 msgstr "Estilo:"
 
@@ -6101,7 +6018,7 @@ msgstr "Orbital"
 #. i18n: file: qtplugins/symmetry/symmetrywidget.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, Avogadro::QtPlugins::SymmetryWidget)
 #: qtplugins/surfaces/orbitaltablemodel.cpp:137
-#: qtplugins/symmetry/symmetry.h:34:2046
+#: qtplugins/symmetry/symmetry.h:34:2040
 msgid "Symmetry"
 msgstr "Simetria"
 
@@ -6217,37 +6134,37 @@ msgctxt "3D Volume Data Set"
 msgid "Cube %1"
 msgstr "Cubo %1"
 
-#: qtplugins/surfaces/surfaces.cpp:624
+#: qtplugins/surfaces/surfaces.cpp:631
 msgid "Calculating electron density"
 msgstr "Calculando a densidade eletrônica"
 
-#: qtplugins/surfaces/surfaces.cpp:633
+#: qtplugins/surfaces/surfaces.cpp:640
 msgid "Calculating spin density"
 msgstr "Calculando a densidade de spin"
 
-#: qtplugins/surfaces/surfaces.cpp:642
+#: qtplugins/surfaces/surfaces.cpp:649
 #, qt-format
 msgid "Calculating molecular orbital %L1"
 msgstr "Calculando o orbital molecular %L1"
 
-#: qtplugins/surfaces/surfaces.cpp:898
+#: qtplugins/surfaces/surfaces.cpp:905
 msgctxt "finished rendering surface or molecular orbital"
 msgid "Surface Finished"
 msgstr "Superfície Concluída"
 
-#: qtplugins/surfaces/surfaces.cpp:909 qtplugins/surfaces/surfaces.cpp:937
+#: qtplugins/surfaces/surfaces.cpp:916 qtplugins/surfaces/surfaces.cpp:944
 msgid "Movie AVI (*.avi)"
 msgstr "Vídeo (*.avi)"
 
-#: qtplugins/surfaces/surfaces.cpp:911
+#: qtplugins/surfaces/surfaces.cpp:918
 msgid "Export Movie"
 msgstr "Exportar Vídeo"
 
-#: qtplugins/surfaces/surfaces.cpp:912
+#: qtplugins/surfaces/surfaces.cpp:919
 msgid "Movie MP4 (*.mp4);;Movie AVI (*.avi);;GIF (*.gif)"
 msgstr "Vídeo MP4 (*.mp4);;Vídeo AVI (*.avi);;GIF (*.gif)"
 
-#: qtplugins/surfaces/surfaces.cpp:962
+#: qtplugins/surfaces/surfaces.cpp:969
 msgid "Couldn't find the active render widget, failing."
 msgstr "Não foi possível encontrar o widget de renderização ativo; falha."
 
@@ -6345,7 +6262,7 @@ msgstr "Exibição simples de esferas VdW."
 
 #. i18n: file: qtplugins/vibrations/vibrationdialog.ui:96
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: qtplugins/vibrations/vibrationdialog.cpp:39:2232
+#: qtplugins/vibrations/vibrationdialog.cpp:39:2226
 msgid "Start Animation"
 msgstr "Iniciar Animação"
 
@@ -8981,11 +8898,6 @@ msgstr ""
 msgid "Max 2θ:"
 msgstr ""
 
-#. i18n: file: qtplugins/plugindownloader/downloaderwidget.ui:20
-#. i18n: ectx: property (text), widget (QPushButton, downloadButton)
-msgid "Download Selected"
-msgstr "Download Selecionados"
-
 #. i18n: file: qtplugins/qtaim/qtaimsettingswidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, atomRadiusLabel)
 msgid "Critical Point Radius:"
@@ -9746,6 +9658,66 @@ msgstr "Seus nomes"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Seus e-mails"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Atualizar"
+
+#~ msgid "Error downloading plugin data."
+#~ msgstr "Erro ao baixar os dados do plugin."
+
+#~ msgid "Error parsing plugin data."
+#~ msgstr "Erro ao analisar os dados do plugin."
+
+#~ msgid ""
+#~ "This plugin requires certain packages to be installed.\n"
+#~ "Do you want to install them?"
+#~ msgstr ""
+#~ "Este plugin requer a instalação de certos pacotes.\n"
+#~ "Deseja instalá-los?"
+
+#~ msgid "Always"
+#~ msgstr "Sempre"
+
+#~ msgid "Never"
+#~ msgstr "Nunca"
+
+#, qt-format
+#~ msgctxt ""
+#~ "After an HTTP request; %1 is a URL, %2 is the HTTP status code, %3 is the "
+#~ "error message (if any)"
+#~ msgid "Failed to download from %1: status code %2, %3\n"
+#~ msgstr "Falha ao baixar de %1: código de status %2, %3\n"
+
+#, qt-format
+#~ msgid "Extracting %1 to %2\n"
+#~ msgstr "Extraindo %1 para %2\n"
+
+#, qt-format
+#~ msgid "Finished %1 files\n"
+#~ msgstr "Concluídos %1 arquivos\n"
+
+#~ msgid "Extraction successful\n"
+#~ msgstr "Extração concluída com sucesso\n"
+
+#, fuzzy, qt-format
+#~ msgid "Error while extracting: %1"
+#~ msgstr "Erro ao extrair: %1"
+
+#~ msgid "Installation canceled\n"
+#~ msgstr "Instalação cancelada\n"
+
+#~ msgid "Download Plugins…"
+#~ msgstr "Baixar Plugins…"
+
+#~ msgid "Download Plugins"
+#~ msgstr "Baixar Plugins"
+
+#~ msgid "Download plugins from GitHub repositories."
+#~ msgstr "Baixar plugins dos repositórios do GitHub."
+
+#~ msgid "Download Selected"
+#~ msgstr "Download Selecionados"
 
 #, qt-format
 #~ msgid "Option '%1' does not refer to an object."
