@@ -65,6 +65,16 @@ OBMMEnergy::OBMMEnergy(const std::string& method)
     m_elements.set(17);
     m_elements.set(35);
     m_elements.set(53);
+
+    // also Fe+2, Fe+3, Li+, Na+, K+, Zn+2, Ca+2, Cu+1, Cu+2, and Mg+2
+    m_elements.set(26);
+    m_elements.set(3);
+    m_elements.set(11);
+    m_elements.set(19);
+    m_elements.set(20);
+    m_elements.set(29);
+    m_elements.set(30);
+    m_elements.set(12);
   }
 }
 
