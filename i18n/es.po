@@ -24,8 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: avogadro-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2026-04-12 04:21+0000\n"
 "PO-Revision-Date: 2026-04-16 18:09+0000\n"
-"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
-"memory@weblate.org>\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/avogadro/"
 "avogadrolibs/es/>\n"
 "Language: es\n"
@@ -4950,7 +4949,7 @@ msgstr "PlotConformer"
 
 #: qtplugins/plotconformer/plotconformer.h:82
 msgid "Generate and plot conformer data (RMSD or energy)."
-msgstr "Generar y traza datos de conformidad (RMSE o energía)."
+msgstr "Generar y trazar datos de conformidad (RMSE o energía)."
 
 #: qtplugins/plotpdf/plotpdf.cpp:36
 msgid "Plot Pair Distribution Function…"
@@ -5205,13 +5204,13 @@ msgstr "Propiedades de Residuos…"
 
 #: qtplugins/propertytables/propertytables.cpp:63
 msgid "Conformer Properties…"
-msgstr "Propiedades Heteromorfismo…"
+msgstr "Propiedades heteromorfismo…"
 
 #: qtplugins/propertytables/propertytables.cpp:75
 msgid ""
 "Tables for displaying and editing atom, bond, angle and torsion properties."
 msgstr ""
-"Tablas para visualizar y editar propiedades de átomos, enlaces, ángulos y "
+"Tablas para exhibir y editar propiedades de átomos, ligadura, ángulos y "
 "torsiones."
 
 #: qtplugins/propertytables/propertytables.h:29
@@ -5252,7 +5251,7 @@ msgstr "Seleccione el tipo de carga parcial:"
 
 #: qtplugins/propertytables/propertyview.cpp:580
 msgid "Change Charge Type…"
-msgstr "Cambiar el Tipo de Carga…"
+msgstr "Cambio de tipo de carga…"
 
 #: qtplugins/propertytables/propertyview.cpp:587
 msgid "Freeze Atom"
@@ -5276,19 +5275,19 @@ msgstr "Liberar Átomo"
 
 #: qtplugins/propertytables/propertyview.cpp:608
 msgid "Constrain Bond"
-msgstr "Fijar Enlace"
+msgstr "Fijar vínculo"
 
 #: qtplugins/propertytables/propertyview.cpp:610
 msgid "Constrain Angle"
-msgstr "Fijar Ángulo"
+msgstr "Fijar ángulo"
 
 #: qtplugins/propertytables/propertyview.cpp:612
 msgid "Constrain Torsion"
-msgstr "Fijar Torsión"
+msgstr "Fijar torsión"
 
 #: qtplugins/propertytables/propertyview.cpp:619
 msgid "Remove Constraint"
-msgstr "Liberar Restricción"
+msgstr "Liberar restricción"
 
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:163
 #: qtplugins/qtaim/qtaimwavefunction.h:82
@@ -5298,7 +5297,7 @@ msgstr "No se puede leer el archivo %1."
 
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:451
 msgid "Failed to create a temporary file."
-msgstr "Se fallo al crear un archivo temporal."
+msgstr "No se ha podido crear un archivo temporal."
 
 #: qtplugins/qtaim/qtaimengine.h:25 qtplugins/qtaim/qtaimextension.cpp:68
 #: qtplugins/qtaim/qtaimextension.h:22
@@ -5495,16 +5494,16 @@ msgid ""
 "Use Ctrl to toggle the selection and shift to add to the selection.\n"
 "Double-Click:\tSelect an entire fragment."
 msgstr ""
-"Herramienta de Selección\t(%1)\n"
+"Herramienta de selección\t(%1)\n"
 "\n"
-"Botón Izquierdo del Ratón:\tPresionar para seleccionar átomos individuales, "
+"Botón izquierdo del ratón:\tPulse para seleccionar átomos individuales, "
 "residuos, o fragmentos\n"
 "\tArrastrar para seleccionar un grupo de átomos\n"
-"Botón Derecho del ratón:\tPresionar fuera de la molécula para limpiar la "
+"Botón derecho del ratón:\tPulse fuera de la molécula para vaciar la "
 "selección\n"
 "Utilizar «Ctrl» para alternar la selección y «shift» para añadir a la "
 "selección.\n"
-"Doble Clic:\tSeleccionar un fragmento completo."
+"Pulsación doble:\tSeleccionar un fragmento completo."
 
 #: qtplugins/selectiontool/selectiontool.cpp:248
 msgid "Paint Atoms"
@@ -5545,7 +5544,7 @@ msgstr "Llenar Celda Unidad…"
 #: qtplugins/spacegroup/spacegroup.cpp:101
 msgctxt "fill the translationally unique repeat unit"
 msgid "Fill Translation Cell…"
-msgstr "Llenar la Celda de Traslado…"
+msgstr "Llenar la celda de traslado…"
 
 #: qtplugins/spacegroup/spacegroup.cpp:126
 msgid "Space Group"
@@ -5557,7 +5556,7 @@ msgstr "Rellenar átomos simétricos en función del grupo espacial del cristal.
 
 #: qtplugins/spacegroup/spacegroup.cpp:135
 msgid "Fill all atoms based on the crystal space group."
-msgstr "Llenar todos los átomos basados en el grupo espacial del cristal."
+msgstr "Llena todos los átomos basados en el grupo espacial de cristal."
 
 #: qtplugins/spacegroup/spacegroup.cpp:394
 #: qtplugins/spacegroup/spacegroup.cpp:422
@@ -5570,8 +5569,8 @@ msgid ""
 "The space group is already set to: %1.\n"
 "Would you like to overwrite it?"
 msgstr ""
-"El grupo espacial ya está configurado en: %1.\n"
-"¿Desea sobrescribirlo?"
+"El grupo espacial ya está establecido en: %1.\n"
+"¿Desearía sobrescribirlo?"
 
 #: qtplugins/spacegroup/spacegroup.cpp:411
 #, qt-format
@@ -5733,7 +5732,7 @@ msgstr ""
 
 #: qtplugins/spacegroup/spacegroup.cpp:680
 msgid "Failed to conventionalize the cell."
-msgstr "Se fallo el convencionalizar la celda."
+msgstr "Se fallo el hacer convencional la celda."
 
 #: qtplugins/spacegroup/spacegroup.cpp:696
 msgid "International"
@@ -5826,7 +5825,7 @@ msgstr "Seleccionar espectro de color calculado"
 
 #: qtplugins/spectra/spectradialog.cpp:718
 msgid "Select Raw Spectra Color"
-msgstr "Seleccionar el Color del Espectro en Bruto"
+msgstr "Seleccionar Color del Espectro en Bruto"
 
 #: qtplugins/spectra/spectradialog.cpp:731
 msgid "Select Imported Spectra Color"
@@ -5941,7 +5940,7 @@ msgstr "Estilo:"
 
 #: qtplugins/surfacerender/surfacerender.h:33
 msgid "Render molecular surfaces."
-msgstr "Renderizar superficies moleculares."
+msgstr "Representar superficies moleculares."
 
 #: qtplugins/surfaces/orbitals.cpp:35
 msgid "Molecular Orbitals…"
@@ -5988,7 +5987,7 @@ msgstr "LUMO"
 
 #: qtplugins/surfaces/orbitalwidget.cpp:26
 msgid "Molecular Orbitals"
-msgstr "Orbitales moleculares"
+msgstr "Orbitales Moleculares"
 
 #: qtplugins/surfaces/surfacedialog.cpp:26
 msgid "Solvent Accessible"
@@ -6093,7 +6092,7 @@ msgstr "Calculando orbital molecular %L1"
 #: qtplugins/surfaces/surfaces.cpp:905
 msgctxt "finished rendering surface or molecular orbital"
 msgid "Surface Finished"
-msgstr "Superficie Terminada"
+msgstr "Superficie Finalizada"
 
 #: qtplugins/surfaces/surfaces.cpp:916 qtplugins/surfaces/surfaces.cpp:944
 msgid "Movie AVI (*.avi)"
@@ -6109,7 +6108,7 @@ msgstr "Película MP4 (*.mp4);;Película AVI (*.avi);;GIF (*.gif)"
 
 #: qtplugins/surfaces/surfaces.cpp:969
 msgid "Couldn't find the active render widget, failing."
-msgstr "No se pudo encontrar el widget de render activo, fallando."
+msgstr "No pude encontrar el widget de representante activo, fallando."
 
 #: qtplugins/surfaces/surfaces.h:74
 msgid "Read and render surfaces."
@@ -6306,7 +6305,7 @@ msgstr ""
 
 #: qtplugins/yaehmop/yaehmop.cpp:357
 msgid "k-space"
-msgstr "espacio-k"
+msgstr "espacio‐k"
 
 #: qtplugins/yaehmop/yaehmop.cpp:367
 #, qt-format
@@ -6671,7 +6670,7 @@ msgid ""
 "Avogadro must be restarted for any changes to take effect."
 msgstr ""
 "Seleccione la versión de Python utilizada para ejecutar scripts.\n"
-"Avogadro debe reiniciarse para que los cambios surtan efecto."
+"Avogadro debe reiniciarse para que cualquier cambio surta efecto."
 
 #. i18n: file: qtplugins/configurepython/configurepythondialog.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -6693,7 +6692,7 @@ msgstr "Tipo:"
 #. i18n: file: qtplugins/constraints/constraintsdialog.ui:74
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 msgid "Atom Indices:"
-msgstr "Indices de Átomos:"
+msgstr "Índices de Átomos:"
 
 #. i18n: file: qtplugins/constraints/constraintsdialog.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -8188,12 +8187,12 @@ msgstr "Origen"
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:127
 #. i18n: ectx: property (text), item, widget (QComboBox, rotateComboBox)
 msgid "Center of Molecule"
-msgstr "Centro de la molécula"
+msgstr "Centro de molécula"
 
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:132
 #. i18n: ectx: property (text), item, widget (QComboBox, rotateComboBox)
 msgid "Center of Selection"
-msgstr "Centro de la selección"
+msgstr "Centro de selección"
 
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:192
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -8852,7 +8851,7 @@ msgstr ""
 #. i18n: file: qtplugins/plotxrd/xrdoptionsdialog.ui:141
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 msgid "Max 2θ:"
-msgstr "Max 2θ:"
+msgstr "Máx 2θ:"
 
 #. i18n: file: qtplugins/qtaim/qtaimsettingswidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, atomRadiusLabel)
@@ -8986,7 +8985,7 @@ msgstr "Tamaño de la fuente:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 msgctxt "Size in pixels of the line drawing the spectra"
 msgid "Line Width:"
-msgstr "Anchura de la línea:"
+msgstr "Anchura de línea:"
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:296
 #. i18n: ectx: property (text), widget (QCheckBox, cb_import)
@@ -9020,7 +9019,7 @@ msgstr "Espectros calculados:"
 #. i18n: file: qtplugins/spectra/spectradialog.ui:409
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 msgid "Raw Spectra:"
-msgstr "Espectro en Bruto:"
+msgstr "Espectro en bruto:"
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:457
 #. i18n: ectx: property (text), widget (QPushButton, push_export)
