@@ -82,6 +82,10 @@ add_subdirectory(utilities)
 add_subdirectory(avogadro)
 
 if(ENABLE_TESTING)
+  include(CTest)
+  # > This command should be invoked in the top-level source directory because
+  # > ctest(1) expects to find a test file in the top-level build directory.
+  enable_testing()
   add_subdirectory(tests)
 endif()
 
