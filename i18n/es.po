@@ -11,7 +11,7 @@
 # Alejandro Díaz-Moscoso <a.diaz.moscoso@csic.es>, 2023.
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 # Saúl Palacios <palacios22c@gmail.com>, 2025.
-# LibreTranslate <noreply-mt-libretranslate@weblate.org>, 2025.
+# LibreTranslate <noreply-mt-libretranslate@weblate.org>, 2025, 2026.
 # Adrian Lopez <adrlop1012@gmail.com>, 2025.
 # Armando Castro <darkarr2d2@gmail.com>, 2025.
 # Eisuke Kawashima <e.kawaschima+weblate@gmail.com>, 2025, 2026.
@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: avogadro-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2026-04-12 04:21+0000\n"
 "PO-Revision-Date: 2026-04-16 18:09+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/avogadro/"
 "avogadrolibs/es/>\n"
 "Language: es\n"
@@ -1497,7 +1497,7 @@ msgstr "Cambiar Color de un Átomo"
 
 #: qtgui/rwmolecule.cpp:286
 msgid "Change Residue Color"
-msgstr "Cambiar Color del Residuo"
+msgstr "Cambiar el color residual"
 
 #: qtgui/rwmolecule.cpp:298
 msgid "Change Atom Layer"
@@ -1622,7 +1622,7 @@ msgstr "Calculando…"
 
 #: qtgui/timedprogressdialog.cpp:79
 msgid "Less than a second remaining"
-msgstr "Falta menos de un segundo"
+msgstr "Menos de un segundo restante"
 
 #: qtgui/timedprogressdialog.cpp:82
 #, qt-plural-format
@@ -2140,7 +2140,7 @@ msgstr "Reiniciar Colores de Residuos"
 
 #: qtplugins/applycolors/applycolors.cpp:474
 msgid "Apply Secondary Structure Colors"
-msgstr "Aplicar Colores de Estructura Secundaria"
+msgstr "Aplicar colores de estructura secundaria"
 
 #: qtplugins/applycolors/applycolors.cpp:562
 msgid "Apply Amino Acid Colors"
@@ -2256,7 +2256,7 @@ msgstr "%1 ΔE = %L2"
 
 #: qtplugins/autoopt/autoopt.h:46
 msgid "Auto Optimize tool"
-msgstr "Herramienta de Optimización Automática"
+msgstr "Herramienta de optimización automática"
 
 #: qtplugins/autoopt/autoopt.h:49
 msgid "Interactive optimization of molecular geometry"
@@ -2545,8 +2545,8 @@ msgstr "Instalar Python"
 msgid ""
 "Python is used for many Avogadro features. Do you want to download Python?"
 msgstr ""
-"Python se utiliza para muchas funciones de Avogadro. ¿Quieres descargar "
-"Python?"
+"Python se utiliza para muchas características de Avogadro. ¿Quieres "
+"descargar Python?"
 
 #: qtplugins/configurepython/configurepython.h:26
 msgid "ConfigurePython"
@@ -3404,7 +3404,7 @@ msgstr "Avogadro"
 
 #: qtplugins/forcefield/forcefield.cpp:471
 msgid "No atoms provided for optimization"
-msgstr "No se proporcionan átomos para la optimización"
+msgstr "No hay átomos proporcionados para la optimización"
 
 #: qtplugins/forcefield/forcefield.cpp:549
 #, qt-format
@@ -3724,7 +3724,7 @@ msgstr "Insertar Péptido"
 
 #: qtplugins/insertpeptide/insertpeptide.h:36
 msgid "InsertPeptide"
-msgstr "InsertarPéptido"
+msgstr "InsertPeptide"
 
 #: qtplugins/insertpeptide/insertpeptide.h:39
 msgid "Insert oligopeptide sequences."
@@ -3985,7 +3985,7 @@ msgstr "Masa molecular (g/mol)"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:182
 msgid "Monoisotopic Mass (g/mol)"
-msgstr "Masa Monoisotopica (g/mol)"
+msgstr "Masa monoisotópica (g/mol)"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:184
 msgid "Chemical Formula"
@@ -4017,7 +4017,7 @@ msgstr "Carga neta"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:198
 msgid "Net Spin Multiplicity"
-msgstr "Multiplicidad de espín neto"
+msgstr "Multiplicidad de giro neto"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:200
 msgid "Dipole Moment (Debye)"
@@ -4902,7 +4902,7 @@ msgstr "Traza datos conformados…"
 
 #: qtplugins/plotconformer/plotconformer.cpp:129
 msgid "Conformer Analysis"
-msgstr "Análisis de conformados"
+msgstr "Análisis del Conformador"
 
 #: qtplugins/plotconformer/plotconformer.cpp:143
 msgid "Plot Type:"
@@ -4933,7 +4933,7 @@ msgstr "RMSE (Å)"
 #: qtplugins/plotconformer/plotconformer.cpp:232
 #, qt-format
 msgid "Relative Energy (%1)"
-msgstr "Energía Relativa (%1)"
+msgstr "Energía relativa (%1)"
 
 #: qtplugins/plotconformer/plotconformer.cpp:235
 msgid "Forces (N)"
@@ -5787,12 +5787,12 @@ msgstr "Raman"
 #: qtplugins/spectra/spectradialog.cpp:604
 msgctxt "vibrational circular dichroism"
 msgid "Vibrational CD"
-msgstr "Dicroísmo Circular Vibracional"
+msgstr "CD vibracional"
 
 #: qtplugins/spectra/spectradialog.cpp:608
 msgctxt "magnetic circular dichroism"
 msgid "Magnetic CD"
-msgstr "Dicroísmo Circular Magnético"
+msgstr "CD magnético"
 
 #: qtplugins/spectra/spectradialog.cpp:612
 msgid "NMR"
@@ -8222,7 +8222,7 @@ msgstr "Átomos seleccionados"
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:233
 #. i18n: ectx: property (text), item, widget (QComboBox, moveComboBox)
 msgid "Everything Else"
-msgstr "Otras cosas"
+msgstr "Todo lo demás"
 
 #. i18n: file: qtplugins/openbabel/conformersearchdialog.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConformerSearchDialog)
@@ -8851,7 +8851,7 @@ msgstr ""
 #. i18n: file: qtplugins/plotxrd/xrdoptionsdialog.ui:141
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 msgid "Max 2θ:"
-msgstr "Máximo 2θ:"
+msgstr "Max 2θ:"
 
 #. i18n: file: qtplugins/qtaim/qtaimsettingswidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, atomRadiusLabel)
