@@ -24,8 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: avogadro-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2026-04-12 04:21+0000\n"
 "PO-Revision-Date: 2026-04-19 15:09+0000\n"
-"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
-"memory@weblate.org>\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/avogadro/"
 "avogadrolibs/es/>\n"
 "Language: es\n"
@@ -5276,19 +5275,19 @@ msgstr "Liberar Átomo"
 
 #: qtplugins/propertytables/propertyview.cpp:608
 msgid "Constrain Bond"
-msgstr "Fijar vínculo"
+msgstr "Restringir vínculo"
 
 #: qtplugins/propertytables/propertyview.cpp:610
 msgid "Constrain Angle"
-msgstr "Fijar ángulo"
+msgstr "Restringir ángulo"
 
 #: qtplugins/propertytables/propertyview.cpp:612
 msgid "Constrain Torsion"
-msgstr "Fijar torsión"
+msgstr "Restringir torsión"
 
 #: qtplugins/propertytables/propertyview.cpp:619
 msgid "Remove Constraint"
-msgstr "Liberar restricción"
+msgstr "Retirar restricción"
 
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:163
 #: qtplugins/qtaim/qtaimwavefunction.h:82
@@ -5502,7 +5501,7 @@ msgstr ""
 "\tArrastrar para seleccionar un grupo de átomos\n"
 "Botón derecho del ratón:\tPulse fuera de la molécula para vaciar la "
 "selección\n"
-"Utilizar «Ctrl» para alternar la selección y «shift» para añadir a la "
+"Utilizar «Ctrl» para alternar la selección y «Mayús» para añadir a la "
 "selección.\n"
 "Pulsación doble:\tSeleccionar un fragmento completo."
 
@@ -5582,10 +5581,10 @@ msgid ""
 "Hall symbol: %3\n"
 "International symbol: %4"
 msgstr ""
-"Percepción del grupo espacial tuvo éxito:\n"
-"Tolerancia: %1  Å\n"
-"Grupo Espacial:%2\n"
-"Símbolo de Hall: %3\n"
+"Percepción lograda del grupo espacial:\n"
+"Tolerancia:       %1  Å\n"
+"Grupo espacial:%2\n"
+"Símbolo salón: %3\n"
 "Símbolo internacional: %4"
 
 #: qtplugins/spacegroup/spacegroup.cpp:428
@@ -5653,13 +5652,13 @@ msgid ""
 "\n"
 "Proceed with this space group?"
 msgstr ""
-"Con una tolerancia de %1  Å, la información del grupo espacial percibida fue "
-"la siguiente: \n"
-"Numero internacional: %2\n"
-"Símbolo de Hall: %3\n"
+"Con una tolerancia de %1 Å, se percibía que la información del grupo "
+"espacial era la siguiente: \n"
+"Número internacional: %2\n"
+"Símbolo salón: %3\n"
 "Símbolo internacional: %4\n"
 "\n"
-"Proceder con este grupo espacial?"
+"¿Proceder con este grupo espacial?"
 
 #: qtplugins/spacegroup/spacegroup.cpp:600 qtplugins/yaehmop/yaehmop.cpp:208
 #: qtplugins/yaehmop/yaehmop.cpp:298 qtplugins/yaehmop/yaehmop.cpp:310
@@ -6178,7 +6177,7 @@ msgid ""
 "Select a ligand or functional group and click on a hydrogen atom to attach "
 "it."
 msgstr ""
-"Herramienta de Plantilla\t(%1)\n"
+"Herramienta Plantilla\t(%1)\n"
 "\n"
 "Insertar fragmentos, incluyendo centros metálicos.\n"
 "Seleccione un elemento y una geometría de coordinación, después presione "
