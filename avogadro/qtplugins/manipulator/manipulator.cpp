@@ -30,6 +30,9 @@ using QtGui::Molecule;
 using QtGui::RWAtom;
 
 #define ROTATION_SPEED 0.5
+#ifndef DEG_TO_RAD
+#define DEG_TO_RAD 0.0174532925
+#endif
 
 class ManipulateWidget : public QWidget, public Ui::ManipulateWidget
 {
@@ -51,7 +54,11 @@ Manipulator::Manipulator(QObject* parent_)
   m_activateAction->setToolTip(
     tr("Manipulation Tool\t(%1)\n\n"
        "Left Mouse:\tClick and drag to move atoms\n"
-       "Right Mouse:\tClick and drag to rotate atoms.")
+       "Right Mouse:\tClick and drag to rotate atoms\n\n"
+       "Arrow Keys:\tTranslate atoms\n"
+       "Shift+Arrows:\tRotate around X/Y axes\n"
+       "Ctrl+Left/Right:\tRotate around Z axis\n"
+       "Alt+:\t\tLarger steps")
       .arg(shortcut));
   setIcon();
   connect(m_toolWidget->buttonBox, SIGNAL(clicked(QAbstractButton*)), this,
@@ -136,9 +143,6 @@ void Manipulator::buttonClicked(QAbstractButton* button)
   }
 
   // Settings are in degrees
-#ifndef DEG_TO_RAD
-#define DEG_TO_RAD 0.0174532925
-#endif
   axisRotate(rotation * DEG_TO_RAD, center, moveSelected);
 
   m_molecule->emitChanged(Molecule::Atoms | Molecule::Modified);
@@ -146,31 +150,88 @@ void Manipulator::buttonClicked(QAbstractButton* button)
 
 QUndoCommand* Manipulator::keyPressEvent(QKeyEvent* e)
 {
+  if (!m_molecule)
+    return nullptr;
+
+  bool moveSelected = true;
+  if (m_toolWidget != nullptr)
+    moveSelected = (m_toolWidget->moveComboBox->currentIndex() == 0);
+
+  // Alt modifier = bigger changes (like navigator)
+  double scale = 1.0;
+  if (e->modifiers() & Qt::AltModifier)
+    scale = 6.0;
+
+  // Get modifiers without Alt for comparison
+  Qt::KeyboardModifiers mods = e->modifiers() & ~(Qt::AltModifier);
+
+  // Rotation step in radians (~5 degrees)
+  double rotStep = 5.0 * DEG_TO_RAD * scale;
+  // Translation step in Angstroms
+  double transStep = 0.1 * scale;
+
+  // Compute centroid for rotation center
+  Vector3 centroid(0.0, 0.0, 0.0);
+  if (mods & (Qt::ShiftModifier | Qt::ControlModifier)) {
+    unsigned long selectedAtomCount = 0;
+    for (Index i = 0; i < m_molecule->atomCount(); ++i) {
+      if (moveSelected && !m_molecule->atomSelected(i))
+        continue;
+      else if (!moveSelected && m_molecule->atomSelected(i))
+        continue;
+
+      centroid += m_molecule->atomPosition3d(i);
+      selectedAtomCount++;
+    }
+    if (selectedAtomCount > 0)
+      centroid /= selectedAtomCount;
+  }
+
   switch (e->key()) {
     case Qt::Key_Left:
     case Qt::Key_H:
     case Qt::Key_A:
-      translate(Vector3(-0.1, 0.0, 0.0));
+      if (mods == Qt::NoModifier || mods == Qt::KeypadModifier)
+        translate(Vector3(-transStep, 0.0, 0.0), moveSelected);
+      else if (mods & Qt::ShiftModifier)
+        axisRotate(Vector3(0.0, -rotStep, 0.0), centroid, moveSelected);
+      else if (mods & Qt::ControlModifier)
+        axisRotate(Vector3(0.0, 0.0, -rotStep), centroid, moveSelected);
       e->accept();
       break;
+
     case Qt::Key_Right:
     case Qt::Key_L:
     case Qt::Key_D:
-      translate(Vector3(+0.1, 0.0, 0.0));
+      if (mods == Qt::NoModifier || mods == Qt::KeypadModifier)
+        translate(Vector3(+transStep, 0.0, 0.0), moveSelected);
+      else if (mods & Qt::ShiftModifier)
+        axisRotate(Vector3(0.0, +rotStep, 0.0), centroid, moveSelected);
+      else if (mods & Qt::ControlModifier)
+        axisRotate(Vector3(0.0, 0.0, +rotStep), centroid, moveSelected);
       e->accept();
       break;
+
     case Qt::Key_Up:
     case Qt::Key_K:
     case Qt::Key_W:
-      translate(Vector3(0.0, +0.1, 0.0));
+      if (mods == Qt::NoModifier || mods == Qt::KeypadModifier)
+        translate(Vector3(0.0, +transStep, 0.0), moveSelected);
+      else if (mods & Qt::ShiftModifier)
+        axisRotate(Vector3(-rotStep, 0.0, 0.0), centroid, moveSelected);
       e->accept();
       break;
+
     case Qt::Key_Down:
     case Qt::Key_J:
     case Qt::Key_S:
-      translate(Vector3(0.0, -0.1, 0.0));
+      if (mods == Qt::NoModifier || mods == Qt::KeypadModifier)
+        translate(Vector3(0.0, -transStep, 0.0), moveSelected);
+      else if (mods & Qt::ShiftModifier)
+        axisRotate(Vector3(+rotStep, 0.0, 0.0), centroid, moveSelected);
       e->accept();
       break;
+
     default:
       e->ignore();
   }
