@@ -58,7 +58,7 @@ Manipulator::Manipulator(QObject* parent_)
        "Arrow Keys:\tTranslate atoms\n"
        "Shift+Arrows:\tRotate around X/Y axes\n"
        "Ctrl+Left/Right:\tRotate around Z axis\n"
-       "Alt+:\t\tLarger steps")
+       "Alt+<key>:\tLarger steps")
       .arg(shortcut));
   setIcon();
   connect(m_toolWidget->buttonBox, SIGNAL(clicked(QAbstractButton*)), this,
@@ -157,18 +157,17 @@ QUndoCommand* Manipulator::keyPressEvent(QKeyEvent* e)
   if (m_toolWidget != nullptr)
     moveSelected = (m_toolWidget->moveComboBox->currentIndex() == 0);
 
-  // Alt modifier = bigger changes (like navigator)
-  double scale = 1.0;
-  if (e->modifiers() & Qt::AltModifier)
-    scale = 6.0;
-
   // Get modifiers without Alt for comparison
   Qt::KeyboardModifiers mods = e->modifiers() & ~(Qt::AltModifier);
 
   // Rotation step in radians (~5 degrees)
-  double rotStep = 5.0 * DEG_TO_RAD * scale;
+  double rotStep = 5.0 * DEG_TO_RAD;
   // Translation step in Angstroms
-  double transStep = 0.1 * scale;
+  double transStep = 0.1;
+  if (e->modifiers() & Qt::AltModifier) {
+    rotStep = 10.0 * DEG_TO_RAD;
+    transStep = 0.5;
+  }
 
   // Compute centroid for rotation center
   Vector3 centroid(0.0, 0.0, 0.0);
