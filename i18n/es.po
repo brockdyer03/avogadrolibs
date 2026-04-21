@@ -9,21 +9,22 @@
 # gallegonovato <fran-carro@hotmail.es>, 2022, 2023, 2024.
 # William <eduardo.957@hotmail.com>, 2022.
 # Alejandro Díaz-Moscoso <a.diaz.moscoso@csic.es>, 2023.
-# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025, 2026.
 # Saúl Palacios <palacios22c@gmail.com>, 2025.
-# LibreTranslate <noreply-mt-libretranslate@weblate.org>, 2025.
+# LibreTranslate <noreply-mt-libretranslate@weblate.org>, 2025, 2026.
 # Adrian Lopez <adrlop1012@gmail.com>, 2025.
 # Armando Castro <darkarr2d2@gmail.com>, 2025.
 # Eisuke Kawashima <e.kawaschima+weblate@gmail.com>, 2025, 2026.
 # Javier Cerezo <jcb1@um.es>, 2026.
 # "Juan E. Arias Martinez" <jeam.professional@gmail.com>, 2026.
+# Francisco Serrador <fserrador@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: avogadro\n"
 "Report-Msgid-Bugs-To: avogadro-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2026-04-12 04:21+0000\n"
-"PO-Revision-Date: 2026-03-28 05:09+0000\n"
-"Last-Translator: \"Juan E. Arias Martinez\" <jeam.professional@gmail.com>\n"
+"PO-Revision-Date: 2026-04-19 15:09+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/avogadro/"
 "avogadrolibs/es/>\n"
 "Language: es\n"
@@ -31,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "X-Launchpad-Export-Date: 2018-04-13 16:01+0000\n"
 
 #: molequeue/batchjob.cpp:66
@@ -1200,7 +1201,7 @@ msgstr "Modelo"
 
 #: qtgui/jsonwidget.cpp:386
 msgid "User Name"
-msgstr "Nombre de Usuario"
+msgstr "Nombre de usuario"
 
 #: qtgui/jsonwidget.cpp:388
 msgid "Password"
@@ -1399,8 +1400,8 @@ msgid ""
 "Error writing raw request to script stdin (len=%1, wrote %2 bytes, QProcess "
 "error: %3)."
 msgstr ""
-"Error al escribir solicitud en bruto al guion stdin (len=1%, escribió %2 "
-"bits, error de QProcess: %3)."
+"Error al escribir solicitud en bruto al guion stdin (len=%1, escribió %2 "
+"bit, error de QProcess: %3)."
 
 #: qtgui/pythonscript.cpp:428
 msgid "Script failed to start."
@@ -1496,7 +1497,7 @@ msgstr "Cambiar Color de un Átomo"
 
 #: qtgui/rwmolecule.cpp:286
 msgid "Change Residue Color"
-msgstr "Cambiar Color del Residuo"
+msgstr "Cambiar el color residual"
 
 #: qtgui/rwmolecule.cpp:298
 msgid "Change Atom Layer"
@@ -1601,7 +1602,7 @@ msgstr "Cambiar la Etiqueta de un Átomo"
 
 #: qtgui/rwmolecule.h:261
 msgid "Change Bond Label"
-msgstr "Etiqueta cambio de enlace"
+msgstr "Etiqueta cambio de vínculo"
 
 #: qtgui/rwmolecule.h:267
 msgid "Change Selection"
@@ -1621,7 +1622,7 @@ msgstr "Calculando…"
 
 #: qtgui/timedprogressdialog.cpp:79
 msgid "Less than a second remaining"
-msgstr "Falta menos de un segundo"
+msgstr "Menos de un segundo restante"
 
 #: qtgui/timedprogressdialog.cpp:82
 #, qt-plural-format
@@ -1729,7 +1730,7 @@ msgstr ""
 "\tEl primer átomo se centra en el origen.\n"
 "\tEl segundo átomo está alineado con el eje seleccionado.\n"
 "Botón Derecho del Ratón:\tCambiar la alineación.\n"
-"Doble clic:\tCentrar el átomo en el origen."
+"Pulsación doble:\tCentrar el átomo en el origen."
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:230
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -2123,7 +2124,7 @@ msgstr "Aplicar Colores de Distancia"
 
 #: qtplugins/applycolors/applycolors.cpp:353
 msgid "Reset Atom Colors"
-msgstr "Reiniciar los Colores de Atomo"
+msgstr "Reiniciar los Colores de Átomo"
 
 #: qtplugins/applycolors/applycolors.cpp:379
 msgid "Apply Custom Color"
@@ -2139,15 +2140,15 @@ msgstr "Reiniciar Colores de Residuos"
 
 #: qtplugins/applycolors/applycolors.cpp:474
 msgid "Apply Secondary Structure Colors"
-msgstr "Aplicar Colores de Estructura Secundaria"
+msgstr "Aplicar colores de estructura secundaria"
 
 #: qtplugins/applycolors/applycolors.cpp:562
 msgid "Apply Amino Acid Colors"
-msgstr "Aplicar Colores de Aminoácidos"
+msgstr "Aplicar colores de aminoácidos"
 
 #: qtplugins/applycolors/applycolors.cpp:589
 msgid "Apply Shapely Colors"
-msgstr "Aplicar Colores de Formas"
+msgstr "Aplicar colores de formas"
 
 #: qtplugins/applycolors/applycolors.h:29
 msgid "ApplyColors"
@@ -2160,7 +2161,7 @@ msgstr "Ctrl+7"
 
 #: qtplugins/autoopt/autoopt.cpp:68
 msgid "Auto Optimize"
-msgstr "Optimizar Automaticamente"
+msgstr "Optimizar automáticamente"
 
 #: qtplugins/autoopt/autoopt.cpp:70
 #, qt-format
@@ -2179,14 +2180,13 @@ msgid ""
 msgstr ""
 "Herramienta de Optimización Automática\t(%1)\n"
 "\n"
-"Funciones de Navegación cuando se hace clic en un espacio vacio.\n"
+"Funciones de Navegación cuando se hace clic en un espacio vacío.\n"
 "Botón izquierdo del ratón:\tRotar el Espacio\n"
 "Botón central del ratón:\tAcercar el Espacio\n"
 "Botón derecho del ratón:\tMover el Espacio\n"
 "Doble-Clic:\tReiniciar la Vista\n"
 "\n"
 "Durante la ejecución:\n"
-"\n"
 "Botón izquierdo del ratón:\tHaga clic en los átomos y arrástrelos para "
 "moverlos.\n"
 "Botón derecho del ratón:\tHaga clic en los átomos y arrástrelos para "
@@ -2198,7 +2198,7 @@ msgstr "Optimizar"
 
 #: qtplugins/autoopt/autoopt.cpp:206
 msgid "Dynamics"
-msgstr "Dinamica"
+msgstr "Dinámicas"
 
 #: qtplugins/autoopt/autoopt.cpp:210
 msgid "Task:"
@@ -2256,11 +2256,11 @@ msgstr "%1 ΔE = %L2"
 
 #: qtplugins/autoopt/autoopt.h:46
 msgid "Auto Optimize tool"
-msgstr "Herramienta de Optimización Automática"
+msgstr "Herramienta de optimización automática"
 
 #: qtplugins/autoopt/autoopt.h:49
 msgid "Interactive optimization of molecular geometry"
-msgstr "Optimización interactiva de la estructura molecular"
+msgstr "Optimización interactiva de la geometría molecular"
 
 #: qtplugins/ballandstick/ballandstick.cpp:107
 msgid "Atom scale"
@@ -2313,17 +2313,16 @@ msgid ""
 msgstr ""
 "Herramienta de manipulación Centrada en Enlaces\t(%1)\n"
 "\n"
-"Botón izquierdo del ratón:\tHaga clic y arrastre para rotar la vista.\n"
-"Botón central del ratón:\tHaga clic y arrastre para acercar o alejar la "
-"vista.\n"
-"Botón derecho del ratón:\tHaga clic y arrastre para mover la vista.\n"
+"Botón izquierdo del ratón:\tPulse y arrastre para rotar la vista.\n"
+"Botón central del ratón:\tPulse y arrastre para acercar o alejar la vista.\n"
+"Botón derecho del ratón:\tPulse y arrastre para mover la vista.\n"
 "Doble clic:\tReiniciar la vista.\n"
 "\n"
-"Haga clic con el botón izquierdo y arrastre un Enlace para establecer el "
-"Plano de Manipulación\n"
-"Haga clic con el botón izquierdo y arrastre uno de los Átomos del Enlace "
-"para cambiar el angulo\n"
-"Haga clic con el botón derecho y arrastre uno de los átomos del Enlace para "
+"Pulse con el botón izquierdo y arrastre un Enlace para establecer el Plano "
+"de Manipulación\n"
+"Pulse con el botón izquierdo y arrastre uno de los Átomos del Enlace para "
+"cambiar el angulo\n"
+"Pulse con el botón derecho y arrastre uno de los Átomos del Enlace para "
 "cambiar la longitud"
 
 #: qtplugins/bondcentrictool/bondcentrictool.h:169
@@ -2482,7 +2481,7 @@ msgstr "Representar contactos cercanos entre átomos."
 #: qtplugins/packageinstaller/packageinstaller.cpp:35
 #: qtplugins/yaehmop/yaehmop.cpp:111
 msgid "&Extensions"
-msgstr "&Extensiones"
+msgstr "E&xtensiones"
 
 #: qtplugins/commandscripts/command.cpp:77
 #: qtplugins/commandscripts/command.cpp:96
@@ -2536,7 +2535,7 @@ msgstr "Ejecutar secuencias de comandos externas"
 #. i18n: ectx: property (windowTitle), widget (QDialog, Avogadro::QtPlugins::ConfigurePythonDialog)
 #: qtplugins/configurepython/configurepython.cpp:34:201 rc.cpp:216
 msgid "Python Settings…"
-msgstr "Configuración de Python…"
+msgstr "Ajustes de Python…"
 
 #: qtplugins/configurepython/configurepython.cpp:58
 msgid "Install Python"
@@ -2546,8 +2545,8 @@ msgstr "Instalar Python"
 msgid ""
 "Python is used for many Avogadro features. Do you want to download Python?"
 msgstr ""
-"Python se utiliza para muchas funciones de Avogadro. ¿Quieres descargar "
-"Python?"
+"Python se utiliza para muchas características de Avogadro. ¿Quieres "
+"descargar Python?"
 
 #: qtplugins/configurepython/configurepython.h:26
 msgid "ConfigurePython"
@@ -2586,11 +2585,11 @@ msgstr "&Calcular"
 #. i18n: ectx: property (windowTitle), widget (QDialog, Avogadro::QtPlugins::ConstraintsDialog)
 #: qtplugins/constraints/constraintsextension.h:27:226
 msgid "Constraints"
-msgstr "Restricciones..."
+msgstr "Restricciones"
 
 #: qtplugins/constraints/constraintsextension.h:31
 msgid "Set constraints for geometry optimizations"
-msgstr "Establecer restricciones para optimizaciones de estructura"
+msgstr "Establecer restricciones para optimizaciones geométricas"
 
 #. i18n: file: qtplugins/constraints/constraintsdialog.ui:56
 #. i18n: ectx: property (text), item, widget (QComboBox, comboType)
@@ -2628,7 +2627,7 @@ msgstr "Fijar Eje Y"
 #: qtplugins/constraints/constraintsmodel.cpp:74
 msgctxt "fix / remain constant"
 msgid "Freeze Z Axis"
-msgstr "FIjar Eje Z"
+msgstr "Fijar Eje Z"
 
 #: qtplugins/constraints/constraintsmodel.cpp:126
 #: qtplugins/propertytables/propertymodel.cpp:664
@@ -3405,7 +3404,7 @@ msgstr "Avogadro"
 
 #: qtplugins/forcefield/forcefield.cpp:471
 msgid "No atoms provided for optimization"
-msgstr "No se proporcionan átomos para la optimización"
+msgstr "No hay átomos proporcionados para la optimización"
 
 #: qtplugins/forcefield/forcefield.cpp:549
 #, qt-format
@@ -3421,7 +3420,7 @@ msgstr "%1 Energía = %L2"
 #: qtplugins/forcefield/forcefield.cpp:691
 #, qt-format
 msgid "%1 Force Norm = %L2"
-msgstr "%1 Criterios de la fuerza = %L2"
+msgstr "%1 criterios de la fuerza = %L2"
 
 #: qtplugins/forcefield/forcefield.h:61
 msgid "Forcefield optimization"
@@ -3445,7 +3444,7 @@ msgstr "Opción de Modelo Invalida"
 msgid "Could not parse user options for model '%1'."
 msgstr ""
 "No se pudo hacer la lectura linea por linea de las opciones de usuario para "
-"el modelo '%1',"
+"el modelo '%1'."
 
 #: qtplugins/forcefield/forcefielddialog.cpp:181
 #, qt-format
@@ -3725,7 +3724,7 @@ msgstr "Insertar Péptido"
 
 #: qtplugins/insertpeptide/insertpeptide.h:36
 msgid "InsertPeptide"
-msgstr "InsertarPéptido"
+msgstr "InsertPeptide"
 
 #: qtplugins/insertpeptide/insertpeptide.h:39
 msgid "Insert oligopeptide sequences."
@@ -3794,7 +3793,7 @@ msgstr "Nombre"
 
 #: qtplugins/label/label.cpp:245
 msgid "Name & ID"
-msgstr "Nombre y Identificación"
+msgstr "Nombre e Identificación"
 
 #: qtplugins/label/label.cpp:252
 msgid "Residue Label:"
@@ -3816,7 +3815,7 @@ msgid ""
 msgstr ""
 "Herramienta de Etiquetas de Átomos\n"
 "\n"
-"Botón izquierdo del ratón:\tHaga clic en los átomos para añadir Etiquetas "
+"Botón izquierdo del ratón:\tPulse en los átomos para añadir Etiquetas "
 "Personalizadas"
 
 #: qtplugins/label/labeleditor.cpp:79
@@ -3886,7 +3885,7 @@ msgstr "¡No se encontraron coordenadas!"
 
 #: qtplugins/lineformatinput/lineformatinput.cpp:146
 msgid "Unable to generate 3D coordinates."
-msgstr "No se pudo generar coordenadas en 3D."
+msgstr "No es capaz de generar coordenadas en 3D."
 
 #: qtplugins/lineformatinput/lineformatinput.h:31
 msgid "LineFormatInput"
@@ -3916,8 +3915,8 @@ msgid ""
 msgstr ""
 "Herramienta de Manipulación\t(%1)\n"
 "\n"
-"Botón izquierdo del ratón:\tClic y arrastrar para mover átomos\n"
-"Botón derecho del ratón:\tClic y arrastrar para rotar átomos."
+"Botón izquierdo del ratón:\tPulse y arrastre para mover átomos\n"
+"Botón derecho del ratón:\tPulse y arrastre para rotar átomos."
 
 #: qtplugins/manipulator/manipulator.h:36
 #: qtplugins/manipulator/manipulator.h:37
@@ -3944,7 +3943,7 @@ msgid ""
 "\tDihedral is measured between 1-2-3-4\n"
 "Right Mouse:\tReset the measurements."
 msgstr ""
-"Herramienta de Medición\t(%1)\n"
+"Herramienta de medición\t(%1)\n"
 "\n"
 "Botón izquierdo del ratón: Seleccione hasta cuatro átomos.\n"
 "\tLas distancias se miden entre 1-2 y 2-3\n"
@@ -3986,7 +3985,7 @@ msgstr "Masa molecular (g/mol)"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:182
 msgid "Monoisotopic Mass (g/mol)"
-msgstr "Masa Monoisotopica (g/mol)"
+msgstr "Masa monoisotópica (g/mol)"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:184
 msgid "Chemical Formula"
@@ -4018,7 +4017,7 @@ msgstr "Carga neta"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:198
 msgid "Net Spin Multiplicity"
-msgstr "Multiplicidad de espín neto"
+msgstr "Multiplicidad de giro neto"
 
 #: qtplugins/molecularproperties/molecularmodel.cpp:200
 msgid "Dipole Moment (Debye)"
@@ -4064,7 +4063,7 @@ msgstr "Energía libre de Gibbs (kcal/mol)"
 #: qtplugins/molecularproperties/molecularmodel.cpp:220
 msgctxt "point group symmetry"
 msgid "Point Group"
-msgstr "Grupo de puntos"
+msgstr "Grupo de punto"
 
 #: qtplugins/molecularproperties/molecularproperties.cpp:38
 msgid "&Molecular…"
@@ -4141,12 +4140,11 @@ msgid ""
 "Middle Mouse:\tClick and drag to zoom in or out.\n"
 "Right Mouse:\tClick and drag to move the view."
 msgstr ""
-"Herramienta de Navegación\t(%1)\n"
+"Herramienta de Navegación \t(%1)\n"
 "\n"
-"Botón izquierdo del ratón:\tHaga clic y arrastre para girar la vista.\n"
-"Botón central del ratón:\tHaga clic y arrastre para acercar o alejar la "
-"vista.\n"
-"Botón derecho del ratón:\tHaga clic y arrastre para mover la vista."
+"Botón izquierdo del ratón:\tPulse y arrastre para girar la vista.\n"
+"Botón central del ratón:\tPulse y arrastre para acercar o alejar la vista.\n"
+"Botón derecho del ratón:\tPulse y arrastre para mover la vista."
 
 #: qtplugins/navigator/navigator.cpp:63
 msgid "Rotate the scene along the x, y, or z axes."
@@ -4169,8 +4167,8 @@ msgid ""
 "Default:\tScroll down to shrink, scroll up to zoom\n"
 "Reversed:\tScroll up to shrink, scroll down to zoom"
 msgstr ""
-"Configuración Predeterminada:\tBaje para alejar, suba para aumentar\n"
-"Configuración Invertida:\tSuba para alejar, baje para aumentar"
+"Por defecto:\tBaje para alejar, suba para aumentar\n"
+"Invertido:\tSuba para alejar, baje para aumentar"
 
 #: qtplugins/navigator/navigator.h:31 qtplugins/navigator/navigator.h:32
 msgid "Navigate tool"
@@ -4548,7 +4546,7 @@ msgstr "Error al buscar el README: %1"
 
 #: qtplugins/packageinstaller/packagemanagerdialog.cpp:282
 msgid "Nothing Selected"
-msgstr "Nada Seleccionado."
+msgstr "Nada Seleccionado"
 
 #: qtplugins/packageinstaller/packagemanagerdialog.cpp:283
 msgid "Check the box next to a plugin to install or update it."
@@ -4664,7 +4662,7 @@ msgstr[1] "Remover %n extensiones seleccionadas?"
 
 #: qtplugins/packageinstaller/packagemanagerdialog.cpp:566
 msgid "Keep Files"
-msgstr "Conservar Archivos"
+msgstr "Conservar archivos"
 
 #: qtplugins/packageinstaller/packagemanagerdialog.cpp:568
 msgid "Delete Files"
@@ -4767,7 +4765,7 @@ msgstr "Formatos de Archivo"
 
 #: qtplugins/packageinstaller/packagemodel.cpp:531
 msgid "Input Generators"
-msgstr "Generadores de Entrada"
+msgstr "Generadores de entradas"
 
 #: qtplugins/packageinstaller/packagemodel.cpp:533
 msgid "Commands"
@@ -4824,7 +4822,7 @@ msgstr "Fotograma:"
 #: qtplugins/playertool/playertool.cpp:114
 msgctxt "start or first frame index"
 msgid "Start:"
-msgstr "Comienzo:"
+msgstr "Inicio:"
 
 #: qtplugins/playertool/playertool.cpp:125
 msgctxt "end or last frame index"
@@ -4851,7 +4849,7 @@ msgstr "Reproducir"
 
 #: qtplugins/playertool/playertool.cpp:166
 msgid "Record…"
-msgstr "Registrar…"
+msgstr "Grabar…"
 
 #: qtplugins/playertool/playertool.cpp:260
 msgid "Pause"
@@ -4900,15 +4898,15 @@ msgstr "Rebobinar trayectorias"
 
 #: qtplugins/plotconformer/plotconformer.cpp:38
 msgid "Plot Conformer Data…"
-msgstr "Visualizar Data de Confórmero…"
+msgstr "Traza datos conformados…"
 
 #: qtplugins/plotconformer/plotconformer.cpp:129
 msgid "Conformer Analysis"
-msgstr "Análisis de Confórmeros"
+msgstr "Análisis del Conformador"
 
 #: qtplugins/plotconformer/plotconformer.cpp:143
 msgid "Plot Type:"
-msgstr "Tipo de Visualización:"
+msgstr "Tipo de traza:"
 
 #. i18n: file: qtplugins/openbabel/conformersearchdialog.ui:191
 #. i18n: ectx: property (text), item, widget (QComboBox, scoringComboBox)
@@ -4922,7 +4920,7 @@ msgstr "Velocidades"
 
 #: qtplugins/plotconformer/plotconformer.cpp:160
 msgid "Energy Units:"
-msgstr "Unidades de Energía:"
+msgstr "Ud. de energía:"
 
 #: qtplugins/plotconformer/plotconformer.cpp:169
 msgid "to"
@@ -4930,12 +4928,12 @@ msgstr "a"
 
 #: qtplugins/plotconformer/plotconformer.cpp:229
 msgid "RMSD (Å)"
-msgstr "RMSE (Å)"
+msgstr "RMSD (Å)"
 
 #: qtplugins/plotconformer/plotconformer.cpp:232
 #, qt-format
 msgid "Relative Energy (%1)"
-msgstr "Energía Relativa (%1)"
+msgstr "Energía relativa (%1)"
 
 #: qtplugins/plotconformer/plotconformer.cpp:235
 msgid "Forces (N)"
@@ -4947,11 +4945,11 @@ msgstr "Velocidades (m/s)"
 
 #: qtplugins/plotconformer/plotconformer.h:36
 msgid "PlotConformer"
-msgstr "VisualizarConfórmero"
+msgstr "PlotConformer"
 
 #: qtplugins/plotconformer/plotconformer.h:82
 msgid "Generate and plot conformer data (RMSD or energy)."
-msgstr "Generar y visualizar data de confórmeros (RMSE o energia)."
+msgstr "Generar y trazar datos de conformidad (RMSE o energía)."
 
 #: qtplugins/plotpdf/plotpdf.cpp:36
 msgid "Plot Pair Distribution Function…"
@@ -5046,7 +5044,7 @@ msgstr "Representar las escenas utilizando POV-Ray."
 
 #: qtplugins/propertytables/propertymodel.cpp:307
 msgid "Click to change color"
-msgstr "Clic para cambiar el color"
+msgstr "Pulse para cambiar el color"
 
 #: qtplugins/propertytables/propertymodel.cpp:632
 msgid "Valence"
@@ -5082,7 +5080,7 @@ msgstr "Etiqueta"
 
 #: qtplugins/propertytables/propertymodel.cpp:652
 msgid "Isotope"
-msgstr "Isotopo"
+msgstr "Isótopo"
 
 #: qtplugins/propertytables/propertymodel.cpp:654
 #: qtplugins/propertytables/propertymodel.cpp:697
@@ -5206,13 +5204,13 @@ msgstr "Propiedades de Residuos…"
 
 #: qtplugins/propertytables/propertytables.cpp:63
 msgid "Conformer Properties…"
-msgstr "Propiedades Heteromorfismo…"
+msgstr "Propiedades heteromorfismo…"
 
 #: qtplugins/propertytables/propertytables.cpp:75
 msgid ""
 "Tables for displaying and editing atom, bond, angle and torsion properties."
 msgstr ""
-"Tablas para visualizar y editar propiedades de átomos, enlaces, ángulos y "
+"Tablas para exhibir y editar propiedades de átomos, ligadura, ángulos y "
 "torsiones."
 
 #: qtplugins/propertytables/propertytables.h:29
@@ -5253,7 +5251,7 @@ msgstr "Seleccione el tipo de carga parcial:"
 
 #: qtplugins/propertytables/propertyview.cpp:580
 msgid "Change Charge Type…"
-msgstr "Cambiar el Tipo de Carga…"
+msgstr "Cambio de tipo de carga…"
 
 #: qtplugins/propertytables/propertyview.cpp:587
 msgid "Freeze Atom"
@@ -5277,19 +5275,19 @@ msgstr "Liberar Átomo"
 
 #: qtplugins/propertytables/propertyview.cpp:608
 msgid "Constrain Bond"
-msgstr "Fijar Enlace"
+msgstr "Restringir vínculo"
 
 #: qtplugins/propertytables/propertyview.cpp:610
 msgid "Constrain Angle"
-msgstr "Fijar Ángulo"
+msgstr "Restringir ángulo"
 
 #: qtplugins/propertytables/propertyview.cpp:612
 msgid "Constrain Torsion"
-msgstr "Fijar Torsión"
+msgstr "Restringir torsión"
 
 #: qtplugins/propertytables/propertyview.cpp:619
 msgid "Remove Constraint"
-msgstr "Liberar Restricción"
+msgstr "Retirar restricción"
 
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:163
 #: qtplugins/qtaim/qtaimwavefunction.h:82
@@ -5299,7 +5297,7 @@ msgstr "No se puede leer el archivo %1."
 
 #: qtplugins/qtaim/qtaimcriticalpointlocator.cpp:451
 msgid "Failed to create a temporary file."
-msgstr "Se fallo al crear un archivo temporal."
+msgstr "No se ha podido crear un archivo temporal."
 
 #: qtplugins/qtaim/qtaimengine.h:25 qtplugins/qtaim/qtaimextension.cpp:68
 #: qtplugins/qtaim/qtaimextension.h:22
@@ -5496,16 +5494,16 @@ msgid ""
 "Use Ctrl to toggle the selection and shift to add to the selection.\n"
 "Double-Click:\tSelect an entire fragment."
 msgstr ""
-"Herramienta de Selección\t(%1)\n"
+"Herramienta de selección\t(%1)\n"
 "\n"
-"Botón Izquierdo del Ratón:\tPresionar para seleccionar átomos individuales, "
+"Botón izquierdo del ratón:\tPulse para seleccionar átomos individuales, "
 "residuos, o fragmentos\n"
 "\tArrastrar para seleccionar un grupo de átomos\n"
-"Botón Derecho del ratón:\tPresionar fuera de la molécula para limpiar la "
+"Botón derecho del ratón:\tPulse fuera de la molécula para vaciar la "
 "selección\n"
-"Utilizar «Ctrl» para alternar la selección y «shift» para añadir a la "
+"Utilizar «Ctrl» para alternar la selección y «Mayús» para añadir a la "
 "selección.\n"
-"Doble Clic:\tSeleccionar un fragmento completo."
+"Pulsación doble:\tSeleccionar un fragmento completo."
 
 #: qtplugins/selectiontool/selectiontool.cpp:248
 msgid "Paint Atoms"
@@ -5546,7 +5544,7 @@ msgstr "Llenar Celda Unidad…"
 #: qtplugins/spacegroup/spacegroup.cpp:101
 msgctxt "fill the translationally unique repeat unit"
 msgid "Fill Translation Cell…"
-msgstr "Llenar la Celda de Traslado…"
+msgstr "Llenar la celda de traslado…"
 
 #: qtplugins/spacegroup/spacegroup.cpp:126
 msgid "Space Group"
@@ -5558,7 +5556,7 @@ msgstr "Rellenar átomos simétricos en función del grupo espacial del cristal.
 
 #: qtplugins/spacegroup/spacegroup.cpp:135
 msgid "Fill all atoms based on the crystal space group."
-msgstr "Llenar todos los átomos basados en el grupo espacial del cristal."
+msgstr "Llena todos los átomos basados en el grupo espacial de cristal."
 
 #: qtplugins/spacegroup/spacegroup.cpp:394
 #: qtplugins/spacegroup/spacegroup.cpp:422
@@ -5571,8 +5569,8 @@ msgid ""
 "The space group is already set to: %1.\n"
 "Would you like to overwrite it?"
 msgstr ""
-"El grupo espacial ya está configurado en: %1.\n"
-"¿Desea sobrescribirlo?"
+"El grupo espacial ya está establecido en: %1.\n"
+"¿Desearía sobrescribirlo?"
 
 #: qtplugins/spacegroup/spacegroup.cpp:411
 #, qt-format
@@ -5583,10 +5581,10 @@ msgid ""
 "Hall symbol: %3\n"
 "International symbol: %4"
 msgstr ""
-"Percepción del grupo espacial tuvo éxito:\n"
-"Tolerancia: %1  Å\n"
-"Grupo Espacial:%2\n"
-"Símbolo de Hall: %3\n"
+"Percepción lograda del grupo espacial:\n"
+"Tolerancia:       %1  Å\n"
+"Grupo espacial:%2\n"
+"Símbolo salón: %3\n"
 "Símbolo internacional: %4"
 
 #: qtplugins/spacegroup/spacegroup.cpp:428
@@ -5654,13 +5652,13 @@ msgid ""
 "\n"
 "Proceed with this space group?"
 msgstr ""
-"Con una tolerancia de %1  Å, la información del grupo espacial percibida fue "
-"la siguiente: \n"
-"Numero internacional: %2\n"
-"Símbolo de Hall: %3\n"
+"Con una tolerancia de %1 Å, se percibía que la información del grupo "
+"espacial era la siguiente: \n"
+"Número internacional: %2\n"
+"Símbolo salón: %3\n"
 "Símbolo internacional: %4\n"
 "\n"
-"Proceder con este grupo espacial?"
+"¿Proceder con este grupo espacial?"
 
 #: qtplugins/spacegroup/spacegroup.cpp:600 qtplugins/yaehmop/yaehmop.cpp:208
 #: qtplugins/yaehmop/yaehmop.cpp:298 qtplugins/yaehmop/yaehmop.cpp:310
@@ -5734,7 +5732,7 @@ msgstr ""
 
 #: qtplugins/spacegroup/spacegroup.cpp:680
 msgid "Failed to conventionalize the cell."
-msgstr "Se fallo el convencionalizar la celda."
+msgstr "Se fallo el hacer convencional la celda."
 
 #: qtplugins/spacegroup/spacegroup.cpp:696
 msgid "International"
@@ -5789,12 +5787,12 @@ msgstr "Raman"
 #: qtplugins/spectra/spectradialog.cpp:604
 msgctxt "vibrational circular dichroism"
 msgid "Vibrational CD"
-msgstr "Dicroísmo Circular Vibracional"
+msgstr "CD vibracional"
 
 #: qtplugins/spectra/spectradialog.cpp:608
 msgctxt "magnetic circular dichroism"
 msgid "Magnetic CD"
-msgstr "Dicroísmo Circular Magnético"
+msgstr "CD magnético"
 
 #: qtplugins/spectra/spectradialog.cpp:612
 msgid "NMR"
@@ -5827,7 +5825,7 @@ msgstr "Seleccionar espectro de color calculado"
 
 #: qtplugins/spectra/spectradialog.cpp:718
 msgid "Select Raw Spectra Color"
-msgstr "Seleccionar el Color del Espectro en Bruto"
+msgstr "Seleccionar Color del Espectro en Bruto"
 
 #: qtplugins/spectra/spectradialog.cpp:731
 msgid "Select Imported Spectra Color"
@@ -5920,7 +5918,7 @@ msgstr "Importado"
 
 #: qtplugins/spectra/spectradialog.cpp:1057
 msgid "Import Data"
-msgstr "Importar Data"
+msgstr "Importar Datos"
 
 #: qtplugins/spectra/spectradialog.cpp:1057
 msgid "CSV Files (*.csv);;TSV Files (*.tsv)"
@@ -5942,7 +5940,7 @@ msgstr "Estilo:"
 
 #: qtplugins/surfacerender/surfacerender.h:33
 msgid "Render molecular surfaces."
-msgstr "Renderizar superficies moleculares."
+msgstr "Representar superficies moleculares."
 
 #: qtplugins/surfaces/orbitals.cpp:35
 msgid "Molecular Orbitals…"
@@ -5989,7 +5987,7 @@ msgstr "LUMO"
 
 #: qtplugins/surfaces/orbitalwidget.cpp:26
 msgid "Molecular Orbitals"
-msgstr "Orbitales moleculares"
+msgstr "Orbitales Moleculares"
 
 #: qtplugins/surfaces/surfacedialog.cpp:26
 msgid "Solvent Accessible"
@@ -6094,7 +6092,7 @@ msgstr "Calculando orbital molecular %L1"
 #: qtplugins/surfaces/surfaces.cpp:905
 msgctxt "finished rendering surface or molecular orbital"
 msgid "Surface Finished"
-msgstr "Superficie Terminada"
+msgstr "Superficie Finalizada"
 
 #: qtplugins/surfaces/surfaces.cpp:916 qtplugins/surfaces/surfaces.cpp:944
 msgid "Movie AVI (*.avi)"
@@ -6110,7 +6108,7 @@ msgstr "Película MP4 (*.mp4);;Película AVI (*.avi);;GIF (*.gif)"
 
 #: qtplugins/surfaces/surfaces.cpp:969
 msgid "Couldn't find the active render widget, failing."
-msgstr "No se pudo encontrar el widget de render activo, fallando."
+msgstr "No pude encontrar el widget de representante activo, fallando."
 
 #: qtplugins/surfaces/surfaces.h:74
 msgid "Read and render surfaces."
@@ -6179,7 +6177,7 @@ msgid ""
 "Select a ligand or functional group and click on a hydrogen atom to attach "
 "it."
 msgstr ""
-"Herramienta de Plantilla\t(%1)\n"
+"Herramienta Plantilla\t(%1)\n"
 "\n"
 "Insertar fragmentos, incluyendo centros metálicos.\n"
 "Seleccione un elemento y una geometría de coordinación, después presione "
@@ -6307,7 +6305,7 @@ msgstr ""
 
 #: qtplugins/yaehmop/yaehmop.cpp:357
 msgid "k-space"
-msgstr "espacio-k"
+msgstr "espacio‐k"
 
 #: qtplugins/yaehmop/yaehmop.cpp:367
 #, qt-format
@@ -6672,7 +6670,7 @@ msgid ""
 "Avogadro must be restarted for any changes to take effect."
 msgstr ""
 "Seleccione la versión de Python utilizada para ejecutar scripts.\n"
-"Avogadro debe reiniciarse para que los cambios surtan efecto."
+"Avogadro debe reiniciarse para que cualquier cambio surta efecto."
 
 #. i18n: file: qtplugins/configurepython/configurepythondialog.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -6694,7 +6692,7 @@ msgstr "Tipo:"
 #. i18n: file: qtplugins/constraints/constraintsdialog.ui:74
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 msgid "Atom Indices:"
-msgstr "Indices de Átomos:"
+msgstr "Índices de Átomos:"
 
 #. i18n: file: qtplugins/constraints/constraintsdialog.ui:113
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -7614,7 +7612,7 @@ msgstr "Aminoácidos:"
 #. i18n: file: qtplugins/insertpeptide/insertpeptidedialog.ui:270
 #. i18n: ectx: property (text), widget (QLabel, label)
 msgid "Sequence (N to C):"
-msgstr "Secuencia (N a C)"
+msgstr "Secuencia (N a C):"
 
 #. i18n: file: qtplugins/insertpeptide/insertpeptidedialog.ui:283
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -8189,12 +8187,12 @@ msgstr "Origen"
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:127
 #. i18n: ectx: property (text), item, widget (QComboBox, rotateComboBox)
 msgid "Center of Molecule"
-msgstr "Centro de la molécula"
+msgstr "Centro de molécula"
 
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:132
 #. i18n: ectx: property (text), item, widget (QComboBox, rotateComboBox)
 msgid "Center of Selection"
-msgstr "Centro de la selección"
+msgstr "Centro de selección"
 
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:192
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -8224,7 +8222,7 @@ msgstr "Átomos seleccionados"
 #. i18n: file: qtplugins/manipulator/manipulatewidget.ui:233
 #. i18n: ectx: property (text), item, widget (QComboBox, moveComboBox)
 msgid "Everything Else"
-msgstr "Otras cosas"
+msgstr "Todo lo demás"
 
 #. i18n: file: qtplugins/openbabel/conformersearchdialog.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConformerSearchDialog)
@@ -8853,7 +8851,7 @@ msgstr ""
 #. i18n: file: qtplugins/plotxrd/xrdoptionsdialog.ui:141
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 msgid "Max 2θ:"
-msgstr "Máximo 2θ:"
+msgstr "Máx 2θ:"
 
 #. i18n: file: qtplugins/qtaim/qtaimsettingswidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, atomRadiusLabel)
@@ -8987,7 +8985,7 @@ msgstr "Tamaño de la fuente:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 msgctxt "Size in pixels of the line drawing the spectra"
 msgid "Line Width:"
-msgstr "Anchura de la línea:"
+msgstr "Anchura de línea:"
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:296
 #. i18n: ectx: property (text), widget (QCheckBox, cb_import)
@@ -9021,7 +9019,7 @@ msgstr "Espectros calculados:"
 #. i18n: file: qtplugins/spectra/spectradialog.ui:409
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 msgid "Raw Spectra:"
-msgstr "Espectro en Bruto:"
+msgstr "Espectro en bruto:"
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:457
 #. i18n: ectx: property (text), widget (QPushButton, push_export)
@@ -9063,12 +9061,10 @@ msgid ""
 "Scroll wheel: Zoom to cursor"
 msgstr ""
 "Controles:\n"
-"Doble izquierda, haz clic en Restaurar predeterminados eje límites\n"
-"Haga clic derecho + arrastrar: Mover parcela\n"
-"Medio haga clic + arrastrar: Zoom a la región\n"
-"Rueda de desplazamiento: Zoom a cursor\n"
-"Nota: Hay saltos de línea aquí. Cada uno representa un salto de línea. "
-"Iniciar una nueva línea en la posición equivalente en la traducción."
+"Pulsación doble izquierda: Restaurar predeterminados eje límites\n"
+"Pulsación derecha + arrastrar: Mover trama\n"
+"Pulsación central + arrastrar: Zoom a la región\n"
+"Arrastrar rueda: Zoom al cursor"
 
 #. i18n: file: qtplugins/spectra/spectradialog.ui:608
 #. i18n: ectx: property (text), widget (QPushButton, push_loadSpectra)
@@ -9589,13 +9585,13 @@ msgid ""
 "<html><head/><body><p>Limit the y-range in the plot?</p><p>Default: off</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>¿Limitar el rango «y» en el trazado?</p><p>Por "
-"defecto: desactivado</p></body></html>"
+"<html><head/><body><p>¿Limitar el rango ‘y’ en la trama?</p><p>Por defecto: "
+"desactivado</p></body></html>"
 
 #. i18n: file: qtplugins/yaehmop/banddialog.ui:181
 #. i18n: ectx: property (text), widget (QCheckBox, cb_limitY)
 msgid "Limit y-range?"
-msgstr "¿Limitar el rango «y»?"
+msgstr "¿Limitar el rango ‘y’?"
 
 #. i18n: file: qtplugins/yaehmop/banddialog.ui:188
 #. i18n: ectx: property (toolTip), widget (QLabel, label_3)
@@ -9629,96 +9625,29 @@ msgstr "¿Mostrar la Entrada de Yaehmop?"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-",Launchpad Contributions:,Andres Montejo Martinez,DiegoJ,Edgardo "
-"Fredz,Enterhase,Feder Sáiz,Federico Vera,Gabriel Ruiz,Geoff "
-"Hutchison,Gothmog,Javier García Díaz,Luis J. Claros,Pablo Catarecha,Rogelio "
-"Castillo A.,cocoloco, ,Launchpad Contributions:,Andres Montejo "
-"Martinez,DiegoJ,Edgardo Fredz,Enterhase,Feder Sáiz,Federico Vera,Gabriel "
-"Ruiz,Geoff Hutchison,Gothmog,Javier García Díaz,Luis J. Claros,Pablo "
-"Catarecha,Rogelio Castillo A.,cocoloco, ,Launchpad Contributions:,Avogadro "
-"Team,niniocompu, ,Launchpad Contributions:,Alejandro Del Rincón,Angel "
-"Herráez,Ariel Cabral,Avogadro Team,DiegoJ,DiegoSuarez uy,Edgardo "
-"Fredz,FJModrego,Feder Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,Mauro "
-"de Carvalho,Nicolás M. Zahlut,Victor Herrero,memaljo,niniocompu, ,Launchpad "
-"Contributions:,Alejandro Del Rincón,Angel Herráez,Ariel Cabral,Avogadro "
-"Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,Mauro de Carvalho,Nicolás M. "
-"Zahlut,Victor Herrero,memaljo,niniocompu, ,Launchpad "
-"Contributions:,Alejandro Del Rincón,Angel Herráez,Ariel Cabral,Avogadro "
-"Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,Mauro de Carvalho,Nicolás M. "
-"Zahlut,Victor Herrero,memaljo,niniocompu, ,Launchpad "
-"Contributions:,Alejandro Del Rincón,Angel Herráez,Ariel Cabral,Avogadro "
-"Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,Mauro de Carvalho,Nicolás M. "
-"Zahlut,Victor Herrero,memaljo,niniocompu, ,Launchpad "
-"Contributions:,Alejandro Del Rincón,Angel Herráez,Ariel Cabral,Avogadro "
-"Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,JoseRoberto,Mauro de "
-"Carvalho,Nicolás M. Zahlut,Victor Herrero,memaljo,niniocompu, ,Launchpad "
-"Contributions:,Alejandro Del Rincón,Angel Herráez,Ariel Cabral,Avogadro "
-"Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Francisco J. Aviles Noreña,Geoff Hutchison,JoseRoberto,Mauro de "
-"Carvalho,Monkey,Nicolás M. Zahlut,Victor "
-"Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Alejandro Del "
-"Rincón,Angel Herráez,Ariel Cabral,Avogadro Team,Daniel "
-"Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder Sáiz,Francisco "
-"J. Aviles Noreña,Geoff Hutchison,JoseRoberto,Mauro de "
-"Carvalho,Monkey,Nicolás M. Zahlut,Victor "
-"Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Alejandro Del "
-"Rincón,Angel Herráez,Ariel Cabral,Avogadro Team,Daniel "
-"Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder Sáiz,Francisco "
-"J. Aviles Noreña,Geoff Hutchison,JoseRoberto,Mauro de "
-"Carvalho,Maximiliano,Miguel Valdiri Badillo,Monkey,Nicolás M. Zahlut,Victor "
-"Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Alejandro Del "
-"Rincón,Angel Herráez,Ariel Cabral,Avogadro Team,Daniel "
-"Ferreira,DiegoJ,DiegoSuarez uy,Edgardo Fredz,FJModrego,Feder "
-"Sáiz,Fitoschido,Francisco J. Aviles Noreña,Geoff "
-"Hutchison,JoseRoberto,Lu,Mauro de Carvalho,Maximiliano,Miguel Valdiri "
-"Badillo,Monkey,Nicolás M. Zahlut,Victor "
-"Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Adolfo Jayme,Alejandro "
-"Del Rincón,Alejandro Moulia Cap Saint Jean,Angel Herráez,Ariel "
-"Cabral,Avogadro Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Dj "
-"Dracaufeu,Edgardo Fredz,Eduardo Alberto Calvo,Eduardo "
-"Echeverria,FJModrego,Feder Sáiz,Francisco J. Aviles Noreña,Geoff "
-"Hutchison,Gróver Adán Tapia Domínguez,Jellby,Jose "
-"Gutierrez,JoseRoberto,LinuxNerdo,Lu,Maximiliano,Miguel de "
-"Dios,Monkey,Nicolás M. Zahlut,Pablo de Castro,Paco Molinero,Rogelio Meza "
-"Torres,Victor Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Adolfo "
-"Jayme,Alejandro Del Rincón,Alejandro Moulia Cap Saint Jean,Angel "
-"Herráez,Ariel Cabral,Avogadro Team,Daniel Ferreira,DiegoJ,DiegoSuarez uy,Dj "
-"Dracaufeu,Edgardo Fredz,Eduardo Alberto Calvo,Eduardo "
-"Echeverria,FJModrego,Feder Sáiz,Francisco J. Aviles Noreña,Geoff "
-"Hutchison,Gróver Adán Tapia Domínguez,Jellby,Jose "
-"Gutierrez,JoseRoberto,LinuxNerdo,Lu,Maximiliano,Miguel de "
-"Dios,Monkey,Nicolás M. Zahlut,Pablo de Castro,Paco Molinero,Rogelio Meza "
-"Torres,Victor Herrero,memaljo,niniocompu, ,Launchpad Contributions:,Adolfo "
-"Jayme,Alejandro Del Rincón,Alejandro Moulia Cap Saint Jean,Angel "
-"Herráez,Ariel Cabral,Avogadro Team,Daniel,DiegoJ,DiegoSuarez uy,Dj "
-"Dracaufeu,Edgardo Fredz,Eduardo Alberto Calvo,Eduardo "
-"Echeverria,FJModrego,Feder Sáiz,Francisco J. Aviles Noreña,Geoff "
-"Hutchison,Gróver Adán Tapia Domínguez,Jellby,Jose "
-"Gutierrez,JoseRoberto,LinuxNerdo,Lu,Maximiliano,Miguel de "
-"Dios,Monkey,Nicolás M. Zahlut,Pablo de Castro,Paco Molinero,Rogelio Meza "
-"Torres,Victor Herrero,memaljo,niniocompu"
+"Launchpad Contributions: Adonis, Alfonso E. Romero, Andres Montejo Martinez, "
+"Angel Herráez, Avogadro Team, Carrillo, DiegoJ, Edgardo Fredz, Enterhase, "
+"FJModrego, Feder Sáiz, Federico Vera, Fido, Gabriel Ruiz, Geoff Hutchison, "
+"Gothmog, Javier García Díaz, Jonay, LinuxNerdo, Luis J. Claros, North Wind, "
+"Miguel Valdiri Badillo, Lucio, Miguel de Dios, North Wind, Pablo Catarecha, "
+"Paco Molinero, Reyni Anderson, Ricardo A. Hermosilla, Roberto Vasconcelos "
+"Novaes, Rogelio Castillo A., Ruiz Lara, Francisco Serrador, Victor Herrero, "
+"cocolocotero, guillermo.abruza, sebikul,"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-",,Nathan_chud@hotmail.com,diegojromerolopez@gmail.com,medeshago@gmail.com,patricio.oshee@gmail.com,federsaiz@googlemail.com,,debianmaster@gmail.com,,,,,pczoido@gmail.com,,jalvarezrom@gmail.com,,,Nathan_chud@hotmail.com,diegojromerolopez@gmail.com,medeshago@gmail.com,patricio.oshee@gmail.com,federsaiz@googlemail.com,,debianmaster@gmail.com,,,,,pczoido@gmail.com,,jalvarezrom@gmail.com,,,avogadro-"
-"devel@lists.sourceforge.net,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,federsaiz@googlemail.com,fjavilesn@gmail.com,,mauro.dec@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,federsaiz@googlemail.com,fjavilesn@gmail.com,,mauro.dec@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,mauro.dec@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,mauro.dec@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,,mauro.dec@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,,mauro.dec@gmail.com,,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,,mauro.dec@gmail.com,monkey.libre@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fjavilesn@gmail.com,,,mauro.dec@gmail.com,meilan@adinet.com.uy,catastro1@tutopia.com,monkey.libre@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,medeshago@gmail.com,,,fitoschido@gmail.com,fjavilesn@gmail.com,,,,mauro.dec@gmail.com,meilan@adinet.com.uy,catastro1@tutopia.com,monkey.libre@gmail.com,nzahlut@live.com,victorhera@gmail.com,memaljo@yahoo.com,,,,fitoschido@gmail.com,,alejandromoulia@gmail.com,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,djdracaufeu@hotmail.com,medeshago@gmail.com,,,,,fjavilesn@gmail.com,,grovertapia@hotmail.com,,joseb.gutierrez@gmail.com,,,,meilan@adinet.com.uy,tres.14159@gmail.com,monkey.libre@gmail.com,nzahlut@live.com,,paco@byasl.com,,victorhera@gmail.com,memaljo@yahoo.com,,,,fitoschido@gmail.com,,alejandromoulia@gmail.com,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,djdracaufeu@hotmail.com,medeshago@gmail.com,,,,,fjavilesn@gmail.com,,grovertapia@hotmail.com,,joseb.gutierrez@gmail.com,,,,meilan@adinet.com.uy,tres.14159@gmail.com,monkey.libre@gmail.com,nzahlut@live.com,,paco@byasl.com,,victorhera@gmail.com,memaljo@yahoo.com,,,,,,alejandromoulia@gmail.com,aherraez@users.sourceforge.net,,avogadro-"
-"devel@lists.sourceforge.net,spanish_nerdo@hotmail.com,diegojromerolopez@gmail.com,jdiegosuarez@hotmail.es,djdracaufeu@hotmail.com,medeshago@gmail.com,,,,,fjavilesn@gmail.com,,grovertapia@hotmail.com,,joseb.gutierrez@gmail.com,,,,meilan@adinet.com.uy,tres.14159@gmail.com,monkey.libre@gmail.com,nzahlut@live.com,,paco@byasl.com,,victorhera@gmail.com,memaljo@yahoo.com,"
+"aherraez@users.sourceforge.net, alejandromoulia@gmail.com, avogadro-"
+"devel@lists.sourceforge.net, catastro1@tutopia.com, debianmaster@gmail.com, "
+"diegojromerolopez@gmail.com, diegosuarez@hotmail.es, "
+"djdracaufeu@hotmail.com, federsaiz@googlemail.com, fitoschido@gmail.com, "
+"fjavilesn@gmail.com, grovertapia@hotmail.com, jdiegosuarez@hotmail.es, "
+"joseb.gutierrez@gmail.com, mauro.dec@gmail.com, medeshago@gmail.com, "
+"meilan@adinet.com.uy, memaljo@yahoo.com, monkey.libre@gmail.com, "
+"nathan_chud@hotmail.com, nzahlut@live.com, jalvarezrom@gmail.com, "
+"joseb.gutierrez@gmail.com, paco@byasl.com, patricio.oshee@gmail.com, "
+"pczoido@gmail.com, spanish_nerdo@hotmail.com, tres.14159@gmail.com, "
+"victorhera@gmail.com,"
 
 #~ msgid "Update"
 #~ msgstr "Actualizar"
