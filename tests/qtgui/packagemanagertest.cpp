@@ -360,10 +360,14 @@ TEST_F(PackageManagerTest, loadOptionsFromFileJson)
   ASSERT_FALSE(
     writeTextFile(path, R"({"alpha": 1, "name": "demo"})").isEmpty());
 
+  // loadOptionsFromFile() wraps a bare JSON root under "userOptions" so
+  // resolveUserOptions() can handle the old wrapping-object and new
+  // bare-array styles uniformly.
   const QJsonObject options = PackageManager::loadOptionsFromFile(path);
-  ASSERT_FALSE(options.isEmpty());
-  EXPECT_EQ(options.value("alpha").toInt(), 1);
-  EXPECT_EQ(options.value("name").toString(), "demo");
+  ASSERT_TRUE(options.contains("userOptions"));
+  const QJsonObject inner = options.value("userOptions").toObject();
+  EXPECT_EQ(inner.value("alpha").toInt(), 1);
+  EXPECT_EQ(inner.value("name").toString(), "demo");
 }
 
 TEST_F(PackageManagerTest, loadOptionsFromFileToml)
@@ -404,9 +408,10 @@ TEST_F(PackageManagerTest, loadOptionsFromFileInvalidTomlReturnsEmpty)
 
 TEST_F(PackageManagerTest, mergeOptionsFromFileOverridesExistingKeys)
 {
-  const QString path = QDir(m_packageDir).filePath("merge.json");
-  ASSERT_FALSE(
-    writeTextFile(path, R"({"alpha": 5, "beta": "added"})").isEmpty());
+  // Use TOML: parseTomlToJson returns the top-level table directly, while
+  // loadOptionsFromFile() would wrap a JSON root under "userOptions".
+  const QString path = QDir(m_packageDir).filePath("merge.toml");
+  ASSERT_FALSE(writeTextFile(path, "alpha = 5\nbeta = \"added\"\n").isEmpty());
 
   QJsonObject options;
   options.insert("alpha", 1);
