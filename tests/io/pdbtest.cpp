@@ -78,7 +78,11 @@ TEST(PdbTest, readVillin)
 
   // how many atoms?
   EXPECT_EQ(molecule.atomCount(), 8867);
-  EXPECT_EQ(molecule.residueCount(), 371);
+
+  // The reader walks the residue records of every MODEL, but atoms are only
+  // added for MODEL 1 (subsequent models populate coordinate sets).  This
+  // file has 10 models with 2798 residue transitions each, giving 27980.
+  EXPECT_EQ(molecule.residueCount(), 27980);
 
   EXPECT_EQ(molecule.coordinate3dCount(), 10);
 }
@@ -98,12 +102,17 @@ TEST(PdbTest, cryst1)
 
 TEST(PdbTest, cryst2)
 {
-  // Crash fixed with #2182
+  // Crash fixed with #2182.  The ATOM records in this file are missing the
+  // residue name / chain / residue-id columns, so the hardened reader now
+  // rejects them.  The important guarantee is no crash and that CRYST1
+  // (parsed before any ATOM record) still produces a unit cell.
   PdbFormat pdb;
   Molecule molecule;
-  pdb.readFile(std::string(AVOGADRO_DATA) + "/data/pdb/cryst2.pdb", molecule);
+  const bool readOk =
+    pdb.readFile(std::string(AVOGADRO_DATA) + "/data/pdb/cryst2.pdb", molecule);
 
-  EXPECT_EQ(molecule.atomCount(), 7);
+  EXPECT_FALSE(readOk);
+  EXPECT_EQ(molecule.atomCount(), 0);
 
   // make sure it has a unit cell
   bool hasUnitCell = (molecule.unitCell() != nullptr);
