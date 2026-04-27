@@ -456,14 +456,21 @@ void GaussianFchk::load(GaussianSet* basis)
   }
   // Now to load in the MO coefficients
   if (basis->isValid()) {
-    if (m_MOcoeffs.size())
-      basis->setMolecularOrbitals(m_MOcoeffs);
-    else
-      cout << "Error no MO coefficients...\n";
-    if (m_alphaMOcoeffs.size())
-      basis->setMolecularOrbitals(m_alphaMOcoeffs, BasisSet::Alpha);
-    if (m_betaMOcoeffs.size())
-      basis->setMolecularOrbitals(m_betaMOcoeffs, BasisSet::Beta);
+    if (m_scftype == Rhf) {
+      if (!m_MOcoeffs.empty())
+        basis->setMolecularOrbitals(m_MOcoeffs);
+      else
+        cout << "Error no MO coefficients...\n";
+    } else {
+      if (!m_alphaMOcoeffs.empty())
+        basis->setMolecularOrbitals(m_alphaMOcoeffs, BasisSet::Alpha);
+      else
+        cout << "Error no alpha MO coefficients...\n";
+      if (!m_betaMOcoeffs.empty())
+        basis->setMolecularOrbitals(m_betaMOcoeffs, BasisSet::Beta);
+      else
+        cout << "Error no beta MO coefficients...\n";
+    }
 
     if (m_density.rows())
       basis->setDensityMatrix(m_density);
