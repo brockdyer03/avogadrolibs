@@ -1,0 +1,22 @@
+# System Qt6 in CI is not built with -fsanitize=thread, so TSan cannot see
+# the synchronization in QCoreApplication::postEvent / event-queue mutex.
+# This makes every queued signal/slot delivery look like a race -- either on
+# the QMetaCallEvent itself (caught by called_from_lib) or on the by-value
+# arguments copied into our slot via the moc-generated dispatcher (caught by
+# the qt_static_metacall pattern, which only matches the moc shim).
+called_from_lib:libQt6Core.so
+race:qt_static_metacall
+race:QtPrivate::QMetaTypeForType
+
+# CalcWorker is torn down via the standard Qt deleteLater + QThread::finished
+# idiom: the worker's destructor runs on the worker thread when its event loop
+# flushes deferred-delete events, and the happens-before chain back to earlier
+# main-thread invokeMethod calls passes through uninstrumented Qt internals.
+# The destructor itself is = default with no body, so there is no real shared
+# state to race on -- only the object-lifetime sync that TSan cannot observe.
+race:Avogadro::QtGui::CalcWorker::~CalcWorker
+
+# Qt6 on Linux uses glib's main loop by default, which wakes worker threads
+# via an eventfd. Synchronization happens through the kernel fd, which TSan
+# doesn't model; glib itself isn't instrumented either.
+called_from_lib:libglib-2.0.so

@@ -456,14 +456,21 @@ void GaussianFchk::load(GaussianSet* basis)
   }
   // Now to load in the MO coefficients
   if (basis->isValid()) {
-    if (m_MOcoeffs.size())
-      basis->setMolecularOrbitals(m_MOcoeffs);
-    else
-      cout << "Error no MO coefficients...\n";
-    if (m_alphaMOcoeffs.size())
-      basis->setMolecularOrbitals(m_alphaMOcoeffs, BasisSet::Alpha);
-    if (m_betaMOcoeffs.size())
-      basis->setMolecularOrbitals(m_betaMOcoeffs, BasisSet::Beta);
+    if (m_scftype == Rhf) {
+      if (!m_MOcoeffs.empty())
+        basis->setMolecularOrbitals(m_MOcoeffs);
+      else
+        cout << "Error no MO coefficients...\n";
+    } else {
+      if (!m_alphaMOcoeffs.empty())
+        basis->setMolecularOrbitals(m_alphaMOcoeffs, BasisSet::Alpha);
+      else
+        cout << "Error no alpha MO coefficients...\n";
+      if (!m_betaMOcoeffs.empty())
+        basis->setMolecularOrbitals(m_betaMOcoeffs, BasisSet::Beta);
+      else
+        cout << "Error no beta MO coefficients...\n";
+    }
 
     if (m_density.rows())
       basis->setDensityMatrix(m_density);
@@ -643,7 +650,7 @@ bool GaussianFchk::readDensityMatrix(std::istream& in, unsigned int n,
     appendError("Invalid density matrix data.");
     return false;
   }
-  m_density.resize(m_numBasisFunctions, m_numBasisFunctions);
+  m_density = MatrixX::Zero(m_numBasisFunctions, m_numBasisFunctions);
   unsigned int cnt = 0;
   unsigned int i = 0, j = 0;
   unsigned int f = 1;
@@ -713,6 +720,8 @@ bool GaussianFchk::readDensityMatrix(std::istream& in, unsigned int n,
       }
     }
   }
+  // The fchk file stores only the lower triangle; mirror to make it symmetric.
+  m_density.triangularView<Eigen::StrictlyUpper>() = m_density.transpose();
   return true;
 }
 bool GaussianFchk::readSpinDensityMatrix(std::istream& in, unsigned int n,
@@ -760,7 +769,7 @@ bool GaussianFchk::readSpinDensityMatrix(std::istream& in, unsigned int n,
     appendError("Invalid spin density matrix data.");
     return false;
   }
-  m_spinDensity.resize(m_numBasisFunctions, m_numBasisFunctions);
+  m_spinDensity = MatrixX::Zero(m_numBasisFunctions, m_numBasisFunctions);
   unsigned int cnt = 0;
   unsigned int i = 0, j = 0;
   unsigned int f = 1;
@@ -830,6 +839,9 @@ bool GaussianFchk::readSpinDensityMatrix(std::istream& in, unsigned int n,
       }
     }
   }
+  // The fchk file stores only the lower triangle; mirror to make it symmetric.
+  m_spinDensity.triangularView<Eigen::StrictlyUpper>() =
+    m_spinDensity.transpose();
   return true;
 }
 
