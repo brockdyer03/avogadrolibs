@@ -83,6 +83,18 @@ void InsertPeptide::showDialog()
 
   if (m_dialog == nullptr) {
     m_dialog = new InsertPeptideDialog(qobject_cast<QWidget*>(parent()));
+
+    connect(m_dialog->insertButton, SIGNAL(clicked()), this,
+            SLOT(performInsert()));
+
+    // Set the amino buttons to update the sequence
+    foreach (const QToolButton* child, m_dialog->findChildren<QToolButton*>()) {
+      connect(child, SIGNAL(clicked()), this, SLOT(updateText()));
+    }
+
+    // connect the structure menu to set the phi / psi
+    connect(m_dialog->structureCombo, SIGNAL(currentIndexChanged(int)), this,
+            SLOT(setStructureType(int)));
   }
 
   QSettings settings;
@@ -91,18 +103,6 @@ void InsertPeptide::showDialog()
   m_dialog->psiSpin->setValue(settings.value("peptide/psi", 180.0).toDouble());
   m_dialog->structureCombo->setCurrentIndex(
     settings.value("peptide/structure", 0).toInt());
-
-  connect(m_dialog->insertButton, SIGNAL(clicked()), this,
-          SLOT(performInsert()));
-
-  // Set the amino buttons to update the sequence
-  foreach (const QToolButton* child, m_dialog->findChildren<QToolButton*>()) {
-    connect(child, SIGNAL(clicked()), this, SLOT(updateText()));
-  }
-
-  // connect the structure menu to set the phi / psi
-  connect(m_dialog->structureCombo, SIGNAL(currentIndexChanged(int)), this,
-          SLOT(setStructureType(int)));
 
   m_dialog->show();
   m_dialog->raise();
@@ -393,6 +393,11 @@ void InsertPeptide::performInsert()
         // CO2- termination
         continue;
       }
+      // Proline's nitrogen is part of a five-membered ring (bonded to CA + CD).
+      // For non-N-terminal residues it also forms the peptide bond to the
+      // previous C, leaving no room for an N-H. Skip the H from the zmat.
+      if (!isFirstResidue && aaStdString == "PRO" && atomName == "H")
+        continue;
 
       // Add atom to molecule
       auto atom = newMol.addAtom(amino.atomicNumbers[j]);
@@ -471,17 +476,23 @@ void InsertPeptide::performInsert()
     }
 
     if (i == 0) {
+      // Proline's nitrogen is secondary (already bonded to CA and CD), so it
+      // already carries the only N-H from the zmat for the neutral terminus
+      // and can hold at most one extra H when protonated.
+      bool isProline = (aaStdString == "PRO");
       // fix the N terminus (e.g., NH2 or NH3+)
       switch (nTerm) {
         case 0: // NH2
-          AddTerminus(1, "H2", 0, 1.009, 1, 120.0, 2, 175.0, newMol,
-                      internalCoords);
+          if (!isProline)
+            AddTerminus(1, "H2", 0, 1.009, 1, 120.0, 2, 175.0, newMol,
+                        internalCoords);
           break;
         case 1: // NH3+
           AddTerminus(1, "H2", 0, 1.009, 1, 109.5, 2, 120.0, newMol,
                       internalCoords);
-          AddTerminus(1, "H3", 0, 1.009, 1, 109.5, 2, 60.0, newMol,
-                      internalCoords);
+          if (!isProline)
+            AddTerminus(1, "H3", 0, 1.009, 1, 109.5, 2, 60.0, newMol,
+                        internalCoords);
           break;
         default:
           break;
